@@ -382,3 +382,26 @@ nav a:focus {
         flex-direction: column;
     }
 }
+
+/*
+  Story page typography
+
+  The classes below are used on the dedicated story page
+  (our‑story.html) to style headings and paragraphs consistently
+  across multiple narrative sections.  They intentionally mirror
+  the font sizes and colours found in other sections to maintain
+  visual harmony.
+*/
+.story-page-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    text-transform: none;
+}
+
+.story-page-section p {
+    margin-bottom: 1rem;
+    color: #666;
+    max-width: 800px;
+    line-height: 1.6;
+}

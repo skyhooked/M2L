@@ -21,10 +21,19 @@ markup, styles and scripts live in the top‑level files of this folder:
   introduce new interactive features.  Avoid embedding scripts directly
   in your HTML.
 
-* **`assets/images/hero-bg.jpg`** – A high‑quality background image
-  generated for the hero section.  You can replace this file with your
-  own artwork by dropping another image into the same location and
-  updating the CSS background in `style.css`.
+* **`our-story.html`** – A dedicated story page that mirrors the look of
+  the homepage while telling the history behind the brand.  The
+  narrative draws upon the “Complete Story” published by M2 Labs
+  and demonstrates how to structure long‑form content using
+  multiple sections.  When adding your own story, keep the
+  headings and paragraphs wrapped in the `.story-page-section` class
+  for consistent typography.
+
+
+The default hero background is pulled from Unsplash via an HTTPS link
+defined directly in `style.css`.  If you prefer to use a local image,
+place it in an `assets` folder and update the `background-image`
+property in the `.hero` rule accordingly.
 
 ## Extending the Site
 
