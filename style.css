@@ -14,10 +14,12 @@
 
 /* Colour and font variables */
 :root {
-    --primary-color: #0b0b0b;       /* Dark background for header and footer */
-    --secondary-color: #ffffff;     /* Light text for dark backgrounds */
-    --accent-color: #e63946;        /* Vibrant red accent colour */
-    --neutral-color: #f5f5f5;       /* Light grey background for sections */
+    --background-color: #F5F5F5;    /* Warm beige - keeps things light, lets hardware photos pop */
+    --primary-text: #36454F;        /* Charcoal - solid, serious, very readable */
+    --secondary-text: #6C7A83;      /* Dusty blue-gray for captions and UI chrome */
+    --accent-color: #B87333;        /* Soft copper - luxury without screaming */
+    --cta-color: #FF8A3D;           /* Bright but still in the orange-copper family */
+    --white: #ffffff;               /* Pure white for contrast */
     --font-family-base: 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -35,8 +37,8 @@ html {
 body {
     font-family: var(--font-family-base);
     line-height: 1.6;
-    color: #333;
-    background-color: #fff;
+    color: var(--primary-text);
+    background-color: var(--background-color);
 }
 
 img {
@@ -59,8 +61,8 @@ img {
 
 /* Header */
 header {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
+    background-color: var(--primary-text);
+    color: var(--white);
     position: fixed;
     top: 0;
     left: 0;
@@ -84,7 +86,7 @@ header .nav-container {
 header .logo a {
     font-size: 1.3rem;
     font-weight: bold;
-    color: var(--secondary-color);
+    color: var(--white);
     text-decoration: none;
 }
 
@@ -100,7 +102,7 @@ nav li {
 }
 
 nav a {
-    color: var(--secondary-color);
+    color: var(--white);
     text-decoration: none;
     font-size: 0.85rem;
     text-transform: uppercase;
@@ -112,15 +114,15 @@ nav a {
 
 /* CTA styling for the Shop link */
 .nav-cta {
-    background-color: #ffd34e;
-    color: var(--primary-color);
+    background-color: var(--cta-color);
+    color: var(--primary-text);
     font-weight: 600;
 }
 
 .nav-cta:hover,
 .nav-cta:focus {
-    background-color: #ffc43d;
-    color: var(--primary-color);
+    background-color: var(--accent-color);
+    color: var(--primary-text);
     transform: translateY(-2px);
 }
 
@@ -140,7 +142,7 @@ nav a:focus:not(.nav-cta) {
     position: absolute;
     top: 110%;
     left: 0;
-    background-color: var(--primary-color);
+    background-color: var(--primary-text);
     padding: 0.5rem 0;
     border-radius: 4px;
     min-width: 150px;
@@ -172,7 +174,7 @@ nav a:focus:not(.nav-cta) {
 }
 
 .nav-icons a {
-    color: var(--secondary-color);
+    color: var(--white);
     font-size: 0.9rem;
     text-decoration: none;
     transition: color 0.3s ease;
@@ -214,14 +216,14 @@ nav a:focus:not(.nav-cta) {
 
 .hero h1 {
     font-size: 3rem;
-    color: var(--secondary-color);
+    color: var(--white);
     margin-bottom: 1rem;
     line-height: 1.2;
 }
 
 .hero p {
     font-size: 1.25rem;
-    color: var(--secondary-color);
+    color: var(--white);
     margin-bottom: 2rem;
 }
 
@@ -229,7 +231,7 @@ nav a:focus:not(.nav-cta) {
     display: inline-block;
     padding: 0.75rem 2rem;
     background-color: var(--accent-color);
-    color: var(--secondary-color);
+    color: var(--white);
     border-radius: 30px;
     text-decoration: none;
     font-size: 1rem;
@@ -238,7 +240,7 @@ nav a:focus:not(.nav-cta) {
 
 .btn:hover,
 .btn:focus {
-    background-color: #c92b36;
+    background-color: var(--accent-color);
 }
 
 /* Generic section styling */
@@ -250,20 +252,20 @@ nav a:focus:not(.nav-cta) {
 
 /* Products */
 .products {
-    background-color: var(--neutral-color);
+    background-color: var(--background-color);
     text-align: center;
 }
 
 .products h2 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
-    color: var(--primary-color);
+    color: var(--primary-text);
 }
 
 .products p {
     max-width: 700px;
     margin: 0 auto 2rem;
-    color: #666;
+    color: var(--secondary-text);
 }
 
 .product-grid {
@@ -274,7 +276,7 @@ nav a:focus:not(.nav-cta) {
 }
 
 .product-card {
-    background-color: #ffffff;
+    background-color: var(--white);
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -294,12 +296,12 @@ nav a:focus:not(.nav-cta) {
 .product-card h3 {
     font-size: 1.25rem;
     margin: 1rem;
-    color: var(--primary-color);
+    color: var(--primary-text);
 }
 
 .product-card p {
     margin: 0 1rem 1rem;
-    color: #666;
+    color: var(--secondary-text);
     flex-grow: 1;
 }
 
@@ -334,29 +336,29 @@ nav a:focus:not(.nav-cta) {
 .story-content h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: var(--primary-color);
+    color: var(--primary-text);
 }
 
 .story-content p {
     margin-bottom: 1.5rem;
-    color: #666;
+    color: var(--secondary-text);
 }
 
 /* Newsletter */
 .newsletter {
-    background-color: var(--neutral-color);
+    background-color: var(--background-color);
     text-align: center;
 }
 
 .newsletter h2 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
-    color: var(--primary-color);
+    color: var(--primary-text);
 }
 
 .newsletter p {
     margin-bottom: 2rem;
-    color: #666;
+    color: var(--secondary-text);
 }
 
 .newsletter-form {
@@ -371,7 +373,7 @@ nav a:focus:not(.nav-cta) {
 .newsletter-form input[type="email"] {
     flex: 1;
     padding: 0.75rem 1rem;
-    border: 1px solid #ccc;
+    border: 1px solid var(--secondary-text);
     border-radius: 4px;
     font-size: 1rem;
 }
@@ -380,7 +382,7 @@ nav a:focus:not(.nav-cta) {
     padding: 0.75rem 1.5rem;
     border: none;
     background-color: var(--accent-color);
-    color: var(--secondary-color);
+    color: var(--white);
     border-radius: 4px;
     font-size: 1rem;
     cursor: pointer;
@@ -389,7 +391,7 @@ nav a:focus:not(.nav-cta) {
 
 .newsletter-form button:hover,
 .newsletter-form button:focus {
-    background-color: #c92b36;
+    background-color: var(--accent-color);
 }
 
 /*
@@ -408,7 +410,7 @@ nav a:focus:not(.nav-cta) {
 }
 
 .artist-card {
-    background-color: #ffffff;
+    background-color: var(--white);
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 1.5rem;
@@ -423,12 +425,12 @@ nav a:focus:not(.nav-cta) {
 .artist-card h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
-    color: var(--primary-color);
+    color: var(--primary-text);
 }
 
 .artist-card p {
     margin-bottom: 1rem;
-    color: #666;
+    color: var(--secondary-text);
 }
 
 .artist-card .btn {
@@ -437,8 +439,8 @@ nav a:focus:not(.nav-cta) {
 
 /* Footer */
 .footer {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
+    background-color: var(--primary-text);
+    color: var(--white);
     padding: 3rem 1rem;
 }
 
@@ -454,13 +456,13 @@ nav a:focus:not(.nav-cta) {
 .footer-logo a {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--secondary-color);
+    color: var(--white);
     text-decoration: none;
 }
 
 .footer-logo p {
     font-size: 0.875rem;
-    color: #aaaaaa;
+    color: var(--secondary-text);
 }
 
 .footer-nav ul {
@@ -470,7 +472,7 @@ nav a:focus:not(.nav-cta) {
 }
 
 .footer-nav a {
-    color: var(--secondary-color);
+    color: var(--white);
     text-decoration: none;
     font-size: 0.875rem;
     transition: color 0.3s ease;
@@ -512,7 +514,7 @@ nav a:focus:not(.nav-cta) {
     left: 0;
     width: 100%;
     height: 60px;
-    background: rgba(17, 17, 17, 0.95);
+    background: rgba(54, 69, 79, 0.95);
     backdrop-filter: blur(6px);
     z-index: 1000;
 }
@@ -526,7 +528,7 @@ nav a:focus:not(.nav-cta) {
     padding: 0 20px;
 }
 .site-header .logo {
-    color: #f4f4f4;
+    color: var(--white);
     font-weight: 600;
     font-size: 1.2rem;
     text-decoration: none;
@@ -543,17 +545,17 @@ nav a:focus:not(.nav-cta) {
     flex-wrap: nowrap;
 }
 .primary-nav a {
-    color: #f4f4f4;
+    color: var(--white);
     text-decoration: none;
     transition: color 0.15s ease;
 }
 .primary-nav a:hover,
 .primary-nav a:focus {
-    color: #FFD34E;
+    color: var(--accent-color);
 }
 .primary-nav .pill {
-    background: #FFD34E;
-    color: #111;
+    background: var(--cta-color);
+    color: var(--white);
     padding: 8px 18px;
     border-radius: 4px;
     transition: transform 0.15s ease;
@@ -568,7 +570,7 @@ nav a:focus:not(.nav-cta) {
 .dropdown > button {
     background: none;
     border: none;
-    color: #f4f4f4;
+    color: var(--white);
     font-size: 0.95rem;
     text-transform: uppercase;
     letter-spacing: 0.03em;
@@ -576,7 +578,7 @@ nav a:focus:not(.nav-cta) {
 }
 .dropdown > button:hover,
 .dropdown > button:focus {
-    color: #FFD34E;
+    color: var(--accent-color);
 }
 .dropdown-menu {
     display: none;
@@ -584,7 +586,7 @@ nav a:focus:not(.nav-cta) {
     top: 100%;
     left: 0;
     min-width: 180px;
-    background: #1d1d1d;
+    background: var(--primary-text);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 4px;
@@ -597,7 +599,7 @@ nav a:focus:not(.nav-cta) {
 .dropdown-menu a {
     display: block;
     padding: 8px 16px;
-    color: #f4f4f4;
+    color: var(--white);
     text-decoration: none;
     font-size: 0.85rem;
     transition: background-color 0.15s ease, color 0.15s ease;
@@ -605,7 +607,7 @@ nav a:focus:not(.nav-cta) {
 .dropdown-menu a:hover,
 .dropdown-menu a:focus {
     background-color: rgba(255, 255, 255, 0.05);
-    color: #FFD34E;
+    color: var(--accent-color);
 }
 .dropdown:hover .dropdown-menu,
 .dropdown:focus-within .dropdown-menu {
@@ -622,7 +624,7 @@ nav a:focus:not(.nav-cta) {
 .util-icons a {
     background: none;
     border: none;
-    color: #f4f4f4;
+    color: var(--white);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -637,8 +639,8 @@ nav a:focus:not(.nav-cta) {
     position: absolute;
     top: -6px;
     right: -10px;
-    background: #e63946;
-    color: #fff;
+    background: var(--cta-color);
+    color: var(--white);
     border-radius: 50%;
     padding: 2px 6px;
     font-size: 0.7rem;
@@ -659,7 +661,7 @@ nav a:focus:not(.nav-cta) {
     .primary-nav.open {
         display: flex;
         flex-direction: column;
-        background: #111;
+        background: var(--primary-text);
         position: fixed;
         top: 60px;
         left: 0;
@@ -689,13 +691,13 @@ body {
 .story-page-section h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: var(--primary-color);
+    color: var(--primary-text);
     text-transform: none;
 }
 
 .story-page-section p {
     margin-bottom: 1rem;
-    color: #666;
+    color: var(--secondary-text);
     max-width: 800px;
     line-height: 1.6;
 }
