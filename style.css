@@ -586,9 +586,13 @@ nav a:focus:not(.nav-cta) {
     min-width: 180px;
     background: #1d1d1d;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 4px;
     padding: 10px 0;
     z-index: 1000;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 .dropdown-menu a {
     display: block;
@@ -606,6 +610,8 @@ nav a:focus:not(.nav-cta) {
 .dropdown:hover .dropdown-menu,
 .dropdown:focus-within .dropdown-menu {
     display: block;
+    opacity: 1;
+    transform: translateY(0);
 }
 .util-icons {
     display: flex;
