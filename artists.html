@@ -1,0 +1,86 @@
+<!--
+  artists.html
+
+  An index of the artists associated with your brand.  Each card
+  links to a dedicated profile page.  The content here reflects the
+  list found on M2 Labs’ Artists page【982151438022881†L28-L46】.  Replace the
+  placeholder descriptions or add images later by placing them in the
+  `images/` directory and updating the `src` attributes accordingly.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artists – Your Brand</title>
+    <meta name="description" content="Meet the artists who shape our sound.  Explore their stories and gear." />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <div class="logo"><a href="index.html#top">Your&nbsp;Brand</a></div>
+            <nav aria-label="Primary Navigation">
+                <ul>
+                    <li><a href="index.html#hero">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="our-story.html">Our&nbsp;Story</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="artist-endorsement.html">Endorsement</a></li>
+                    <li><a href="artists.html">Artists</a></li>
+                </ul>
+            </nav>
+            <div class="nav-icons">
+                <a href="#login" aria-label="Login">Log&nbsp;In</a>
+                <a href="#cart" aria-label="Shopping Cart">Cart&nbsp;(0)</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="hero" role="banner">
+            <div class="hero-overlay">
+                <h1>Our&nbsp;Artists</h1>
+                <p>Meet the musicians and bands who trust our gear.</p>
+            </div>
+        </section>
+        <section class="section" aria-labelledby="artists-list-title">
+            <h2 id="artists-list-title">Featured Artists</h2>
+            <div class="artist-list">
+                <article class="artist-card">
+                    <h3>The&nbsp;WormWood&nbsp;Project</h3>
+                    <p>Brandon&nbsp;Gaines &amp; Aubrey&nbsp;Britt&nbsp;Bailey</p>
+                    <a href="wormwood.html" class="btn">View&nbsp;Profile</a>
+                </article>
+                <article class="artist-card">
+                    <h3>Hector&nbsp;Guadarrama</h3>
+                    <p>Mestizo&nbsp;Audio + palettes</p>
+                    <a href="hector-guadarrama.html" class="btn">View&nbsp;Profile</a>
+                </article>
+                <article class="artist-card">
+                    <h3>Loraine</h3>
+                    <p>Justin&nbsp;Young + Eric&nbsp;Anderson</p>
+                    <a href="loraine.html" class="btn">View&nbsp;Profile</a>
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="index.html#top">Your&nbsp;Brand</a>
+                <p>Crafting the future of vintage sound</p>
+            </div>
+            <nav class="footer-nav" aria-label="Footer Navigation">
+                <ul>
+                    <li><a href="#privacy">Privacy&nbsp;Policy</a></li>
+                    <li><a href="#warranty">Warranty</a></li>
+                    <li><a href="#contact">Contact&nbsp;Us</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="ecommerce-plugin"></div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

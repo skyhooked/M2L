@@ -52,12 +52,18 @@
             <!-- Primary navigation.  Update the anchor text and href targets as you add more pages or sections. -->
             <nav aria-label="Primary Navigation">
                 <ul>
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#products">Shop</a></li>
-                    <li><a href="#story">Our&nbsp;Story</a></li>
-                    <li><a href="#news">News</a></li>
-                    <li><a href="#endorsement">Endorsement</a></li>
-                    <li><a href="#artists">Artists</a></li>
+                    <!-- When viewing the homepage the hash link still works; on other pages this resolves correctly to the hero section via the full path. -->
+                    <li><a href="index.html#hero">Home</a></li>
+                    <!-- Link to a standalone shop page.  The page itself will host a third‑party store plugin. -->
+                    <li><a href="shop.html">Shop</a></li>
+                    <!-- Link to the full story page rather than the on‑page summary. -->
+                    <li><a href="our-story.html">Our&nbsp;Story</a></li>
+                    <!-- Link to a dedicated news feed page. -->
+                    <li><a href="news.html">News</a></li>
+                    <!-- Link to the artist endorsement program page. -->
+                    <li><a href="artist-endorsement.html">Endorsement</a></li>
+                    <!-- Link to the artists index page.  Individual artist pages are linked from there. -->
+                    <li><a href="artists.html">Artists</a></li>
                 </ul>
             </nav>
             <!-- Secondary navigation for account/cart icons.  Replace with actual icons or components as needed. -->
@@ -115,7 +121,8 @@
                 <div class="story-content">
                     <h2 id="story-title">The&nbsp;Story</h2>
                     <p>Use this section to share the journey behind your brand.  Explain why you’re passionate about analog gear, the problems you’re solving, and how you stand out from competitors.</p>
-                    <a href="#" class="btn">Read&nbsp;More</a>
+                    <!-- Link to full story page for deeper reading -->
+                    <a href="our-story.html" class="btn">Read&nbsp;More</a>
                 </div>
             </div>
         </section>

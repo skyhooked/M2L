@@ -1,0 +1,74 @@
+<!--
+  shop.html
+
+  This page serves as a placeholder for your online store.  A
+  third‑party e‑commerce plugin or storefront will eventually be
+  embedded here.  The structure follows the same layout as the
+  homepage and story pages to ensure a consistent user experience.
+  Replace the contents of the `#shop-plugin` div with your shopping
+  cart or catalogue widget when ready.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop – Your Brand</title>
+    <meta name="description" content="Browse our products. Our online shop is coming soon." />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <div class="logo"><a href="index.html#top">Your&nbsp;Brand</a></div>
+            <nav aria-label="Primary Navigation">
+                <ul>
+                    <li><a href="index.html#hero">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="our-story.html">Our&nbsp;Story</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="artist-endorsement.html">Endorsement</a></li>
+                    <li><a href="artists.html">Artists</a></li>
+                </ul>
+            </nav>
+            <div class="nav-icons">
+                <a href="#login" aria-label="Login">Log&nbsp;In</a>
+                <a href="#cart" aria-label="Shopping Cart">Cart&nbsp;(0)</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="hero" role="banner">
+            <div class="hero-overlay">
+                <h1>Shop Coming&nbsp;Soon</h1>
+                <p>Our online store is under construction.  Check back later for exclusive gear and merchandise.</p>
+            </div>
+        </section>
+        <section class="section" aria-label="Shop Placeholder">
+            <h2>Your Online Store</h2>
+            <p>This space is reserved for your third‑party e‑commerce integration.  Add your shopping cart or catalogue embed code inside the container below when you’re ready to launch your store.</p>
+            <div id="shop-plugin" style="min-height:300px; border:1px dashed #ccc; display:flex; align-items:center; justify-content:center; margin-top:2rem;">
+                <p><!-- Replace this placeholder with your e‑commerce widget. --></p>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="index.html#top">Your&nbsp;Brand</a>
+                <p>Crafting the future of vintage sound</p>
+            </div>
+            <nav class="footer-nav" aria-label="Footer Navigation">
+                <ul>
+                    <li><a href="#privacy">Privacy&nbsp;Policy</a></li>
+                    <li><a href="#warranty">Warranty</a></li>
+                    <li><a href="#contact">Contact&nbsp;Us</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="ecommerce-plugin"></div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
