@@ -1,48 +1,75 @@
 /*
   script.js
 
-  JavaScript for interactivity on the site.  Currently this file
-  implements smooth scrolling for navigation links and a basic handler
-  for the newsletter form.  Keeping scripts in a separate file
-  improves maintainability and allows for easy extension with more
-  complex behaviour (e.g. sliders, modal dialogues, product filters).
-
-  Notes for future development:
-  • If you plan to integrate a framework (React, Vue, etc.) or
-    third‑party widgets, consider bundling scripts with a build tool
-    like Vite or Webpack.  For simple enhancements, vanilla JS is
-    sufficient.
-  • Always validate user input server‑side in addition to any client‑side
-    checks.
+  This file contains all of the site’s client‑side behaviour.  It powers
+  the responsive navigation (hamburger toggle), search modal, cart badge
+  update and smooth scrolling.  It also preserves the existing
+  newsletter form handler.  Future enhancements (e.g. product filters,
+  quizzes) should be added here to keep logic separate from markup.
 */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scroll for internal anchor links in the navigation
-    const navLinks = document.querySelectorAll('nav a[href^="#"]');
-    navLinks.forEach(link => {
-        link.addEventListener('click', event => {
-            // Only handle on-page anchors
-            const targetId = link.getAttribute('href');
-            if (targetId && targetId.startsWith('#')) {
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
+    // Mobile navigation toggle
+    const ham = document.querySelector('.hamburger');
+    const nav = document.querySelector('.primary-nav');
+    if (ham && nav) {
+        ham.addEventListener('click', () => {
+            nav.classList.toggle('open');
+        });
+    }
+
+    // Search modal open
+    const searchBtn = document.getElementById('search-btn');
+    if (searchBtn) {
+        searchBtn.addEventListener('click', () => {
+            const dlg = document.getElementById('search-modal');
+            // `showModal` is available on <dialog> elements in modern browsers
+            if (dlg && typeof dlg.showModal === 'function') {
+                dlg.showModal();
+            }
+        });
+    }
+
+    // Close modals when clicking a close button
+    document.querySelectorAll('.close-modal').forEach(button => {
+        button.addEventListener('click', event => {
+            event.preventDefault();
+            const dlg = event.target.closest('dialog');
+            if (dlg) {
+                dlg.close();
+            }
+        });
+    });
+
+    // Update cart badge from localStorage
+    const cartBadge = document.getElementById('cart-count');
+    if (cartBadge) {
+        cartBadge.textContent = localStorage.getItem('cartQty') || '0';
+    }
+
+    // Smooth scroll for anchor links on the same page
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', event => {
+            const targetId = anchor.getAttribute('href');
+            if (targetId && targetId.length > 1) {
+                const targetEl = document.querySelector(targetId);
+                if (targetEl) {
                     event.preventDefault();
-                    const offset = targetElement.offsetTop - 70; // adjust for fixed header
+                    // Offset by header height to ensure the section isn’t hidden
+                    const offset = targetEl.offsetTop - 70;
                     window.scrollTo({ top: offset, behavior: 'smooth' });
                 }
             }
         });
     });
 
-    // Newsletter form submission
+    // Newsletter form submission handling
     const newsletterForm = document.querySelector('.newsletter-form');
     if (newsletterForm) {
         newsletterForm.addEventListener('submit', event => {
             event.preventDefault();
             const emailInput = newsletterForm.querySelector('input[type="email"]');
             const email = emailInput.value.trim();
-            // TODO: Integrate your email marketing service here (e.g. Mailchimp, SendGrid).
-            // For now we simply display a confirmation message and reset the form.
             if (email) {
                 alert(`Thank you, ${email}! You’ve been added to our mailing list.`);
                 newsletterForm.reset();

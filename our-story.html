@@ -17,7 +17,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Our Story – Your Brand</title>
+    <title>Our Story – M2 Labs</title>
     <!--
       Update this description to summarise your brand’s origin.  This
       meta description helps search engines understand the page
@@ -27,30 +27,51 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <!-- Header with fixed navigation.  The links here point to
-         top‑level pages and sections on your site.  Adjust the
-         href attributes if you rename files or change section IDs. -->
-    <header>
-        <div class="container nav-container">
-            <div class="logo">
-                <a href="index.html#top">Your&nbsp;Brand</a>
-            </div>
-            <nav aria-label="Primary Navigation">
-                <ul>
-                    <li><a href="index.html#hero">Home</a></li>
-                    <li><a href="index.html#products">Shop</a></li>
-                    <li><a href="our-story.html">Our&nbsp;Story</a></li>
-                    <li><a href="index.html#news">News</a></li>
-                    <li><a href="index.html#endorsement">Endorsement</a></li>
-                    <li><a href="index.html#artists">Artists</a></li>
-                </ul>
+    <!-- Sticky CTA‑first header.  Shared across pages. -->
+    <header class="site-header">
+        <div class="nav-wrap">
+            <a href="index.html" class="logo">M2&nbsp;Labs</a>
+            <button class="hamburger" aria-label="Open menu"></button>
+            <nav class="primary-nav" id="mobile-nav" role="navigation" aria-label="Main">
+                <a href="shop.html" class="pill">Shop</a>
+                <a href="our-story.html">Our&nbsp;Story</a>
+                <a href="news.html">News</a>
+                <div class="dropdown">
+                    <button aria-haspopup="true" aria-expanded="false">Artists&nbsp;▾</button>
+                    <div class="dropdown-menu" role="menu">
+                        <a href="artists.html">Roster</a>
+                        <a href="artist-endorsement.html">Endorsement&nbsp;Program</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button aria-haspopup="true" aria-expanded="false">Support&nbsp;▾</button>
+                    <div class="dropdown-menu" role="menu">
+                        <a href="warranty.html">Warranty</a>
+                        <a href="privacy.html">Privacy</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
             </nav>
-            <div class="nav-icons">
-                <a href="#login" aria-label="Login">Log&nbsp;In</a>
-                <a href="#cart" aria-label="Shopping Cart">Cart&nbsp;(0)</a>
+            <div class="util-icons">
+                <button id="search-btn" aria-label="Search">
+                    <img src="assets/img/search.svg" alt="">
+                </button>
+                <!-- <button aria-label="Quiz (coming soon)" style="display:none;"></button> -->
+                <a href="login.html" aria-label="Account">
+                    <img src="assets/img/user.svg" alt="">
+                </a>
+                <a href="cart.html" aria-label="Cart">
+                    <img src="assets/img/cart.svg" alt="">
+                    <span id="cart-count">0</span>
+                </a>
             </div>
         </div>
     </header>
+    <dialog id="search-modal">
+        <h2>Search</h2>
+        <input type="text" placeholder="Coming soon…" />
+        <button class="close-modal">Close</button>
+    </dialog>
 
     <!-- Main content of the story page. -->
     <main>
@@ -113,9 +134,9 @@
             </div>
             <nav class="footer-nav" aria-label="Footer Navigation">
                 <ul>
-                    <li><a href="#privacy">Privacy&nbsp;Policy</a></li>
-                    <li><a href="#warranty">Warranty</a></li>
-                    <li><a href="#contact">Contact&nbsp;Us</a></li>
+                    <li><a href="privacy.html">Privacy&nbsp;Policy</a></li>
+                    <li><a href="warranty.html">Warranty</a></li>
+                    <li><a href="contact.html">Contact&nbsp;Us</a></li>
                 </ul>
             </nav>
         </div>

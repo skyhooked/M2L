@@ -1,12 +1,11 @@
 <!--
-  wormwood.html
+  contact.html
 
-  Profile page for The WormWood Project.  The narrative here
-  summarises the content of M2 Labs’ profile【218474219097350†L48-L56】【218474219097350†L58-L61】.
-  Feel free to embellish with additional background, images or
-  discography when you have more information.  Replace placeholder
-  images by adding files to the `images/` folder and updating the
-  `src` attributes accordingly.
+  This page provides a way for visitors to get in touch with you.  It
+  contains a contact form and your direct contact information.  When
+  hooking up the form, ensure submissions are routed securely to
+  whichever service you prefer (e.g. Formspree, Netlify Forms or your
+  own backend).
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -14,8 +13,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The WormWood Project – M2 Labs</title>
-    <meta name="description" content="Learn about The WormWood Project, their sound and their journey." />
+    <title>Contact Us – M2 Labs</title>
+    <meta name="description" content="Reach out to us with questions, comments or support requests." />
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -65,21 +64,26 @@
     <main>
         <section class="hero" role="banner">
             <div class="hero-overlay">
-                <h1>The&nbsp;WormWood&nbsp;Project</h1>
-                <p>Visceral Southern Gothic grit meets modern grunge.</p>
+                <h1>Contact&nbsp;Us</h1>
+                <p>We're here to help with any questions or comments.</p>
             </div>
         </section>
-        <section class="section story-page-section" aria-labelledby="wormwood-bio">
-            <h2 id="wormwood-bio">Band&nbsp;Bio</h2>
-            <p>The WormWood Project is a visceral blend of Southern Gothic grit and modern grunge, led by frontman Aubrey Britt Bailey.  His haunting lyrics explore themes of addiction, loss and redemption【218474219097350†L48-L56】.  Their debut EP <em>Ghosts</em> is a raw tribute to lives lost, with each track capturing Bailey’s unfiltered emotion and masterful storytelling.</p>
-            <p>Anchored by Anton Shields’ powerhouse drumming and driven by gritty guitar from Brandon Lee Gaines, alongside Jaco Kiley’s slithering bass, the band crafts an intense, cinematic sound that’s both timeless and unforgettable【218474219097350†L52-L56】.  The WormWood Project invites listeners into a world of vivid, haunting melodies that linger long after the music fades.</p>
-            <p>Brandon Lee Gaines and Aubrey Britt Bailey are currently using The Bomber Overdrive by M2 Labs【218474219097350†L58-L61】.  Check them out and experience the raw energy for yourself!</p>
+        <section class="section story-page-section" aria-labelledby="contact-section">
+            <h2 id="contact-section">Get in Touch</h2>
+            <p>If you have questions about your order, need help with a product, or want to learn more about our policies, we’re here to help.</p>
+            <form class="newsletter-form" action="#" method="post" style="max-width:600px;">
+                <input type="text" name="name" placeholder="Your Name" required />
+                <input type="email" name="email" placeholder="Your Email" required />
+                <textarea name="message" rows="4" placeholder="How can we help?" required style="width:100%;padding:0.75rem;border:1px solid #ccc;border-radius:4px;font-size:1rem;"></textarea>
+                <button type="submit">Send&nbsp;Message</button>
+            </form>
+            <p style="margin-top:1rem;">You can also email us at <a href="mailto:support@yourbrand.com">support@yourbrand.com</a> or call <a href="tel:+10000000000">(000)&nbsp;000‑0000</a>. We’re based in Atlanta, GA and operate Monday through Friday.</p>
         </section>
     </main>
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-logo">
-                <a href="index.html#top">Your&nbsp;Brand</a>
+                <a href="index.html">M2&nbsp;Labs</a>
                 <p>Crafting the future of vintage sound</p>
             </div>
             <nav class="footer-nav" aria-label="Footer Navigation">

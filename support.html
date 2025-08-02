@@ -1,0 +1,133 @@
+<!--
+  support.html
+
+  This page consolidates all customer support resources into one place.  It
+  contains your privacy policy, warranty information and a contact section
+  so visitors can quickly find the help they need.  Each section is given
+  a unique anchor (id) so that you can link directly to it from the
+  navigation dropdown or other pages.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support – M2 Labs</title>
+    <meta name="description" content="Read our privacy policy, warranty terms and get in touch with us." />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- Sticky CTA‑first header.  Shared across pages. -->
+    <header class="site-header">
+        <div class="nav-wrap">
+            <a href="index.html" class="logo">M2&nbsp;Labs</a>
+            <button class="hamburger" aria-label="Open menu"></button>
+            <nav class="primary-nav" id="mobile-nav" role="navigation" aria-label="Main">
+                <a href="shop.html" class="pill">Shop</a>
+                <a href="our-story.html">Our&nbsp;Story</a>
+                <a href="news.html">News</a>
+                <div class="dropdown">
+                    <button aria-haspopup="true" aria-expanded="false">Artists&nbsp;▾</button>
+                    <div class="dropdown-menu" role="menu">
+                        <a href="artists.html">Roster</a>
+                        <a href="artist-endorsement.html">Endorsement&nbsp;Program</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button aria-haspopup="true" aria-expanded="false">Support&nbsp;▾</button>
+                    <div class="dropdown-menu" role="menu">
+                        <a href="warranty.html">Warranty</a>
+                        <a href="privacy.html">Privacy</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="util-icons">
+                <button id="search-btn" aria-label="Search">
+                    <img src="assets/img/search.svg" alt="">
+                </button>
+                <a href="login.html" aria-label="Account">
+                    <img src="assets/img/user.svg" alt="">
+                </a>
+                <a href="cart.html" aria-label="Cart">
+                    <img src="assets/img/cart.svg" alt="">
+                    <span id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+    <dialog id="search-modal">
+        <h2>Search</h2>
+        <input type="text" placeholder="Coming soon…" />
+        <button class="close-modal">Close</button>
+    </dialog>
+    <main>
+        <!-- Support hero section -->
+        <section class="hero" role="banner">
+            <div class="hero-overlay">
+                <h1>Support</h1>
+                <p>Your questions answered and your tone protected.</p>
+            </div>
+        </section>
+        <!-- Privacy Policy Section -->
+        <section id="privacy" class="section story-page-section" aria-labelledby="privacy-title">
+            <h2 id="privacy-title">Privacy&nbsp;Policy</h2>
+            <p>We respect your privacy and are committed to protecting the personal information you share with us【971756025904836†L34-L58】.  This policy outlines how we collect, use and safeguard your data when you visit our site.</p>
+            <ul>
+                <li><strong>Personal Data:</strong> Information you provide voluntarily such as your name, address and payment details【971756025904836†L40-L57】.</li>
+                <li><strong>Derivative Data:</strong> Information automatically collected by our servers, including your IP address, browser type and pages visited【971756025904836†L50-L53】.</li>
+                <li><strong>Use of Information:</strong> We use your data to create and manage your account, process orders, communicate with you and improve our services【971756025904836†L60-L70】.</li>
+                <li><strong>Disclosure:</strong> We may share your information to comply with legal obligations, protect rights, or as part of a business transfer, and only with your consent for other purposes【971756025904836†L77-L93】.</li>
+                <li><strong>Security:</strong> We employ administrative, technical and physical safeguards to protect your data, but no system is completely secure【971756025904836†L95-L102】.</li>
+                <li><strong>Children:</strong> Our services are not directed to children under 13 and we do not knowingly collect their data【971756025904836†L104-L108】.</li>
+            </ul>
+            <p>For more details about how we handle your information, please reach out via the contact section below.</p>
+        </section>
+        <!-- Warranty Section -->
+        <section id="warranty" class="section story-page-section" aria-labelledby="warranty-title">
+            <h2 id="warranty-title">Warranty&nbsp;Information</h2>
+            <p>We stand behind the quality and craftsmanship of our products with a lifetime warranty on all electronics and hardware【607038081944186†L30-L46】.  Below is a summary of what our warranty covers and excludes.</p>
+            <ul>
+                <li><strong>Coverage:</strong> Manufacturing defects in electronic components and hardware under normal use conditions【607038081944186†L32-L47】.</li>
+                <li><strong>Exclusions:</strong> Damage from misuse, accidents, unauthorised modifications, normal wear and tear or environmental conditions outside recommended use【607038081944186†L48-L56】.</li>
+                <li><strong>Registration:</strong> You must create an account and register your product, providing the serial number and purchase details, to activate your warranty【607038081944186†L60-L68】.</li>
+                <li><strong>Transfers:</strong> The warranty may be transferred once; the new owner must register the product and provide proof of original purchase【607038081944186†L72-L84】.</li>
+                <li><strong>Claims:</strong> Submit a warranty claim through your account, describe the issue and ship the product to us.  Customers cover shipping costs to us; we cover return shipping after repair or replacement【607038081944186†L91-L121】.</li>
+                <li><strong>Limitations:</strong> This warranty is valid only for authorised purchases and within the country of purchase.  We are not liable for incidental or consequential damages【607038081944186†L123-L136】.</li>
+            </ul>
+            <p>See your product documentation for specific terms.  If you need assistance with a warranty claim, please contact us.</p>
+        </section>
+        <!-- Contact Section -->
+        <section id="contact" class="section story-page-section" aria-labelledby="contact-title">
+            <h2 id="contact-title">Contact&nbsp;Us</h2>
+            <p>If you have questions about your order, need help with a product, or want to learn more about our policies, we’re here to help.  Reach out using the form below or via email.</p>
+            <!-- Simple contact form.  This form does not submit anywhere by default; you can connect it to a backend service or email handler. -->
+            <form class="newsletter-form" action="#" method="post" style="max-width:600px;">
+                <input type="text" name="name" placeholder="Your Name" required />
+                <input type="email" name="email" placeholder="Your Email" required />
+                <textarea name="message" rows="4" placeholder="How can we help?" required style="width:100%;padding:0.75rem;border:1px solid #ccc;border-radius:4px;font-size:1rem;"></textarea>
+                <button type="submit">Send&nbsp;Message</button>
+            </form>
+            <p style="margin-top:1rem;">You can also email us at <a href="mailto:support@yourbrand.com">support@yourbrand.com</a> or call <a href="tel:+10000000000">(000) 000‑0000</a>.  We’re based in Atlanta, GA and operate Monday through Friday.</p>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="index.html#top">Your&nbsp;Brand</a>
+                <p>Crafting the future of vintage sound</p>
+            </div>
+            <nav class="footer-nav" aria-label="Footer Navigation">
+                <ul>
+                    <li><a href="privacy.html">Privacy&nbsp;Policy</a></li>
+                    <li><a href="warranty.html">Warranty</a></li>
+                    <li><a href="contact.html">Contact&nbsp;Us</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="ecommerce-plugin"></div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
