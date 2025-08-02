@@ -1,12 +1,11 @@
 <!--
-  wormwood.html
+  quiz.html
 
-  Profile page for The WormWood Project.  The narrative here
-  summarises the content of M2 Labs’ profile【218474219097350†L48-L56】【218474219097350†L58-L61】.
-  Feel free to embellish with additional background, images or
-  discography when you have more information.  Replace placeholder
-  images by adding files to the `images/` folder and updating the
-  `src` attributes accordingly.
+  This page hosts the “Find Your Sound” quiz, a simple interactive tool to help
+  visitors determine which of your pedals best fits their musical style.  The
+  quiz acts as a lead capture mechanism and can be implemented using an
+  embedded Typeform, Google Form or any other questionnaire service.  See the
+  placeholder below for guidance on how to embed an external form.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -14,11 +13,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The WormWood Project – M2 Labs</title>
-    <meta name="description" content="Learn about The WormWood Project, their sound and their journey." />
+    <title>Find Your Sound – M2 Labs</title>
+    <meta name="description" content="Take our quick quiz to discover the perfect analog pedal for your unique sound." />
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+    <!-- Reuse the streamlined header from the other pages.  The Shop link is
+         highlighted with a pill background, and the Support link includes a
+         dropdown for Privacy, Warranty and Contact sections. -->
     <header class="site-header">
         <div class="nav-wrap">
             <a href="index.html" class="logo">M2&nbsp;Labs</a>
@@ -63,17 +65,35 @@
         <button class="close-modal">Close</button>
     </dialog>
     <main>
+        <!-- Hero banner for the quiz page -->
         <section class="hero" role="banner">
             <div class="hero-overlay">
-                <h1>The&nbsp;WormWood&nbsp;Project</h1>
-                <p>Visceral Southern Gothic grit meets modern grunge.</p>
+                <h1>Find&nbsp;Your&nbsp;Sound</h1>
+                <p>Take our short quiz to discover the perfect pedal for your tone.</p>
             </div>
         </section>
-        <section class="section story-page-section" aria-labelledby="wormwood-bio">
-            <h2 id="wormwood-bio">Band&nbsp;Bio</h2>
-            <p>The WormWood Project is a visceral blend of Southern Gothic grit and modern grunge, led by frontman Aubrey Britt Bailey.  His haunting lyrics explore themes of addiction, loss and redemption【218474219097350†L48-L56】.  Their debut EP <em>Ghosts</em> is a raw tribute to lives lost, with each track capturing Bailey’s unfiltered emotion and masterful storytelling.</p>
-            <p>Anchored by Anton Shields’ powerhouse drumming and driven by gritty guitar from Brandon Lee Gaines, alongside Jaco Kiley’s slithering bass, the band crafts an intense, cinematic sound that’s both timeless and unforgettable【218474219097350†L52-L56】.  The WormWood Project invites listeners into a world of vivid, haunting melodies that linger long after the music fades.</p>
-            <p>Brandon Lee Gaines and Aubrey Britt Bailey are currently using The Bomber Overdrive by M2 Labs【218474219097350†L58-L61】.  Check them out and experience the raw energy for yourself!</p>
+
+        <!-- Quiz container section.  Embed your questionnaire tool here. -->
+        <section class="section story-page-section" id="quiz-section" aria-labelledby="quiz-title">
+            <h2 id="quiz-title">Discover Your Tone</h2>
+            <p>Answer a couple of quick questions about your style and tone preferences.
+            We’ll suggest the M2 Labs pedal that best matches your vibe.  Embed a
+            Typeform or similar questionnaire in the container below by pasting the
+            provided embed code from your chosen service.</p>
+            <!--
+              To embed a Typeform, copy the embed snippet from your Typeform account
+              and replace the placeholder below.  For example:
+
+              <div class="quiz-embed">
+                  <iframe src="https://form.typeform.com/to/your-typeform-id" style="width:100%;height:500px;border:none;" allow="camera; microphone; autoplay; fullscreen"></iframe>
+              </div>
+
+              Keep the iframe responsive by setting the width to 100% and adjusting
+              the height as needed.
+            -->
+            <div class="quiz-embed" style="background-color:#f5f5f5;padding:2rem;border-radius:8px;text-align:center;">
+                <p><em>Your quiz will appear here.</em></p>
+            </div>
         </section>
     </main>
     <footer class="footer">

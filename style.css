@@ -67,19 +67,22 @@ header {
     width: 100%;
     z-index: 1000;
     border-bottom: 1px solid rgba(255,255,255,0.1);
+    /* Reduce the overall height to keep the bar compact. */
+    height: 60px;
 }
 
 header .nav-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 20px;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 header .logo a {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
     color: var(--secondary-color);
     text-decoration: none;
@@ -88,28 +91,93 @@ header .logo a {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 1.2rem;
+    align-items: center;
+}
+
+nav li {
+    position: relative;
 }
 
 nav a {
     color: var(--secondary-color);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    transition: color 0.3s ease;
+    padding: 0.5rem 0.75rem;
+    transition: color 0.3s ease, background-color 0.3s ease,
+        transform 0.2s ease;
+    border-radius: 20px;
 }
 
-nav a:hover,
-nav a:focus {
+/* CTA styling for the Shop link */
+.nav-cta {
+    background-color: #ffd34e;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.nav-cta:hover,
+.nav-cta:focus {
+    background-color: #ffc43d;
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Hover state for other nav links */
+nav a:hover:not(.nav-cta),
+nav a:focus:not(.nav-cta) {
     color: var(--accent-color);
 }
 
+/* Dropdown menu */
+.dropdown-parent:hover > .dropdown {
+    display: block;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    background-color: var(--primary-color);
+    padding: 0.5rem 0;
+    border-radius: 4px;
+    min-width: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 2000;
+}
+
+.dropdown li {
+    width: 100%;
+}
+
+.dropdown a {
+    display: block;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+}
+
+.dropdown a:hover,
+.dropdown a:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--accent-color);
+}
+
+/* Icons container */
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 .nav-icons a {
-    margin-left: 1rem;
     color: var(--secondary-color);
     font-size: 0.9rem;
     text-decoration: none;
     transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
 }
 
 .nav-icons a:hover,
@@ -324,6 +392,49 @@ nav a:focus {
     background-color: #c92b36;
 }
 
+/*
+  Artist listing styles
+
+  These rules format the list of artist cards on the artists index
+  page.  Cards are laid out responsively in a flexbox grid similar
+  to the product cards.  Adjust the max‑width and flex properties as
+  needed.
+*/
+.artist-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.artist-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+    flex: 1 1 300px;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.artist-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.artist-card p {
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+.artist-card .btn {
+    align-self: center;
+}
+
 /* Footer */
 .footer {
     background-color: var(--primary-color);
@@ -381,6 +492,180 @@ nav a:focus {
     .story-container {
         flex-direction: column;
     }
+}
+
+/*
+  -------------------------------------------------------------------------
+  Sticky CTA‑first navigation bar
+
+  The rules below implement a minimal, conversion‑focused header that stays
+  affixed to the top of the viewport.  It features a translucent dark
+  background with a subtle blur, a highlighted "Shop" pill, dropdowns for
+  Artists and Support, and utility icons for search, account and cart.  At
+  smaller breakpoints (≤768px) the main nav collapses behind a hamburger
+  button.  The body receives top padding equal to the header height to
+  prevent content from being hidden behind the fixed bar.
+*/
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: rgba(17, 17, 17, 0.95);
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+}
+.site-header .nav-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.site-header .logo {
+    color: #f4f4f4;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+.primary-nav {
+    display: flex;
+    gap: 24px;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    align-items: center;
+}
+.primary-nav a {
+    color: #f4f4f4;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+.primary-nav a:hover,
+.primary-nav a:focus {
+    color: #FFD34E;
+}
+.primary-nav .pill {
+    background: #FFD34E;
+    color: #111;
+    padding: 8px 18px;
+    border-radius: 4px;
+    transition: transform 0.15s ease;
+}
+.primary-nav .pill:hover,
+.primary-nav .pill:focus {
+    transform: translateY(-2px);
+}
+.dropdown {
+    position: relative;
+}
+.dropdown > button {
+    background: none;
+    border: none;
+    color: #f4f4f4;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+}
+.dropdown > button:hover,
+.dropdown > button:focus {
+    color: #FFD34E;
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    background: #1d1d1d;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    padding: 10px 0;
+    z-index: 1000;
+}
+.dropdown-menu a {
+    display: block;
+    padding: 8px 16px;
+    color: #f4f4f4;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+.dropdown-menu a:hover,
+.dropdown-menu a:focus {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #FFD34E;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.util-icons {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+.util-icons button,
+.util-icons a {
+    background: none;
+    border: none;
+    color: #f4f4f4;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.util-icons img {
+    width: 20px;
+    height: 20px;
+}
+#cart-count {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background: #e63946;
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.7rem;
+}
+.hamburger {
+    display: none;
+    background: none;
+    border: 0;
+    width: 32px;
+    height: 32px;
+    background: url('assets/img/hamburger.svg') center/contain no-repeat;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    .primary-nav {
+        display: none;
+    }
+    .primary-nav.open {
+        display: flex;
+        flex-direction: column;
+        background: #111;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        padding: 24px;
+        gap: 16px;
+    }
+    .hamburger {
+        display: block;
+    }
+}
+
+/* Offset body content for fixed header */
+body {
+    padding-top: 60px;
 }
 
 /*

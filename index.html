@@ -27,7 +27,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Brand – Modern Analog Sound</title>
+    <title>M2 Labs – Modern Analog Sound</title>
     <!--
       The description meta tag is important for SEO.  Update the
       content value to reflect your brand’s mission and include
@@ -42,37 +42,52 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <!-- Header & navigation bar -->
-    <header id="top">
-        <div class="container nav-container">
-            <!-- Logo area.  Replace the text with your logo image or SVG if desired. -->
-            <div class="logo">
-                <a href="#top">Your&nbsp;Brand</a>
-            </div>
-            <!-- Primary navigation.  Update the anchor text and href targets as you add more pages or sections. -->
-            <nav aria-label="Primary Navigation">
-                <ul>
-                    <!-- When viewing the homepage the hash link still works; on other pages this resolves correctly to the hero section via the full path. -->
-                    <li><a href="index.html#hero">Home</a></li>
-                    <!-- Link to a standalone shop page.  The page itself will host a third‑party store plugin. -->
-                    <li><a href="shop.html">Shop</a></li>
-                    <!-- Link to the full story page rather than the on‑page summary. -->
-                    <li><a href="our-story.html">Our&nbsp;Story</a></li>
-                    <!-- Link to a dedicated news feed page. -->
-                    <li><a href="news.html">News</a></li>
-                    <!-- Link to the artist endorsement program page. -->
-                    <li><a href="artist-endorsement.html">Endorsement</a></li>
-                    <!-- Link to the artists index page.  Individual artist pages are linked from there. -->
-                    <li><a href="artists.html">Artists</a></li>
-                </ul>
+    <!-- Sticky CTA‑first header.  Contains the logo, primary navigation with dropdowns and utility icons. -->
+    <header class="site-header">
+        <div class="nav-wrap">
+            <a href="index.html" class="logo">M2&nbsp;Labs</a>
+            <button class="hamburger" aria-label="Open menu"></button>
+            <nav class="primary-nav" id="mobile-nav" role="navigation" aria-label="Main">
+                <a href="shop.html" class="pill">Shop</a>
+                <a href="our-story.html">Our&nbsp;Story</a>
+                <a href="news.html">News</a>
+                <div class="dropdown">
+                    <button aria-haspopup="true" aria-expanded="false">Artists&nbsp;▾</button>
+                    <div class="dropdown-menu" role="menu">
+                        <a href="artists.html">Roster</a>
+                        <a href="artist-endorsement.html">Endorsement&nbsp;Program</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button aria-haspopup="true" aria-expanded="false">Support&nbsp;▾</button>
+                    <div class="dropdown-menu" role="menu">
+                        <a href="warranty.html">Warranty</a>
+                        <a href="privacy.html">Privacy</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
             </nav>
-            <!-- Secondary navigation for account/cart icons.  Replace with actual icons or components as needed. -->
-            <div class="nav-icons">
-                <a href="#login" aria-label="Login">Log&nbsp;In</a>
-                <a href="#cart" aria-label="Shopping Cart">Cart&nbsp;(0)</a>
+            <div class="util-icons">
+                <button id="search-btn" aria-label="Search">
+                    <img src="assets/img/search.svg" alt="">
+                </button>
+                <!-- <button aria-label="Quiz (coming soon)" style="display:none;"></button> -->
+                <a href="login.html" aria-label="Account">
+                    <img src="assets/img/user.svg" alt="">
+                </a>
+                <a href="cart.html" aria-label="Cart">
+                    <img src="assets/img/cart.svg" alt="">
+                    <span id="cart-count">0</span>
+                </a>
             </div>
         </div>
     </header>
+    <!-- Search modal uses the native <dialog> element.  It can be opened via the search icon and closed with its button. -->
+    <dialog id="search-modal">
+        <h2>Search</h2>
+        <input type="text" placeholder="Coming soon…" />
+        <button class="close-modal">Close</button>
+    </dialog>
 
     <!-- Main content wrapper.  Each section is self‑contained to
          facilitate easy reordering or removal. -->
@@ -163,9 +178,10 @@
             </div>
             <nav class="footer-nav" aria-label="Footer Navigation">
                 <ul>
-                    <li><a href="#privacy">Privacy&nbsp;Policy</a></li>
-                    <li><a href="#warranty">Warranty</a></li>
-                    <li><a href="#contact">Contact&nbsp;Us</a></li>
+                    <!-- Link to support page anchors so these footer links work from any page -->
+                    <li><a href="privacy.html">Privacy&nbsp;Policy</a></li>
+                    <li><a href="warranty.html">Warranty</a></li>
+                    <li><a href="contact.html">Contact&nbsp;Us</a></li>
                 </ul>
             </nav>
         </div>
