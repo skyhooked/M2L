@@ -540,6 +540,7 @@ nav a:focus:not(.nav-cta) {
     text-transform: uppercase;
     letter-spacing: 0.03em;
     align-items: center;
+    flex-wrap: nowrap;
 }
 .primary-nav a {
     color: #f4f4f4;
@@ -602,7 +603,8 @@ nav a:focus:not(.nav-cta) {
     background-color: rgba(255, 255, 255, 0.05);
     color: #FFD34E;
 }
-.dropdown:hover .dropdown-menu {
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
     display: block;
 }
 .util-icons {
@@ -623,6 +625,7 @@ nav a:focus:not(.nav-cta) {
 .util-icons img {
     width: 20px;
     height: 20px;
+    filter: brightness(0) invert(1);
 }
 #cart-count {
     position: absolute;
