@@ -27,13 +27,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>M2 Labs – Modern Analog Sound</title>
+    <title>M2 Labs – Crafting the Future of Vintage Sound</title>
     <!--
       The description meta tag is important for SEO.  Update the
       content value to reflect your brand’s mission and include
       relevant keywords.  Keep it under ~160 characters.
     -->
-    <meta name="description" content="Crafting the future of vintage sound with high‑quality analog equipment and modern design." />
+    <meta name="description" content="Crafting the future of vintage sound with high‑quality analog equipment, modern design with a transferable lifetime warranty." />
     <!--
       Link to the primary stylesheet.  Do not change the relative
       location unless you also move the file.  Using a separate CSS
@@ -47,7 +47,7 @@
     <header class="site-header">
         <div class="nav-wrap">
             <a href="index.html" class="logo">
-                <img src="logos/H-Logo-white.svg" alt="M2 Labs Logo" width="140" height="47">
+                <img src="logos/H-Logo-white.svg" alt="" width="140" height="47">
             </a>
             <button class="hamburger" aria-label="Open menu"></button>
             <nav class="primary-nav" id="mobile-nav" role="navigation" aria-label="Main">
@@ -65,19 +65,30 @@
                     </div>
                 </div>
             </nav>
-            <div class="util-icons">
-                <button id="search-btn" aria-label="Search">
-                    <img src="icons/search.svg" alt="">
-                </button>
-                <!-- <button aria-label="Quiz (coming soon)" style="display:none;"></button> -->
-                <a href="login.html" aria-label="Account">
-                    <img src="icons/user.svg" alt="">
-                </a>
-                <a href="cart.html" aria-label="Cart">
-                    <img src="icons/cart.svg" alt="">
-                    <span id="cart-count">0</span>
-                </a>
-            </div>
+         <!-- util-icons (inline SVG, inherits currentColor) -->
+<div class="util-icons">
+    <!-- search -->
+    <button id="search-btn" aria-label="Search" class="icon-btn">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M10.5 3a7.5 7.5 0 015.95 12.093l4.178 4.178a1 1 0 01-1.414 1.414l-4.178-4.178A7.5 7.5 0 1110.5 3zm0 2a5.5 5.5 0 100 11 5.5 5.5 0 000-11z"/>
+        </svg>
+    </button>
+
+    <!-- account -->
+    <a href="login.html" aria-label="Account" class="icon-btn">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 12c2.761 0 5-2.239 5-5S14.761 2 12 2 7 4.239 7 7s2.239 5 5 5zm0 2c-4.418 0-8 2.239-8 5v3h16v-3c0-2.761-3.582-5-8-5z"/>
+        </svg>
+    </a>
+
+    <!-- cart -->
+    <a href="cart.html" aria-label="Cart" class="icon-btn">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 4h-2V2h2v2zm16 0h-2V2h2v2zM4 6v2h2l3.6 7.59-1.35 2.41C7.52 19.37 8 20.66 9.06 21h9.93v-2H9.42l.95-1.68h7.64c.73 0 1.37-.49 1.57-1.18l2.88-9.84A1 1 0 0021 5H6.21l-.94-2H2v2h2l.6 1h15.21l-2.25 7.7H8.53L6.16 6H4zm5 13a2 2 0 100 4 2 2 0 000-4zm8 0a2 2 0 100 4 2 2 0 000-4z"/>
+        </svg>
+        <span id="cart-count">0</span>
+    </a>
+</div>
         </div>
     </header>
     <!-- Search modal uses the native <dialog> element.  It can be opened via the search icon and closed with its button. -->
