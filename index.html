@@ -11,58 +11,29 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 <body>
-    <header class="site-header">
-        <div class="nav-wrap">
-            <!-- Logo -->
-            <a href="index.html" class="logo">
-                <img src="logos/H-Logo-white.svg" alt="M2 Labs Logo" width="140" height="47">
-            </a>
+<header class="site-header">
+  <div class="logo">
+    <img src="logos/H-Logo-white.svg">
+  </div>
 
-            <!-- Hamburger Menu Button -->
-            <button class="menu-toggle" aria-label="Toggle menu">
-                <img src="icons/hamburger.svg" alt="Menu">
-            </button>
+  <!-- HAMBURGER BUTTON -->
+  <button class="menu-toggle" aria-label="Toggle menu">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  </button>
 
-            <!-- Navigation -->
-            <nav class="primary-nav" id="mobile-nav" role="navigation" aria-label="Main">
-                <a href="shop.html" class="pill">Shop</a>
-                <a href="our-story.html">Our&nbsp;Story</a>
-                <a href="news.html">News</a>
-                <a href="artists.html">Artists</a>
-                <a href="artist-endorsement.html">Artist&nbsp;Endorsement</a>
-                <div class="dropdown">
-                    <button aria-haspopup="true" aria-expanded="false">Support&nbsp;▾</button>
-                    <div class="dropdown-menu" role="menu">
-                        <a href="warranty.html">Warranty</a>
-                        <a href="privacy.html">Privacy</a>
-                        <a href="contact.html">Contact</a>
-                    </div>
-                </div>
-            </nav>
-
-            <!-- Utility Icons -->
-            <div class="util-icons">
-                <button id="search-btn" aria-label="Search" class="icon-btn">
-                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M10.5 3a7.5 7.5 0 015.95 12.093l4.178 4.178a1 1 0 01-1.414 1.414l-4.178-4.178A7.5 7.5 0 1110.5 3zm0 2a5.5 5.5 0 100 11 5.5 5.5 0 000-11z"/>
-                    </svg>
-                </button>
-
-                <a href="login.html" aria-label="Account" class="icon-btn">
-                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 12c2.761 0 5-2.239 5-5S14.761 2 12 2 7 4.239 7 7s2.239 5 5 5zm0 2c-4.418 0-8 2.239-8 5v3h16v-3c0-2.761-3.582-5-8-5z"/>
-                    </svg>
-                </a>
-
-                <a href="cart.html" aria-label="Cart" class="icon-btn">
-                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M6 4h-2V2h2v2zm16 0h-2V2h2v2zM4 6v2h2l3.6 7.59-1.35 2.41C7.52 19.37 8 20.66 9.06 21h9.93v-2H9.42l.95-1.68h7.64c.73 0 1.37-.49 1.57-1.18l2.88-9.84A1 1 0 0021 5H6.21l-.94-2H2v2h2l.6 1h15.21l-2.25 7.7H8.53L6.16 6H4zm5 13a2 2 0 100 4 2 2 0 000-4zm8 0a2 2 0 100 4 2 2 0 000-4z"/>
-                    </svg>
-                    <span id="cart-count">0</span>
-                </a>
-            </div>
-        </div>
-    </header>
+  <!-- NAV LINKS -->
+  <nav class="nav-links">
+    <a href="#">Shop</a>
+    <a href="#">Our Story</a>
+    <a href="#">News</a>
+    <a href="#">Artist Endorsement</a>
+    <a href="#">Artists</a>
+  </nav>
+</header>
 
     <dialog id="search-modal">
         <h2>Search</h2>

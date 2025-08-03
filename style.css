@@ -88,6 +88,10 @@ img{max-width:100%;display:block}
     flex: none;
 }
 
+.site-header .logo::after {
+    content: none !important;
+}
+
 .site-header .logo img {
     height: 48px;
     width: auto;
@@ -258,7 +262,7 @@ img{max-width:100%;display:block}
 .menu-toggle img {
     width: 100%;
     height: 100%;
-    filter: brightness(0) invert(1); /* make SVG white */
+    filter: brightness(0) invert(1);
 }
 
 /* ---------- HERO ---------- */
@@ -267,7 +271,7 @@ img{max-width:100%;display:block}
     margin-top:0;
     display:flex;
     align-items:center;
-    justify-content:flex-end;        /* overlay stays on the right for desktop */
+    justify-content:flex-end;
     padding-right:5%;
     background:url('product images/tbo-hero6.png') center/cover no-repeat;
 }
@@ -276,7 +280,6 @@ img{max-width:100%;display:block}
     background:rgba(0,0,0,.6);
     padding:40px;
     border-radius:10px;
-
     text-align:center;
     display:flex;
     flex-direction:column;
@@ -369,12 +372,10 @@ img{max-width:100%;display:block}
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 768px) {
 
-    /* Show hamburger icon */
     .menu-toggle {
         display: block;
     }
 
-    /* Hide nav links until toggled */
     .site-header .primary-nav {
         display: none;
         flex-direction: column;
@@ -391,7 +392,6 @@ img{max-width:100%;display:block}
         display: flex;
     }
 
-    /* Center hero on mobile */
     .hero {
         justify-content: center;
         padding-right: 0;
