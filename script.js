@@ -82,7 +82,11 @@ document.addEventListener('DOMContentLoaded', () => {
         loadFragment('partials/header.html', 'header.site-header'),
         loadFragment('partials/footer.html', 'footer.footer')
     ])
-        .then(initSite)
+        .then(() => {
+            // Remove any deprecated inline SVG logo remnants
+            document.querySelectorAll('#m2-logo').forEach(el => el.remove());
+            initSite();
+        })
         .catch(err => {
             console.error(err);
             // Fallback: initialise site even if fragments fail to load
