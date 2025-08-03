@@ -1,5 +1,5 @@
 /* ===========================================================
-   M2-Labs  |  Charcoal + Copper palette  |  2025-08-03 HOTFIX
+   M2-Labs  |  Charcoal + Copper palette  |  2025-08-03 FINAL
 =========================================================== */
 
 /* Font */
@@ -56,9 +56,7 @@ img{max-width:100%;display:block}
     color:var(--cta-text);
 }
 
-/* ===========================================================
-   HEADER / NAV   (this is the only part that was broken)
-=========================================================== */
+/* ---------- HEADER / NAV ---------- */
 header{
     position:fixed;
     top:0;
@@ -87,7 +85,7 @@ header .logo img{height:40px}
 
 /* primary nav */
 header nav{
-    margin-left:40px;   /* space after logo */
+    margin-left:40px;
     display:flex;
     align-items:center;
     height:100%;
@@ -135,9 +133,9 @@ header nav a:focus{color:#B87333}
     color:#B87333;
 }
 
-/* icons (search, user, cart) */
+/* icons */
 .nav-icons{
-    margin-left:auto;          /* pins to the right */
+    margin-left:auto;
     display:flex;
     align-items:center;
     gap:1.25rem;
@@ -182,22 +180,10 @@ header nav a:focus{color:#B87333}
     line-height:1;
 }
 
-/* ---- Kill the rogue white strip -------------------------------------------------
-   Some themes inject an extra <nav> or spacer div right after <header>.
-   Nuke anything that follows header and pretends to be a nav strip.
-------------------------------------------------------------------------------- */
-header + nav,
-header + .sticky-nav,
-header + .sticky-placeholder{
-    display:none !important;
-}
-
-/* ===========================================================
-   HERO  (unchanged)
-=========================================================== */
+/* ---------- HERO ---------- */
 .hero{
-    height:100vh;
-    margin-top:80px;
+    height:calc(100vh - 60px); /* adjust for fixed header */
+    margin-top:0;              /* <-- FIX: removed the extra gap */
     display:flex;
     align-items:center;
     justify-content:center;
@@ -212,9 +198,7 @@ header + .sticky-placeholder{
 .hero h1{font-size:3rem;margin-bottom:1rem;color:#fff}
 .hero p {font-size:1.25rem;margin-bottom:2rem;color:#fff}
 
-/* ===========================================================
-   REST OF THE LAYOUT  (left exactly as it was)
-=========================================================== */
+/* ---------- SECTIONS / CARDS / FOOTER ---------- */
 .section{max-width:1200px;margin:0 auto;padding:5rem 1rem}
 .products{text-align:center}
 .products h2{font-size:2rem;margin-bottom:.5rem;color:var(--neutral-90)}
