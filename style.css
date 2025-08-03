@@ -1,52 +1,100 @@
-/* -----------------------------------------------------------
-   M2-Labs global stylesheet • Charcoal + Copper • 2025-08-03-c
------------------------------------------------------------- */
+/* -------------------------------------------------------------
+   M2-Labs  •  Charcoal + Copper palette  •  2025-08-03-fix-icons
+-------------------------------------------------------------- */
 
-/* Google font */
+/* Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
-/* -----------------------------------------------------------
-   Custom properties
------------------------------------------------------------- */
+/* -------------------------------------------------------------
+   Design Tokens
+-------------------------------------------------------------- */
 :root {
-    /* Palette tokens */
+    /* Core palette */
     --neutral-0:  #F5F5F5;
     --neutral-90: #36454F;
     --neutral-60: #6C7A83;
-    --copper-60:  #B87333;
     --copper-80:  #FF8A3D;
 
-    /* Semantic aliases */
-    --bg-base:        var(--neutral-0);
-    --text-primary:   var(--neutral-90);
-    --text-secondary: var(--neutral-60);
-    --link-accent:    var(--copper-60);
+    /* Button look & feel */
+    --btn-fill:   var(--copper-80);
+    --btn-text:   #000000;
+    --btn-fill-h: var(--neutral-0);
+    --btn-text-h: #000000;
+    --btn-brd:    #000000;
+    --btn-rad:    6px;
 
-    /* Button & CTA pill */
-    --btn-bg:      var(--copper-80);   /* default background  */
-    --btn-text:    #000000;            /* default text        */
-    --btn-h-bg:    var(--neutral-0);   /* hover background    */
-    --btn-h-text:  #000000;            /* hover text          */
+    /* Other aliases */
+    --bg-base:       var(--neutral-0);
+    --text-primary:  var(--neutral-90);
+    --text-secondary:var(--neutral-60);
 
-    --font-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-base:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
 }
 
-/* -----------------------------------------------------------
-   Base reset
------------------------------------------------------------- */
+/* -------------------------------------------------------------
+   Reset / base
+-------------------------------------------------------------- */
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
     font-family:var(--font-base);line-height:1.6;
     background:var(--bg-base);color:var(--text-primary);
-    padding-top:60px;
+    padding-top:60px;           /* fixed-header offset */
 }
 img{max-width:100%;display:block}
-.sr-only{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;clip:rect(0 0 0 0);white-space:nowrap;border:0;overflow:hidden}
 
-/* -----------------------------------------------------------
-   Header & navigation
------------------------------------------------------------- */
+/* -------------------------------------------------------------
+   **Unified button rule**  (ONLY real CTAs)
+-------------------------------------------------------------- */
+.btn,
+.nav-cta,
+.primary-nav .pill,
+.newsletter-form button,
+.newsletter-form input[type="submit"]{
+    display:inline-block;padding:.75rem 2rem;
+    background:var(--btn-fill);color:var(--btn-text);
+    border:2px solid var(--btn-brd);
+    border-radius:var(--btn-rad);
+    font-size:1rem;font-weight:600;text-decoration:none;cursor:pointer;
+    transition:background .25s,color .25s;
+}
+.btn:hover,.btn:focus,
+.nav-cta:hover,.nav-cta:focus,
+.primary-nav .pill:hover,.primary-nav .pill:focus,
+.newsletter-form button:hover,.newsletter-form button:focus,
+.newsletter-form input[type="submit"]:hover,
+.newsletter-form input[type="submit"]:focus{
+    background:var(--btn-fill-h);color:var(--btn-text-h);
+}
+
+/* -------------------------------------------------------------
+   **DO NOT style header icon links as buttons**
+-------------------------------------------------------------- */
+.nav-icons button,
+.nav-icons a,
+.util-icons button,
+.util-icons a{
+    background:none!important;
+    border:none!important;
+    padding:0!important;
+    border-radius:0!important;
+    color:var(--neutral-0);
+    display:flex;align-items:center;cursor:pointer;
+    transition:color .3s;
+}
+.nav-icons a:hover,
+.nav-icons a:focus,
+.util-icons a:hover,
+.util-icons a:focus,
+.nav-icons button:hover,
+.nav-icons button:focus{color:#B87333}
+.icon{width:20px;height:20px;fill:currentColor;stroke:currentColor}
+.nav-icons img,.util-icons img{width:20px;height:20px;filter:brightness(0) invert(1)}
+
+/* -------------------------------------------------------------
+   Header & Nav
+-------------------------------------------------------------- */
 header{
     position:fixed;top:0;left:0;width:100%;height:60px;z-index:1000;
     background:var(--text-primary);color:var(--neutral-0);
@@ -56,51 +104,19 @@ header .nav-container{
     max-width:1200px;margin:0 auto;padding:0 20px;height:100%;
     display:flex;justify-content:space-between;align-items:center;
 }
-header .logo a{
-    font-size:1.3rem;font-weight:800;color:var(--neutral-0);text-decoration:none;
-}
+header .logo a{font-size:1.3rem;font-weight:800;color:var(--neutral-0);text-decoration:none}
 nav ul{list-style:none;display:flex;gap:1.2rem;align-items:center}
 nav li{position:relative}
 nav a{
     font-size:.85rem;text-transform:uppercase;text-decoration:none;
     padding:.5rem .75rem;border-radius:18px;
-    color:var(--neutral-0);
-    transition:color .3s,background .3s,transform .2s;
+    color:var(--neutral-0);transition:color .3s;
 }
-/* CTA pill follows button tokens */
-.nav-cta{
-    background:var(--btn-bg);color:var(--btn-text);font-weight:600;
-}
-.nav-cta:hover,.nav-cta:focus{
-    background:var(--btn-h-bg);color:var(--btn-h-text);transform:translateY(-2px);
-}
-/* standard hover */
-nav a:hover:not(.nav-cta),nav a:focus:not(.nav-cta){color:var(--link-accent)}
+nav a:hover:not(.nav-cta),nav a:focus:not(.nav-cta){color:#B87333} /* link accent */
 
-/* Dropdown */
-.dropdown-parent:hover>.dropdown{display:block}
-.dropdown{
-    display:none;position:absolute;top:110%;left:0;min-width:150px;
-    background:var(--text-primary);padding:.5rem 0;border-radius:4px;
-    box-shadow:0 4px 8px rgba(0,0,0,.2);z-index:2000;
-}
-.dropdown a{
-    display:block;padding:.5rem 1rem;font-size:.75rem;color:var(--neutral-0);
-}
-.dropdown a:hover,.dropdown a:focus{
-    background:rgba(255,255,255,.08);color:var(--link-accent);
-}
-
-/* Nav icons */
-.nav-icons{display:flex;align-items:center;gap:1rem}
-.nav-icons a{
-    color:var(--neutral-0);display:flex;align-items:center;transition:color .3s;
-}
-.nav-icons a:hover,.nav-icons a:focus{color:var(--link-accent)}
-
-/* -----------------------------------------------------------
+/* -------------------------------------------------------------
    Hero
------------------------------------------------------------- */
+-------------------------------------------------------------- */
 .hero{
     height:100vh;margin-top:80px;display:flex;align-items:center;justify-content:center;position:relative;
     background:url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1650&q=80') center/cover no-repeat;
@@ -109,23 +125,9 @@ nav a:hover:not(.nav-cta),nav a:focus:not(.nav-cta){color:var(--link-accent)}
 .hero h1{font-size:3rem;margin-bottom:1rem;color:var(--neutral-0)}
 .hero p {font-size:1.25rem;margin-bottom:2rem;color:var(--neutral-0)}
 
-/* -----------------------------------------------------------
-   Buttons (global)
------------------------------------------------------------- */
-.btn,.newsletter-form button{
-    display:inline-block;padding:.75rem 2rem;border:none;border-radius:30px;cursor:pointer;
-    background:var(--btn-bg);color:var(--btn-text);
-    font-size:1rem;text-decoration:none;
-    transition:background .3s,color .3s;
-}
-.btn:hover,.btn:focus,
-.newsletter-form button:hover,.newsletter-form button:focus{
-    background:var(--btn-h-bg);color:var(--btn-h-text);
-}
-
-/* -----------------------------------------------------------
-   Sections
------------------------------------------------------------- */
+/* -------------------------------------------------------------
+   Sections / grids / footer  (unchanged)
+-------------------------------------------------------------- */
 .section{max-width:1200px;margin:0 auto;padding:5rem 1rem}
 
 /* Products */
@@ -157,7 +159,9 @@ nav a:hover:not(.nav-cta),nav a:focus:not(.nav-cta){color:var(--link-accent)}
 .newsletter{background:var(--neutral-0);text-align:center}
 .newsletter h2{font-size:2rem;margin-bottom:.5rem;color:var(--text-primary)}
 .newsletter p {margin-bottom:2rem;color:var(--text-secondary)}
-.newsletter-form{display:flex;justify-content:center;align-items:center;gap:.5rem;max-width:600px;margin:0 auto}
+.newsletter-form{
+    display:flex;justify-content:center;align-items:center;gap:.5rem;max-width:600px;margin:0 auto;
+}
 .newsletter-form input[type=email]{
     flex:1;padding:.75rem 1rem;border:1px solid #ccc;border-radius:4px;font-size:1rem;
 }
@@ -173,9 +177,7 @@ nav a:hover:not(.nav-cta),nav a:focus:not(.nav-cta){color:var(--link-accent)}
 .artist-card p {margin-bottom:1rem;color:var(--text-secondary)}
 .artist-card .btn{align-self:center}
 
-/* -----------------------------------------------------------
-   Footer
------------------------------------------------------------- */
+/* Footer */
 .footer{
     background:var(--text-primary);color:var(--neutral-0);padding:3rem 1rem;
 }
@@ -188,57 +190,34 @@ nav a:hover:not(.nav-cta),nav a:focus:not(.nav-cta){color:var(--link-accent)}
 .footer-nav a{
     color:var(--neutral-0);text-decoration:none;font-size:.875rem;transition:color .3s;
 }
-.footer-nav a:hover,.footer-nav a:focus{color:var(--link-accent)}
+.footer-nav a:hover,.footer-nav a:focus{color:#B87333}
 
-/* -----------------------------------------------------------
+/* -------------------------------------------------------------
    Responsive tweaks
------------------------------------------------------------- */
-@media (max-width:768px){
+-------------------------------------------------------------- */
+@media(max-width:768px){
     .hero h1{font-size:2rem}
     .product-grid{gap:1rem}
     .story-container{flex-direction:column}
 }
 
-/* -----------------------------------------------------------
-   Sticky alt header (if you still use it)
------------------------------------------------------------- */
-.site-header{
-    position:fixed;top:0;left:0;width:100%;height:60px;z-index:1000;
-    background:rgba(54,69,79,.95);backdrop-filter:blur(6px);
-}
-.site-header .nav-wrap{
-    max-width:1200px;margin:0 auto;height:100%;
-    display:flex;align-items:center;justify-content:space-between;padding:0 20px;
-}
+/* -------------------------------------------------------------
+   Sticky alt-header (if used) – CTA pill already inherits pattern
+-------------------------------------------------------------- */
+.site-header{position:fixed;top:0;left:0;width:100%;height:60px;background:rgba(54,69,79,.95);backdrop-filter:blur(6px);z-index:1000}
+.site-header .nav-wrap{max-width:1200px;margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;padding:0 20px}
 .site-header .logo{color:var(--neutral-0);font-weight:600;font-size:1.2rem;text-decoration:none;text-transform:uppercase;letter-spacing:.03em}
 .primary-nav{display:flex;gap:24px;font-size:.95rem;text-transform:uppercase;letter-spacing:.03em;align-items:center}
 .primary-nav a{color:var(--neutral-0);text-decoration:none;transition:color .15s}
 .primary-nav a:hover,.primary-nav a:focus{color:#FFD34E}
-.primary-nav .pill{
-    background:var(--btn-bg);color:var(--btn-text);padding:8px 18px;border-radius:4px;
-    transition:transform .15s,background .3s,color .3s;
-}
-.primary-nav .pill:hover,.primary-nav .pill:focus{
-    background:var(--btn-h-bg);color:var(--btn-h-text);transform:translateY(-2px);
-}
-
-/* mobile menu */
-.hamburger{
-    display:none;background:none;border:0;width:32px;height:32px;
-    background:url('icons/hamburger.svg') center/contain no-repeat;cursor:pointer;
-}
-@media (max-width:768px){
+.hamburger{display:none;background:none;border:0;width:32px;height:32px;background:url('icons/hamburger.svg') center/contain no-repeat;cursor:pointer}
+@media(max-width:768px){
     .primary-nav{display:none}
-    .primary-nav.open{
-        display:flex;flex-direction:column;gap:16px;position:fixed;top:60px;left:0;right:0;
-        background:var(--text-primary);padding:24px;
-    }
+    .primary-nav.open{display:flex;flex-direction:column;gap:16px;position:fixed;top:60px;left:0;right:0;background:var(--text-primary);padding:24px}
     .hamburger{display:block}
 }
 
-/* -----------------------------------------------------------
-   SVG insurance
------------------------------------------------------------- */
-.icon{width:20px;height:20px;fill:currentColor;stroke:currentColor}
-.util-icons img{width:20px;height:20px;filter:brightness(0) invert(1)}
+/* -------------------------------------------------------------
+   Cart badge
+-------------------------------------------------------------- */
 #cart-count{position:absolute;top:-6px;right:-10px;background:#e63946;color:#fff;border-radius:50%;padding:2px 6px;font-size:.7rem}
