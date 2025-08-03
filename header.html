@@ -1,0 +1,56 @@
+<!-- Header partial: CTA-first sticky navigation bar -->
+<header class="site-header">
+    <div class="nav-wrap">
+        <!-- Logo links back to the home page.  Use the SVG stored in the
+             `logos` directory for consistency with the latest repository
+             structure.  The logo is 140×47 pixels and includes appropriate
+             alt text for screen readers. -->
+        <a href="index.html" class="logo">
+            <img src="logos/H-Logo-white.svg" alt="M2 Labs Logo" width="140" height="47" />
+        </a>
+        <!-- Hamburger button toggles the mobile menu on small screens -->
+        <button class="hamburger" aria-label="Open menu"></button>
+        <!-- Primary navigation: emphasises the Shop link and collapses under 768&nbsp;px -->
+        <nav class="primary-nav" id="mobile-nav" role="navigation" aria-label="Main">
+            <a href="shop.html" class="pill">Shop</a>
+            <a href="our-story.html">Our&nbsp;Story</a>
+            <a href="news.html">News</a>
+            <div class="dropdown">
+                <button aria-haspopup="true" aria-expanded="false">Artists&nbsp;▾</button>
+                <div class="dropdown-menu" role="menu">
+                    <a href="artists.html">Roster</a>
+                    <a href="artist-endorsement.html">Endorsement&nbsp;Program</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button aria-haspopup="true" aria-expanded="false">Support&nbsp;▾</button>
+                <div class="dropdown-menu" role="menu">
+                    <a href="warranty.html">Warranty</a>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </nav>
+        <!-- Utility icons: search modal trigger, account and cart -->
+        <div class="util-icons">
+            <button id="search-btn" aria-label="Search">
+                <img src="icons/search.svg" alt="">
+            </button>
+            <!-- Reserved for future quiz icon: uncomment when ready -->
+            <!-- <button aria-label="Quiz (coming soon)" style="display:none;"></button> -->
+            <a href="login.html" aria-label="Account">
+                <img src="icons/user.svg" alt="">
+            </a>
+            <a href="cart.html" aria-label="Cart">
+                <img src="icons/cart.svg" alt="">
+                <span id="cart-count">0</span>
+            </a>
+        </div>
+    </div>
+</header>
+<!-- Search modal.  The <dialog> element provides a native modal with built‑in accessibility. -->
+<dialog id="search-modal">
+    <h2>Search</h2>
+    <input type="text" placeholder="Coming soon…" />
+    <button class="close-modal">Close</button>
+</dialog>

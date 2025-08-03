@@ -1,3 +1,698 @@
+/*
+  style.css
 
-/* Hide deprecated inline SVG logo if any page still contains it */
-#m2-logo { display: none !important; }
+  This stylesheet defines the visual language for your website.  It uses a
+  limited colour palette inspired by the reference site (dark backgrounds
+  with vibrant red highlights) and prioritises readability and responsive
+  layouts.  Custom properties (CSS variables) at the top make it easy
+  to adjust colours and fonts globally.  Feel free to tweak the
+  variables but avoid renaming them without updating dependent rules.
+
+  Note: Keep your custom styles within this file to maintain separation
+  between structure (HTML) and presentation (CSS).  Avoid inline styles.
+*/
+
+/* Colour and font variables */
+:root {
+    --primary-color: #0b0b0b;       /* Dark background for header and footer */
+    --secondary-color: #ffffff;     /* Light text for dark backgrounds */
+    --accent-color: #e63946;        /* Vibrant red accent colour */
+    --neutral-color: #f5f5f5;       /* Light grey background for sections */
+    --font-family-base: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family-base);
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Utility class to visually hide content while keeping it accessible */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    /* Reduce the overall height to keep the bar compact. */
+    height: 60px;
+}
+
+header .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo a {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+}
+
+nav li {
+    position: relative;
+}
+
+nav a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    padding: 0.5rem 0.75rem;
+    transition: color 0.3s ease, background-color 0.3s ease,
+        transform 0.2s ease;
+    border-radius: 20px;
+}
+
+/* CTA styling for the Shop link */
+.nav-cta {
+    background-color: #ffd34e;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.nav-cta:hover,
+.nav-cta:focus {
+    background-color: #ffc43d;
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Hover state for other nav links */
+nav a:hover:not(.nav-cta),
+nav a:focus:not(.nav-cta) {
+    color: var(--accent-color);
+}
+
+/* Dropdown menu */
+.dropdown-parent:hover > .dropdown {
+    display: block;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    background-color: var(--primary-color);
+    padding: 0.5rem 0;
+    border-radius: 4px;
+    min-width: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 2000;
+}
+
+.dropdown li {
+    width: 100%;
+}
+
+.dropdown a {
+    display: block;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+}
+
+.dropdown a:hover,
+.dropdown a:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--accent-color);
+}
+
+/* Icons container */
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-icons a {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.nav-icons a:hover,
+.nav-icons a:focus {
+    color: var(--accent-color);
+}
+
+/* Hero section */
+.hero {
+    height: 100vh;
+    /*
+      Hero background image.  You can replace the URL below with your own
+      hosted image or one stored in the repository (e.g. in
+      `assets/images`).  Using a remote, royalty‑free image from Unsplash
+      keeps the repository light while providing an eye‑catching
+      backdrop.  Remember to use HTTPS.
+    */
+    background-image: url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1650&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 80px; /* offset for fixed header */
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: #c92b36;
+}
+
+/* Generic section styling */
+.section {
+    padding: 5rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Products */
+.products {
+    background-color: var(--neutral-color);
+    text-align: center;
+}
+
+.products h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.products p {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    color: #666;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.product-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 320px;
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    font-size: 1.25rem;
+    margin: 1rem;
+    color: var(--primary-color);
+}
+
+.product-card p {
+    margin: 0 1rem 1rem;
+    color: #666;
+    flex-grow: 1;
+}
+
+.product-card .btn {
+    margin: 0 1rem 1.5rem;
+}
+
+/* Story */
+.story-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+}
+
+.story-image {
+    flex: 1 1 50%;
+    min-height: 300px;
+    background-image: url('https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1000&q=80');
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+}
+
+.story-content {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.story-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.story-content p {
+    margin-bottom: 1.5rem;
+    color: #666;
+}
+
+/* Newsletter */
+.newsletter {
+    background-color: var(--neutral-color);
+    text-align: center;
+}
+
+.newsletter h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.newsletter p {
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.newsletter-form input[type="email"] {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.newsletter-form button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover,
+.newsletter-form button:focus {
+    background-color: #c92b36;
+}
+
+/*
+  Artist listing styles
+
+  These rules format the list of artist cards on the artists index
+  page.  Cards are laid out responsively in a flexbox grid similar
+  to the product cards.  Adjust the max‑width and flex properties as
+  needed.
+*/
+.artist-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.artist-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+    flex: 1 1 300px;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.artist-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.artist-card p {
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+.artist-card .btn {
+    align-self: center;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 3rem 1rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer-logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.footer-logo p {
+    font-size: 0.875rem;
+    color: #aaaaaa;
+}
+
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-nav a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus {
+    color: var(--accent-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .product-grid {
+        gap: 1rem;
+    }
+    .story-container {
+        flex-direction: column;
+    }
+}
+
+/*
+  -------------------------------------------------------------------------
+  Sticky CTA‑first navigation bar
+
+  The rules below implement a minimal, conversion‑focused header that stays
+  affixed to the top of the viewport.  It features a translucent dark
+  background with a subtle blur, a highlighted "Shop" pill, dropdowns for
+  Artists and Support, and utility icons for search, account and cart.  At
+  smaller breakpoints (≤768px) the main nav collapses behind a hamburger
+  button.  The body receives top padding equal to the header height to
+  prevent content from being hidden behind the fixed bar.
+*/
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: rgba(17, 17, 17, 0.95);
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+}
+.site-header .nav-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.site-header .logo {
+    color: #f4f4f4;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+.primary-nav {
+    display: flex;
+    gap: 24px;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    align-items: center;
+}
+.primary-nav a {
+    color: #f4f4f4;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+.primary-nav a:hover,
+.primary-nav a:focus {
+    color: #FFD34E;
+}
+.primary-nav .pill {
+    background: #FFD34E;
+    color: #111;
+    padding: 8px 18px;
+    border-radius: 4px;
+    transition: transform 0.15s ease;
+}
+.primary-nav .pill:hover,
+.primary-nav .pill:focus {
+    transform: translateY(-2px);
+}
+.dropdown {
+    position: relative;
+}
+.dropdown > button {
+    background: none;
+    border: none;
+    color: #f4f4f4;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+}
+.dropdown > button:hover,
+.dropdown > button:focus {
+    color: #FFD34E;
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    background: #1d1d1d;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    padding: 10px 0;
+    z-index: 1000;
+}
+.dropdown-menu a {
+    display: block;
+    padding: 8px 16px;
+    color: #f4f4f4;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+.dropdown-menu a:hover,
+.dropdown-menu a:focus {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #FFD34E;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.util-icons {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+.util-icons button,
+.util-icons a {
+    background: none;
+    border: none;
+    color: #f4f4f4;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.util-icons img {
+    width: 20px;
+    height: 20px;
+}
+#cart-count {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background: #e63946;
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.7rem;
+}
+/*
+  The hamburger icon uses an external SVG stored in the `icons` directory of
+  the repository.  Avoid referencing `/assets/img` here since Cloudflare
+  rewrites all asset requests to the root document.  Instead, we load the
+  graphic from the `icons` folder alongside the other nav icons.
+*/
+.hamburger {
+    display: none;
+    background: none;
+    border: 0;
+    width: 32px;
+    height: 32px;
+    background: url('icons/hamburger.svg') center/contain no-repeat;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    .primary-nav {
+        display: none;
+    }
+    .primary-nav.open {
+        display: flex;
+        flex-direction: column;
+        background: #111;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        padding: 24px;
+        gap: 16px;
+    }
+    .hamburger {
+        display: block;
+    }
+}
+
+/* Offset body content for fixed header */
+body {
+    padding-top: 60px;
+}
+
+/*
+  Story page typography
+
+  The classes below are used on the dedicated story page
+  (our‑story.html) to style headings and paragraphs consistently
+  across multiple narrative sections.  They intentionally mirror
+  the font sizes and colours found in other sections to maintain
+  visual harmony.
+*/
+.story-page-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    text-transform: none;
+}
+
+.story-page-section p {
+    margin-bottom: 1rem;
+    color: #666;
+    max-width: 800px;
+    line-height: 1.6;
+}
