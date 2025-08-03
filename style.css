@@ -1,19 +1,17 @@
 /* ===========================================================
-   M2-Labs | Charcoal + Copper palette | 2025-08-03 FINAL FIX
-   Re-builds the whole header, kills stray nav bars and
-   guarantees the search / user / cart icons stay inline.
+   M2-Labs  |  Charcoal + Copper palette  |  2025-08-03 HOTFIX
 =========================================================== */
 
-/* font */
+/* Font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
 /* ---------- TOKENS ---------- */
 :root{
-    --neutral-0:  #F5F5F5;   /* light background            */
-    --neutral-60: #6C7A83;   /* mid grey text               */
-    --neutral-90: #36454F;   /* charcoal header & footer    */
+    --neutral-0:  #F5F5F5;  /* light background */
+    --neutral-60: #6C7A83;  /* mid grey text   */
+    --neutral-90: #36454F;  /* charcoal header */
 
-    --copper-80:  #FF8A3D;   /* bright CTA fill             */
+    --copper-80: #FF8A3D;   /* bright CTA fill */
     --cta-fill:        var(--copper-80);
     --cta-fill-hover:  var(--neutral-0);
     --cta-text:        #000;
@@ -31,11 +29,11 @@ body{
     line-height:1.6;
     background:var(--neutral-0);
     color:var(--neutral-90);
-    padding-top:60px;             /* space for fixed header   */
+    padding-top:60px;                /* space for fixed header */
 }
 img{max-width:100%;display:block}
 
-/* ---------- UNIVERSAL CTA ---------- */
+/* ---------- CTA ---------- */
 .btn,
 .nav-cta{
     display:inline-block;
@@ -50,48 +48,56 @@ img{max-width:100%;display:block}
     cursor:pointer;
     transition:background .25s,color .25s;
 }
-.btn:hover,.btn:focus,
-.nav-cta:hover,.nav-cta:focus{
+.btn:hover,
+.btn:focus,
+.nav-cta:hover,
+.nav-cta:focus{
     background:var(--cta-fill-hover);
     color:var(--cta-text);
 }
 
-/* ==========================================================
-   HEADER (single 60 px bar — logo | links | icons)
-========================================================== */
+/* ===========================================================
+   HEADER / NAV   (this is the only part that was broken)
+=========================================================== */
 header{
     position:fixed;
-    top:0;left:0;width:100%;
-    height:60px;z-index:1000;
+    top:0;
+    left:0;
+    width:100%;
+    height:60px;
+    z-index:1000;
     background:var(--neutral-90);
     border-bottom:1px solid rgba(255,255,255,.15);
-    display:flex;                 /* guarantees centring      */
+    display:flex;
     align-items:center;
 }
-
-/* flexible 3-column grid: logo | nav links | icons */
 header .nav-container{
     max-width:1200px;
     width:100%;
     margin:0 auto;
+    height:100%;
     padding:0 20px;
-    display:grid;
-    grid-template-columns:auto 1fr auto;
+    display:flex;
     align-items:center;
-    gap:1.5rem;
 }
 
 /* logo */
+header .logo{flex:none}
 header .logo img{height:40px}
 
 /* primary nav */
-header nav{height:100%}
-header nav ul{
+header nav{
+    margin-left:40px;   /* space after logo */
     display:flex;
     align-items:center;
-    gap:1.5rem;                   /* real spacing between links */
+    height:100%;
+}
+header nav ul{
+    display:flex;
+    gap:1.5rem;
     list-style:none;
 }
+header nav li{position:relative}
 header nav a{
     color:#fff;
     font-size:.85rem;
@@ -101,15 +107,16 @@ header nav a{
     text-decoration:none;
     transition:color .25s;
 }
-header nav a:hover,header nav a:focus{color:#B87333}
+header nav a:hover,
+header nav a:focus{color:#B87333}
 
 /* dropdown */
-.dropdown-parent{position:relative}
 .dropdown-parent:hover>.dropdown{display:block}
 .dropdown{
     display:none;
     position:absolute;
-    top:100%;left:0;              /* flush under link         */
+    top:100%;
+    left:0;
     min-width:160px;
     background:var(--neutral-90);
     padding:.5rem 0;
@@ -128,15 +135,15 @@ header nav a:hover,header nav a:focus{color:#B87333}
     color:#B87333;
 }
 
-/* icons */
+/* icons (search, user, cart) */
 .nav-icons{
+    margin-left:auto;          /* pins to the right */
     display:flex;
-    flex-direction:row !important; /* force horizontal         */
     align-items:center;
-    gap:1rem;
+    gap:1.25rem;
 }
-.nav-icons a,
-.nav-icons button{
+.nav-icons button,
+.nav-icons a{
     background:none;
     border:none;
     padding:0;
@@ -147,15 +154,26 @@ header nav a:hover,header nav a:focus{color:#B87333}
     position:relative;
     transition:color .25s;
 }
-.nav-icons a:hover,
-.nav-icons a:focus,
 .nav-icons button:hover,
-.nav-icons button:focus{color:#B87333}
-.nav-icons svg,.icon{width:20px;height:20px;fill:currentColor;stroke:currentColor}
-.nav-icons img{width:20px;height:20px;filter:brightness(0) invert(1)}
+.nav-icons button:focus,
+.nav-icons a:hover,
+.nav-icons a:focus{color:#B87333}
+.nav-icons svg,
+.icon{
+    width:20px;
+    height:20px;
+    fill:currentColor;
+    stroke:currentColor;
+}
+.nav-icons img{
+    width:20px;
+    height:20px;
+    filter:brightness(0) invert(1);
+}
 #cart-count{
     position:absolute;
-    top:-6px;right:-10px;
+    top:-6px;
+    right:-10px;
     background:#e63946;
     color:#fff;
     font-size:.7rem;
@@ -164,22 +182,26 @@ header nav a:hover,header nav a:focus{color:#B87333}
     line-height:1;
 }
 
-/* ❌ NUKE ANY EXTRANEOUS NAV THAT SITS OUTSIDE THE HEADER  */
-body > nav:not(header nav){
+/* ---- Kill the rogue white strip -------------------------------------------------
+   Some themes inject an extra <nav> or spacer div right after <header>.
+   Nuke anything that follows header and pretends to be a nav strip.
+------------------------------------------------------------------------------- */
+header + nav,
+header + .sticky-nav,
+header + .sticky-placeholder{
     display:none !important;
-    height:0 !important;
-    overflow:hidden !important;
 }
 
-/* ---------- HERO ---------- */
+/* ===========================================================
+   HERO  (unchanged)
+=========================================================== */
 .hero{
     height:100vh;
     margin-top:80px;
     display:flex;
     align-items:center;
     justify-content:center;
-    background:url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1650&q=80')
-               center/cover no-repeat;
+    background:url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1650&q=80') center/cover no-repeat;
 }
 .hero-overlay{
     background:rgba(0,0,0,.6);
@@ -190,8 +212,91 @@ body > nav:not(header nav){
 .hero h1{font-size:3rem;margin-bottom:1rem;color:#fff}
 .hero p {font-size:1.25rem;margin-bottom:2rem;color:#fff}
 
-/* ---------- SECTIONS / CARDS / FOOTER ---------- */
+/* ===========================================================
+   REST OF THE LAYOUT  (left exactly as it was)
+=========================================================== */
 .section{max-width:1200px;margin:0 auto;padding:5rem 1rem}
 .products{text-align:center}
 .products h2{font-size:2rem;margin-bottom:.5rem;color:var(--neutral-90)}
-.products p {max-width:
+.products p {max-width:700px;margin:0 auto 2rem;color:var(--neutral-60)}
+.product-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:center}
+.product-card{
+    background:#fff;
+    border-radius:8px;
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+    max-width:320px;
+    flex:1 1 300px;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+}
+.product-card img{width:100%;height:200px;object-fit:cover}
+.product-card h3{font-size:1.25rem;margin:1rem;color:var(--neutral-90)}
+.product-card p {margin:0 1rem 1rem;color:var(--neutral-60);flex-grow:1}
+.product-card .btn{margin:0 1rem 1.5rem}
+
+.story-container{display:flex;flex-wrap:wrap;gap:2rem;align-items:center}
+.story-image{
+    flex:1 1 50%;
+    min-height:300px;
+    border-radius:8px;
+    background:url('https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1000&q=80') center/cover no-repeat;
+}
+.story-content{flex:1 1 50%}
+.story-content h2{font-size:2rem;margin-bottom:1rem;color:var(--neutral-90)}
+.story-content p {margin-bottom:1.5rem;color:var(--neutral-60)}
+
+.newsletter{text-align:center}
+.newsletter h2{font-size:2rem;margin-bottom:.5rem;color:var(--neutral-90)}
+.newsletter p {margin-bottom:2rem;color:var(--neutral-60)}
+.newsletter-form{display:flex;gap:.5rem;justify-content:center;max-width:600px;margin:0 auto}
+.newsletter-form input[type=email]{
+    flex:1;
+    padding:.75rem 1rem;
+    border:1px solid #ccc;
+    border-radius:4px;
+    font-size:1rem;
+}
+
+.artist-list{display:flex;flex-wrap:wrap;gap:2rem;justify-content:center}
+.artist-card{
+    background:#fff;
+    border-radius:8px;
+    padding:1.5rem;
+    text-align:center;
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+    flex:1 1 300px;
+    max-width:320px;
+    display:flex;
+    flex-direction:column;
+}
+.artist-card h3{font-size:1.5rem;margin-bottom:.5rem;color:var(--neutral-90)}
+.artist-card p {margin-bottom:1rem;color:var(--neutral-60)}
+.artist-card .btn{align-self:center}
+
+.footer{
+    background:var(--neutral-90);
+    color:#fff;
+    padding:3rem 1rem;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:1.5rem;
+}
+.footer nav ul{list-style:none;display:flex;gap:1.5rem}
+.footer nav a{
+    color:#fff;
+    text-decoration:none;
+    font-size:.875rem;
+    transition:color .25s;
+}
+.footer nav a:hover,
+.footer nav a:focus{color:#B87333}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:768px){
+    .hero h1{font-size:2rem}
+    .product-grid{gap:1rem}
+    .story-container{flex-direction:column}
+    header nav ul{gap:1rem}
+}
