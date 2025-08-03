@@ -14,22 +14,23 @@
 
 /* Colour and font variables */
 /* Load Montserrat (regular 400, semibold 600, bold 800) */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
 :root {
-  --primary-color: #0b0b0b;            /* Dark background for header and footer */
-  --secondary-color: #ffffff;          /* Light text for dark backgrounds */
-  --accent-color: #e63946;             /* Vibrant red accent colour */
-  --neutral-color: #f5f5f5;            /* Light grey background for sections */
-  --font-family-base: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --primary-color: #0b0b0b;
+    --secondary-color: #ffffff;
+    --accent-color: #e63946;
+    --neutral-color: #f5f5f5;
+    --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* Apply the base font everywhere */
 html,
 body {
-  font-family: var(--font-family-base);
+    font-family: var(--font-family-base);
 }
-}
+
+/* existing styles follow … */
 
 /* Reset and base styles */
 * {

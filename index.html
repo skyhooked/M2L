@@ -11,7 +11,6 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 <body>
-    <!-- Sticky CTA-first header.  Contains the logo, primary navigation with dropdowns and utility icons. -->
     <header class="site-header">
         <div class="nav-wrap">
             <a href="index.html" class="logo">
@@ -34,23 +33,19 @@
                 </div>
             </nav>
 
-            <!-- util-icons (inline SVG, inherits currentColor) -->
             <div class="util-icons">
-                <!-- search -->
                 <button id="search-btn" aria-label="Search" class="icon-btn">
                     <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M10.5 3a7.5 7.5 0 015.95 12.093l4.178 4.178a1 1 0 01-1.414 1.414l-4.178-4.178A7.5 7.5 0 1110.5 3zm0 2a5.5 5.5 0 100 11 5.5 5.5 0 000-11z"/>
                     </svg>
                 </button>
 
-                <!-- account -->
                 <a href="login.html" aria-label="Account" class="icon-btn">
                     <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12 12c2.761 0 5-2.239 5-5S14.761 2 12 2 7 4.239 7 7s2.239 5 5 5zm0 2c-4.418 0-8 2.239-8 5v3h16v-3c0-2.761-3.582-5-8-5z"/>
                     </svg>
                 </a>
 
-                <!-- cart -->
                 <a href="cart.html" aria-label="Cart" class="icon-btn">
                     <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M6 4h-2V2h2v2zm16 0h-2V2h2v2zM4 6v2h2l3.6 7.59-1.35 2.41C7.52 19.37 8 20.66 9.06 21h9.93v-2H9.42l.95-1.68h7.64c.73 0 1.37-.49 1.57-1.18l2.88-9.84A1 1 0 0021 5H6.21l-.94-2H2v2h2l.6 1h15.21l-2.25 7.7H8.53L6.16 6H4zm5 13a2 2 0 100 4 2 2 0 000-4zm8 0a2 2 0 100 4 2 2 0 000-4z"/>
@@ -61,16 +56,13 @@
         </div>
     </header>
 
-    <!-- Search modal -->
     <dialog id="search-modal">
         <h2>Search</h2>
         <input type="text" placeholder="Coming soon…" />
         <button class="close-modal">Close</button>
     </dialog>
 
-    <!-- Main content -->
     <main>
-        <!-- Hero -->
         <section id="hero" class="hero" role="banner">
             <div class="hero-overlay">
                 <h1>Crafting the&nbsp;Future<br />of&nbsp;Vintage&nbsp;Sound</h1>
@@ -79,7 +71,6 @@
             </div>
         </section>
 
-        <!-- Products -->
         <section id="products" class="section products" aria-labelledby="products-title">
             <h2 id="products-title">Our&nbsp;Pedals</h2>
             <p>Explore our range of analog effects, designed for musicians and creators.</p>
@@ -87,54 +78,51 @@
                 <article class="product-card">
                     <img src="https://images.unsplash.com/photo-1497032205916-ac775f0649ae?auto=format&fit=crop&w=800&q=80" alt="Analog guitar pedal on a wooden table" />
                     <h3>Product&nbsp;One</h3>
-                    <p>A concise description of your first product.  Keep this text short and enticing.</p>
+                    <p>A concise description of your first product.</p>
                     <a href="#" class="btn">Learn&nbsp;More</a>
                 </article>
                 <article class="product-card">
                     <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Close-up of a vintage effects pedal" />
                     <h3>Product&nbsp;Two</h3>
-                    <p>Describe another product here.  Use alt text to describe the image for screen readers.</p>
+                    <p>Describe another product here.</p>
                     <a href="#" class="btn">Learn&nbsp;More</a>
                 </article>
                 <article class="product-card">
                     <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80" alt="Electric guitar next to effects pedals" />
                     <h3>Product&nbsp;Three</h3>
-                    <p>Briefly highlight a third product.  Edit or duplicate cards to fit your inventory.</p>
+                    <p>Briefly highlight a third product.</p>
                     <a href="#" class="btn">Learn&nbsp;More</a>
                 </article>
             </div>
         </section>
 
-        <!-- Story -->
         <section id="story" class="section story" aria-labelledby="story-title">
             <div class="story-container">
                 <div class="story-image" role="img" aria-label="Illustration of a musician with a guitar"></div>
                 <div class="story-content">
                     <h2 id="story-title">The&nbsp;Story</h2>
-                    <p>Use this section to share the journey behind your brand.  Explain why you’re passionate about analog gear, the problems you’re solving, and how you stand out from competitors.</p>
+                    <p>Use this section to share the journey behind your brand.</p>
                     <a href="our-story.html" class="btn">Read&nbsp;More</a>
                 </div>
             </div>
         </section>
 
-        <!-- Placeholder sections -->
         <section id="news" class="section" aria-labelledby="news-title">
             <h2 id="news-title">News</h2>
             <p>Share the latest updates, product launches, or blog posts here.</p>
         </section>
         <section id="endorsement" class="section" aria-labelledby="endorsement-title">
             <h2 id="endorsement-title">Artist&nbsp;Endorsement</h2>
-            <p>Highlight endorsements from well-known artists or testimonials from satisfied customers.</p>
+            <p>Highlight endorsements from well-known artists or testimonials.</p>
         </section>
         <section id="artists" class="section" aria-labelledby="artists-title">
             <h2 id="artists-title">Artists</h2>
             <p>Showcase the artists who use your gear.</p>
         </section>
 
-        <!-- Newsletter -->
         <section id="newsletter" class="section newsletter" aria-labelledby="newsletter-title">
             <h2 id="newsletter-title">Stay&nbsp;in&nbsp;Touch</h2>
-            <p>Join our email list to receive updates, pre-sale announcements and community news.</p>
+            <p>Join our email list to receive updates.</p>
             <form action="#" method="post" class="newsletter-form">
                 <label for="email" class="sr-only">Email address</label>
                 <input type="email" id="email" name="email" placeholder="Enter your email here" required />
@@ -143,7 +131,6 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-logo">
@@ -163,7 +150,6 @@
         <div id="ecommerce-plugin"></div>
     </footer>
 
-    <!-- Scripts -->
     <script src="script.js"></script>
 </body>
 </html>
