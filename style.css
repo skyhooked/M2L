@@ -60,146 +60,200 @@ img{max-width:100%;display:block}
 }
 
 /* ---------- HEADER / NAV ---------- */
-header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:var(--header-h);
-    z-index:1000;
-    background:var(--neutral-90);
-    border-bottom:1px solid rgba(255,255,255,.15);
-    display:flex;
-    align-items:center;
-}
-header .nav-container{
-    max-width:1200px;
-    width:100%;
-    margin:0 auto;
-    height:100%;
-    padding:0 24px;
-    display:flex;
-    align-items:center;
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-h);
+    z-index: 1000;
+    background: var(--neutral-90);
+    border-bottom: 1px solid rgba(255,255,255,.15);
+    display: flex;
+    align-items: center;
 }
 
-/* logo */
-header .logo{flex:none}
-header .logo img{height:48px;width:auto}
-
-/* primary nav */
-header nav{
-    flex:1 1 auto;
-    height:100%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-header nav ul{
-    display:flex;
-    align-items:center;
-    gap:2rem;
-    list-style:none;
-}
-header nav li{position:relative}
-header nav a{
-    color:#fff;
-    font-size:.875rem;
-    line-height:var(--header-h);
-    text-transform:uppercase;
-    letter-spacing:.03em;
-    text-decoration:none;
-    transition:color .25s;
-}
-header nav a:hover,
-header nav a:focus{color:#B87333}
-
-/* “SHOP” button variant */
-header nav a.shop-btn{
-    background:var(--cta-fill);
-    color:var(--cta-text);
-    border:1px solid var(--cta-border);
-    padding:.5rem 1.5rem;
-    border-radius:var(--cta-radius);
-    font-weight:600;
-    transition:background .25s;
-}
-header nav a.shop-btn:hover{
-    background:var(--cta-fill-hover);
-    color:var(--cta-text);
+.site-header .nav-wrap {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
 }
 
-/* dropdown */
-.dropdown-parent:hover>.dropdown{display:block}
-.dropdown{
-    display:none;
-    position:absolute;
-    top:100%;
-    left:0;
-    min-width:160px;
-    background:var(--neutral-90);
-    padding:.5rem 0;
-    border-radius:4px;
-    box-shadow:0 4px 8px rgba(0,0,0,.25);
-}
-.dropdown a{
-    display:block;
-    padding:.5rem 1rem;
-    font-size:.8rem;
-    color:#fff;
-}
-.dropdown a:hover,
-.dropdown a:focus{
-    background:rgba(255,255,255,.08);
-    color:#B87333;
+.site-header .logo {
+    flex: none;
 }
 
-/* icons */
-.nav-icons{
-    margin-left:auto;
-    display:flex;
-    align-items:center;
-    gap:1.25rem;
-    flex-shrink:0;
+.site-header .logo img {
+    height: 48px;
+    width: auto;
 }
-.nav-icons button,
-.nav-icons a{
-    background:none;
-    border:none;
-    padding:0;
-    cursor:pointer;
-    color:#fff;
-    display:flex;
-    align-items:center;
-    position:relative;
-    transition:color .25s;
+
+/* Primary nav links */
+.site-header .primary-nav {
+    flex: 1 1 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
 }
-.nav-icons button:hover,
-.nav-icons button:focus,
-.nav-icons a:hover,
-.nav-icons a:focus{color:#B87333}
-.nav-icons svg,
-.icon{
-    width:22px;
-    height:22px;
-    fill:currentColor;
-    stroke:currentColor;
-    transform:none !important;      /* prevents accidental rotation */
+
+.site-header .primary-nav a {
+    color: #fff;
+    font-size: .875rem;
+    line-height: var(--header-h);
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    text-decoration: none;
+    transition: color .25s;
 }
-.nav-icons img{
-    width:22px;
-    height:22px;
-    filter:brightness(0) invert(1);
+
+.site-header .primary-nav a:hover,
+.site-header .primary-nav a:focus {
+    color: #B87333;
 }
-#cart-count{
-    position:absolute;
-    top:-6px;
-    right:-10px;
-    background:#e63946;
-    color:#fff;
-    font-size:.7rem;
-    border-radius:50%;
-    padding:2px 6px;
-    line-height:1;
+
+/* Shop button variant inside nav */
+.site-header .primary-nav .pill {
+    background: var(--cta-fill);
+    color: var(--cta-text);
+    border: 1px solid var(--cta-border);
+    padding: .5rem 1.5rem;
+    border-radius: var(--cta-radius);
+    font-weight: 600;
+    transition: background .25s;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+}
+
+.site-header .primary-nav .pill:hover,
+.site-header .primary-nav .pill:focus {
+    background: var(--cta-fill-hover);
+    color: var(--cta-text);
+}
+
+/* Dropdown menu */
+.site-header .dropdown {
+    position: relative;
+}
+
+.site-header .dropdown button {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #fff;
+    font-size: .875rem;
+    line-height: var(--header-h);
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: color .25s;
+}
+
+.site-header .dropdown:hover > .dropdown-menu,
+.site-header .dropdown button:focus + .dropdown-menu {
+    display: block;
+}
+
+.site-header .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    background: var(--neutral-90);
+    padding: .5rem 0;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,.25);
+}
+
+.site-header .dropdown-menu a {
+    display: block;
+    padding: .5rem 1rem;
+    font-size: .8rem;
+    color: #fff;
+}
+
+.site-header .dropdown-menu a:hover,
+.site-header .dropdown-menu a:focus {
+    background: rgba(255,255,255,.08);
+    color: #B87333;
+}
+
+/* Utility icons */
+.util-icons {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-shrink: 0;
+}
+
+.util-icons button,
+.util-icons a {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: color .25s;
+}
+
+.util-icons button:hover,
+.util-icons button:focus,
+.util-icons a:hover,
+.util-icons a:focus {
+    color: #B87333;
+}
+
+.util-icons svg,
+.util-icons .icon {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+    stroke: currentColor;
+    transform: none !important;
+}
+
+.util-icons img {
+    width: 22px;
+    height: 22px;
+    filter: brightness(0) invert(1);
+}
+
+/* Cart badge */
+#cart-count {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background: #e63946;
+    color: #fff;
+    font-size: .7rem;
+    border-radius: 50%;
+    padding: 2px 6px;
+    line-height: 1;
+}
+
+/* Mobile menu toggle button */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #fff;
+    margin-left: auto;
+    cursor: pointer;
 }
 
 /* ---------- HERO ---------- */
@@ -208,8 +262,8 @@ header nav a.shop-btn:hover{
     margin-top:0;
     display:flex;
     align-items:center;
-    justify-content:flex-end;        /* overlay stays on the right */
-    padding-right:5%;                /* tweak offset if needed */
+    justify-content:flex-end;        /* overlay stays on the right for desktop */
+    padding-right:5%;
     background:url('product images/tbo-hero6.png') center/cover no-repeat;
 }
 
@@ -218,18 +272,15 @@ header nav a.shop-btn:hover{
     padding:40px;
     border-radius:10px;
 
-    /* center everything inside the overlay */
     text-align:center;
     display:flex;
     flex-direction:column;
     align-items:center;
-    gap:1.5rem;                      /* space between text and button */
+    gap:1.5rem;
 }
 
 .hero h1{font-size:3rem;margin-bottom:1rem;color:#fff}
 .hero p {font-size:1.25rem;margin-bottom:2rem;color:#fff}
-
-
 
 /* ---------- SECTIONS / CARDS / FOOTER ---------- */
 .section{max-width:1200px;margin:0 auto;padding:5rem 1rem}
@@ -311,255 +362,61 @@ header nav a.shop-btn:hover{
 .footer nav a:focus{color:#B87333}
 
 /* ---------- RESPONSIVE ---------- */
-@media(max-width:768px){
-    .hero h1{font-size:2rem}
-    .product-grid{gap:1rem}
-    .story-container{flex-direction:column}
-    header nav ul{gap:1rem}
-}
-
-
-/* ---------- NEW HEADER CLASSES FOR UPDATED MARKUP ---------- */
-
-.site-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: var(--header-h);
-    z-index: 1000;
-    background: var(--neutral-90);
-    border-bottom: 1px solid rgba(255,255,255,.15);
-    display: flex;
-    align-items: center;
-}
-
-.site-header .nav-wrap {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    height: 100%;
-    padding: 0 24px;
-    display: flex;
-    align-items: center;
-}
-
-.site-header .logo {
-    flex: none;
-}
-
-.site-header .logo img {
-    height: 48px;
-    width: auto;
-}
-
-.site-header .primary-nav {
-    flex: 1 1 auto;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-}
-
-.site-header .primary-nav a {
-    color: #fff;
-    font-size: .875rem;
-    line-height: var(--header-h);
-    text-transform: uppercase;
-    letter-spacing: .03em;
-    text-decoration: none;
-    transition: color .25s;
-}
-
-.site-header .primary-nav a:hover,
-.site-header .primary-nav a:focus {
-    color: #B87333;
-}
-
-/* Shop button variant inside new primary nav */
-.site-header .primary-nav .pill {
-    background: var(--cta-fill);
-    color: var(--cta-text);
-    border: 1px solid var(--cta-border);
-    padding: .5rem 1.5rem;
-    border-radius: var(--cta-radius);
-    font-weight: 600;
-    transition: background .25s;
-}
-
-.site-header .primary-nav .pill:hover,
-.site-header .primary-nav .pill:focus {
-    background: var(--cta-fill-hover);
-    color: var(--cta-text);
-}
-
-/* Dropdown styling for updated markup */
-.site-header .dropdown {
-    position: relative;
-}
-
-.site-header .dropdown button {
-    background: none;
-    border: none;
-    padding: 0;
-    color: #fff;
-    font-size: .875rem;
-    line-height: var(--header-h);
-    text-transform: uppercase;
-    letter-spacing: .03em;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    transition: color .25s;
-}
-
-.site-header .dropdown:hover > .dropdown-menu,
-.site-header .dropdown button:focus + .dropdown-menu {
-    display: block;
-}
-
-.site-header .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    min-width: 160px;
-    background: var(--neutral-90);
-    padding: .5rem 0;
-    border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0,0,0,.25);
-}
-
-.site-header .dropdown-menu a {
-    display: block;
-    padding: .5rem 1rem;
-    font-size: .8rem;
-    color: #fff;
-}
-
-.site-header .dropdown-menu a:hover,
-.site-header .dropdown-menu a:focus {
-    background: rgba(255,255,255,.08);
-    color: #B87333;
-}
-
-/* Utility icons container */
-.util-icons {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    flex-shrink: 0;
-}
-
-.util-icons button,
-.util-icons a {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    position: relative;
-    transition: color .25s;
-}
-
-.util-icons button:hover,
-.util-icons button:focus,
-.util-icons a:hover,
-.util-icons a:focus {
-    color: #B87333;
-}
-
-.util-icons svg,
-.util-icons .icon {
-    width: 22px;
-    height: 22px;
-    fill: currentColor;
-    stroke: currentColor;
-    transform: none !important;
-}
-
-.util-icons img {
-    width: 22px;
-    height: 22px;
-    filter: brightness(0) invert(1);
-}
-
-/* Cart count badge (works if used) */
-#cart-count {
-    position: absolute;
-    top: -6px;
-    right: -10px;
-    background: #e63946;
-    color: #fff;
-    font-size: .7rem;
-    border-radius: 50%;
-    padding: 2px 6px;
-  
-  
-   line-height: 1; 
-}
-
-
-
-
-
-
-
-/* Fix shop button height */
-.site-header .primary-nav .pill {
-    line-height: 1;
-    display: inline-flex;
-    align-items: center;
-}
-
-/* Hide hamburger button on desktop */
-.hamburger {
-    display: none;
-}
-
-/* Mobile styles */
 @media (max-width: 768px) {
+
+    /* Mobile menu toggle visible */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Hide nav links until toggled */
     .site-header .primary-nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: var(--header-h);
+        right: 0;
+        background: var(--neutral-90);
+        width: 100%;
+        padding: 1rem 0;
         gap: 1rem;
     }
-    .hamburger {
-        display: block;
-        background: none;
-        border: none;
-        cursor: pointer;
+
+    .site-header .primary-nav.show {
+        display: flex;
     }
-}
-@media (max-width: 768px) {
+
+    /* Center hero on mobile */
     .hero {
-        justify-content: center;        /* center the overlay on mobile */
-        padding-right: 0;               /* remove extra right padding */
-        text-align: center;             /* center text inside overlay */
+        justify-content: center;
+        padding-right: 0;
+        text-align: center;
     }
 
     .hero-overlay {
-        width: 90%;                     /* fit most of the screen width */
-        padding: 20px;                  /* smaller padding for mobile */
+        width: 90%;
+        padding: 20px;
         border-radius: 8px;
     }
 
     .hero h1 {
-        font-size: 2rem;                /* scale heading down */
+        font-size: 2rem;
         line-height: 1.3;
     }
 
     .hero p {
-        font-size: 1rem;                /* scale subtext down */
+        font-size: 1rem;
         margin-bottom: 1.5rem;
     }
 
     .hero-overlay button,
     .hero-overlay a {
-        width: 100%;                    /* make CTA full width on mobile */
+        width: 100%;
         font-size: 1rem;
         padding: 0.75rem;
+    }
+
+    .story-container {
+        flex-direction: column;
     }
 }

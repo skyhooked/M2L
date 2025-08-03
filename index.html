@@ -13,10 +13,15 @@
 <body>
     <header class="site-header">
         <div class="nav-wrap">
+            <!-- Logo -->
             <a href="index.html" class="logo">
-                <img src="logos/H-Logo-white.svg" alt="" width="140" height="47">
+                <img src="logos/H-Logo-white.svg" alt="M2 Labs Logo" width="140" height="47">
             </a>
-            <button class="hamburger" aria-label="Open menu"></button>
+
+            <!-- Hamburger Menu Button -->
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+
+            <!-- Navigation -->
             <nav class="primary-nav" id="mobile-nav" role="navigation" aria-label="Main">
                 <a href="shop.html" class="pill">Shop</a>
                 <a href="our-story.html">Our&nbsp;Story</a>
@@ -33,6 +38,7 @@
                 </div>
             </nav>
 
+            <!-- Utility Icons -->
             <div class="util-icons">
                 <button id="search-btn" aria-label="Search" class="icon-btn">
                     <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
@@ -66,10 +72,10 @@
         <section id="hero" class="hero" role="banner">
             <div class="hero-overlay">
                 <h1>
-  READY TO DROP<br>
-  THE BOMBER<br>
-  ON YOUR BOARD?
-</h1>
+                    READY TO DROP<br>
+                    THE BOMBER<br>
+                    ON YOUR BOARD?
+                </h1>
                 <p>Precision gain ready for takeoff.</p>
                 <a href="#products" class="btn">Pre-Order&nbsp;Now</a>
             </div>
@@ -103,10 +109,12 @@
             <h2 id="news-title">News</h2>
             <p>Share the latest updates, product launches, or blog posts here.</p>
         </section>
+
         <section id="endorsement" class="section" aria-labelledby="endorsement-title">
             <h2 id="endorsement-title">Artist&nbsp;Endorsement</h2>
             <p>Highlight endorsements from well-known artists or testimonials.</p>
         </section>
+
         <section id="artists" class="section" aria-labelledby="artists-title">
             <h2 id="artists-title">Artists</h2>
             <p>Showcase the artists who use your gear.</p>
@@ -143,5 +151,11 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            document.querySelector('.primary-nav').classList.toggle('show');
+        });
+    </script>
 </body>
 </html>
