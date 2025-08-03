@@ -1,26 +1,4 @@
-<!--
-  index.html
-
-  This is the main entry point for your website.  It draws inspiration from
-  m2‑labs.com while providing a clean, modern and extensible foundation for
-  your own brand or product line.  The structure of the document uses
-  semantic HTML5 elements (<header>, <main>, <section> and <footer>) to
-  improve accessibility and search engine optimisation (SEO).  Throughout
-  the markup you’ll find comments explaining the purpose of each section
-  and where it’s safe to customise content or add functionality.  Please
-  keep these comments in place to help future contributors understand
-  the layout.
-
-  Important:
-  • Do not remove the `id` attributes on the sections; they are used for
-    anchor links in the navigation and by scripts for smooth scrolling.
-  • The `#ecommerce-plugin` container near the bottom of the page is
-    intentionally left empty.  It provides a placeholder for you to drop
-    in any third‑party e‑commerce widgets (shopping cart, account
-    management, vendor portals, etc.).
-  • All external links and images should use HTTPS to avoid mixed‑content
-    warnings and to comply with modern browser security standards.
--->
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,22 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>M2 Labs – Crafting the Future of Vintage Sound</title>
-    <!--
-      The description meta tag is important for SEO.  Update the
-      content value to reflect your brand’s mission and include
-      relevant keywords.  Keep it under ~160 characters.
-    -->
-    <meta name="description" content="Crafting the future of vintage sound with high‑quality analog equipment, modern design with a transferable lifetime warranty." />
-    <!--
-      Link to the primary stylesheet.  Do not change the relative
-      location unless you also move the file.  Using a separate CSS
-      file keeps styles organised and easy to manage.
-    -->
+    <meta name="description" content="Crafting the future of vintage sound with high-quality analog equipment, modern design with a transferable lifetime warranty." />
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 <body>
-    <!-- Sticky CTA‑first header.  Contains the logo, primary navigation with dropdowns and utility icons. -->
+    <!-- Sticky CTA-first header.  Contains the logo, primary navigation with dropdowns and utility icons. -->
     <header class="site-header">
         <div class="nav-wrap">
             <a href="index.html" class="logo">
@@ -65,43 +33,44 @@
                     </div>
                 </div>
             </nav>
-         <!-- util-icons (inline SVG, inherits currentColor) -->
-<div class="util-icons">
-    <!-- search -->
-    <button id="search-btn" aria-label="Search" class="icon-btn">
-        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M10.5 3a7.5 7.5 0 015.95 12.093l4.178 4.178a1 1 0 01-1.414 1.414l-4.178-4.178A7.5 7.5 0 1110.5 3zm0 2a5.5 5.5 0 100 11 5.5 5.5 0 000-11z"/>
-        </svg>
-    </button>
 
-    <!-- account -->
-    <a href="login.html" aria-label="Account" class="icon-btn">
-        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 12c2.761 0 5-2.239 5-5S14.761 2 12 2 7 4.239 7 7s2.239 5 5 5zm0 2c-4.418 0-8 2.239-8 5v3h16v-3c0-2.761-3.582-5-8-5z"/>
-        </svg>
-    </a>
+            <!-- util-icons (inline SVG, inherits currentColor) -->
+            <div class="util-icons">
+                <!-- search -->
+                <button id="search-btn" aria-label="Search" class="icon-btn">
+                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M10.5 3a7.5 7.5 0 015.95 12.093l4.178 4.178a1 1 0 01-1.414 1.414l-4.178-4.178A7.5 7.5 0 1110.5 3zm0 2a5.5 5.5 0 100 11 5.5 5.5 0 000-11z"/>
+                    </svg>
+                </button>
 
-    <!-- cart -->
-    <a href="cart.html" aria-label="Cart" class="icon-btn">
-        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M6 4h-2V2h2v2zm16 0h-2V2h2v2zM4 6v2h2l3.6 7.59-1.35 2.41C7.52 19.37 8 20.66 9.06 21h9.93v-2H9.42l.95-1.68h7.64c.73 0 1.37-.49 1.57-1.18l2.88-9.84A1 1 0 0021 5H6.21l-.94-2H2v2h2l.6 1h15.21l-2.25 7.7H8.53L6.16 6H4zm5 13a2 2 0 100 4 2 2 0 000-4zm8 0a2 2 0 100 4 2 2 0 000-4z"/>
-        </svg>
-        <span id="cart-count">0</span>
-    </a>
-</div>
+                <!-- account -->
+                <a href="login.html" aria-label="Account" class="icon-btn">
+                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 12c2.761 0 5-2.239 5-5S14.761 2 12 2 7 4.239 7 7s2.239 5 5 5zm0 2c-4.418 0-8 2.239-8 5v3h16v-3c0-2.761-3.582-5-8-5z"/>
+                    </svg>
+                </a>
+
+                <!-- cart -->
+                <a href="cart.html" aria-label="Cart" class="icon-btn">
+                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6 4h-2V2h2v2zm16 0h-2V2h2v2zM4 6v2h2l3.6 7.59-1.35 2.41C7.52 19.37 8 20.66 9.06 21h9.93v-2H9.42l.95-1.68h7.64c.73 0 1.37-.49 1.57-1.18l2.88-9.84A1 1 0 0021 5H6.21l-.94-2H2v2h2l.6 1h15.21l-2.25 7.7H8.53L6.16 6H4zm5 13a2 2 0 100 4 2 2 0 000-4zm8 0a2 2 0 100 4 2 2 0 000-4z"/>
+                    </svg>
+                    <span id="cart-count">0</span>
+                </a>
+            </div>
         </div>
     </header>
-    <!-- Search modal uses the native <dialog> element.  It can be opened via the search icon and closed with its button. -->
+
+    <!-- Search modal -->
     <dialog id="search-modal">
         <h2>Search</h2>
         <input type="text" placeholder="Coming soon…" />
         <button class="close-modal">Close</button>
     </dialog>
 
-    <!-- Main content wrapper.  Each section is self‑contained to
-         facilitate easy reordering or removal. -->
+    <!-- Main content -->
     <main>
-        <!-- Hero section -->
+        <!-- Hero -->
         <section id="hero" class="hero" role="banner">
             <div class="hero-overlay">
                 <h1>Crafting the&nbsp;Future<br />of&nbsp;Vintage&nbsp;Sound</h1>
@@ -110,12 +79,11 @@
             </div>
         </section>
 
-        <!-- Products/Features section.  Showcase your product categories or key offerings here. -->
+        <!-- Products -->
         <section id="products" class="section products" aria-labelledby="products-title">
             <h2 id="products-title">Our&nbsp;Pedals</h2>
             <p>Explore our range of analog effects, designed for musicians and creators.</p>
             <div class="product-grid">
-                <!-- Product card template.  Duplicate or remove cards as needed. -->
                 <article class="product-card">
                     <img src="https://images.unsplash.com/photo-1497032205916-ac775f0649ae?auto=format&fit=crop&w=800&q=80" alt="Analog guitar pedal on a wooden table" />
                     <h3>Product&nbsp;One</h3>
@@ -123,7 +91,7 @@
                     <a href="#" class="btn">Learn&nbsp;More</a>
                 </article>
                 <article class="product-card">
-                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Close‑up of a vintage effects pedal" />
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Close-up of a vintage effects pedal" />
                     <h3>Product&nbsp;Two</h3>
                     <p>Describe another product here.  Use alt text to describe the image for screen readers.</p>
                     <a href="#" class="btn">Learn&nbsp;More</a>
@@ -137,40 +105,37 @@
             </div>
         </section>
 
-        <!-- Story section.  Tell visitors about your company’s history, mission and values. -->
+        <!-- Story -->
         <section id="story" class="section story" aria-labelledby="story-title">
             <div class="story-container">
-                <!-- Left side image.  Replace the background image in CSS (story-image class) to change the visual. -->
                 <div class="story-image" role="img" aria-label="Illustration of a musician with a guitar"></div>
                 <div class="story-content">
                     <h2 id="story-title">The&nbsp;Story</h2>
                     <p>Use this section to share the journey behind your brand.  Explain why you’re passionate about analog gear, the problems you’re solving, and how you stand out from competitors.</p>
-                    <!-- Link to full story page for deeper reading -->
                     <a href="our-story.html" class="btn">Read&nbsp;More</a>
                 </div>
             </div>
         </section>
 
-        <!-- Placeholder sections.  These IDs correspond to navigation items and can be fleshed out later. -->
+        <!-- Placeholder sections -->
         <section id="news" class="section" aria-labelledby="news-title">
             <h2 id="news-title">News</h2>
-            <p>Share the latest updates, product launches, or blog posts here.  You can integrate a CMS or blog platform for dynamic content.</p>
+            <p>Share the latest updates, product launches, or blog posts here.</p>
         </section>
         <section id="endorsement" class="section" aria-labelledby="endorsement-title">
             <h2 id="endorsement-title">Artist&nbsp;Endorsement</h2>
-            <p>Highlight endorsements from well‑known artists or testimonials from satisfied customers.</p>
+            <p>Highlight endorsements from well-known artists or testimonials from satisfied customers.</p>
         </section>
         <section id="artists" class="section" aria-labelledby="artists-title">
             <h2 id="artists-title">Artists</h2>
-            <p>Showcase the artists who use your gear.  This could be a gallery or a series of profile cards.</p>
+            <p>Showcase the artists who use your gear.</p>
         </section>
 
-        <!-- Newsletter section.  Encourage visitors to subscribe to your mailing list. -->
+        <!-- Newsletter -->
         <section id="newsletter" class="section newsletter" aria-labelledby="newsletter-title">
             <h2 id="newsletter-title">Stay&nbsp;in&nbsp;Touch</h2>
-            <p>Join our email list to receive updates, pre‑sale announcements and community news.</p>
+            <p>Join our email list to receive updates, pre-sale announcements and community news.</p>
             <form action="#" method="post" class="newsletter-form">
-                <!-- Using label with sr-only class (defined in CSS) keeps the form accessible without showing the label visually. -->
                 <label for="email" class="sr-only">Email address</label>
                 <input type="email" id="email" name="email" placeholder="Enter your email here" required />
                 <button type="submit" class="btn">Sign&nbsp;Up</button>
@@ -178,7 +143,7 @@
         </section>
     </main>
 
-    <!-- Footer.  Contains secondary navigation and brand tagline. -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-logo">
@@ -189,26 +154,16 @@
             </div>
             <nav class="footer-nav" aria-label="Footer Navigation">
                 <ul>
-                    <!-- Link to support page anchors so these footer links work from any page -->
                     <li><a href="privacy.html">Privacy&nbsp;Policy</a></li>
                     <li><a href="warranty.html">Warranty</a></li>
                     <li><a href="contact.html">Contact&nbsp;Us</a></li>
                 </ul>
             </nav>
         </div>
-        <!-- 
-          This empty container is reserved for third‑party integrations
-          such as shopping carts, vendor dashboards or other e‑commerce
-          widgets.  Add your plugin’s embed code inside this div. 
-        -->
         <div id="ecommerce-plugin"></div>
     </footer>
 
     <!-- Scripts -->
     <script src="script.js"></script>
-
-    <!-- FOXYCART -->
-<script data-cfasync="false" src="https://cdn.foxycart.com/m2-labs/loader.js" async defer></script>
-<!-- /FOXYCART -->
 </body>
 </html>
