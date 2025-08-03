@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,20 +12,20 @@
 <body>
 <header class="site-header">
   <div class="logo">
-    <img src="logos/H-Logo-white.svg">
+    <img src="logos/H-Logo-white.svg" alt="M2 Labs logo">
   </div>
 
   <!-- HAMBURGER BUTTON -->
   <button class="menu-toggle" aria-label="Toggle menu">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="6"  x2="21" y2="6"/>
       <line x1="3" y1="12" x2="21" y2="12"/>
       <line x1="3" y1="18" x2="21" y2="18"/>
     </svg>
   </button>
 
   <!-- NAV LINKS -->
-  <nav class="nav-links">
+  <nav class="primary-nav">
     <a href="#">Shop</a>
     <a href="#">Our Story</a>
     <a href="#">News</a>
@@ -35,100 +34,103 @@
   </nav>
 </header>
 
-    <dialog id="search-modal">
-        <h2>Search</h2>
-        <input type="text" placeholder="Coming soon…" />
-        <button class="close-modal">Close</button>
-    </dialog>
+<dialog id="search-modal">
+    <h2>Search</h2>
+    <input type="text" placeholder="Coming soon…" />
+    <button class="close-modal">Close</button>
+</dialog>
 
-    <main>
-        <section id="hero" class="hero" role="banner">
-            <div class="hero-overlay">
-                <h1>
-                    READY TO DROP<br>
-                    THE BOMBER<br>
-                    ON YOUR BOARD?
-                </h1>
-                <p>Precision gain ready for takeoff.</p>
-                <a href="#products" class="btn">Pre-Order&nbsp;Now</a>
-            </div>
-        </section>
-
-        <section id="products" class="section products" aria-labelledby="products-title">
-            <h2 id="products-title">Our&nbsp;Pedals</h2>
-            <p>Explore our range of analog effects, designed for musicians and creators.</p>
-            <div class="product-grid">
-                <article class="product-card">
-                    <img src="product images/M2-Labs-The-Bomber-Overdrive-1.jpg" alt="Analog guitar pedal on a wooden table" />
-                    <h3>The Bomber Overdrive</h3>
-                    <p>The Bomber Overdrive hits that perfect spot between subtle breakup and serious distortion. The Distortion control lets you shape exactly how much grit you want, from those tube-like edge-of-breakup tones to rich, full-throttle drive that's loaded with harmonics.<br>Are you ready to drop The Bomber on your board?</p>
-                    <a href="#" class="btn">Learn&nbsp;More</a>
-                </article>
-            </div>
-        </section>
-
-        <section id="story" class="section story" aria-labelledby="story-title">
-            <div class="story-container">
-                <div class="story-image" role="img" aria-label="Illustration of a musician with a guitar"></div>
-                <div class="story-content">
-                    <h2 id="story-title">The&nbsp;Story</h2>
-                    <p>Use this section to share the journey behind your brand.</p>
-                    <a href="our-story.html" class="btn">Read&nbsp;More</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="news" class="section" aria-labelledby="news-title">
-            <h2 id="news-title">News</h2>
-            <p>Share the latest updates, product launches, or blog posts here.</p>
-        </section>
-
-        <section id="endorsement" class="section" aria-labelledby="endorsement-title">
-            <h2 id="endorsement-title">Artist&nbsp;Endorsement</h2>
-            <p>Highlight endorsements from well-known artists or testimonials.</p>
-        </section>
-
-        <section id="artists" class="section" aria-labelledby="artists-title">
-            <h2 id="artists-title">Artists</h2>
-            <p>Showcase the artists who use your gear.</p>
-        </section>
-
-        <section id="newsletter" class="section newsletter" aria-labelledby="newsletter-title">
-            <h2 id="newsletter-title">Stay&nbsp;in&nbsp;Touch</h2>
-            <p>Join our email list to receive updates.</p>
-            <form action="#" method="post" class="newsletter-form">
-                <label for="email" class="sr-only">Email address</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email here" required />
-                <button type="submit" class="btn">Sign&nbsp;Up</button>
-            </form>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-logo">
-                <a href="#top">
-                    <img src="logos/H-Logo-white.svg" alt="M2 Labs Logo" width="120" height="40">
-                </a>
-                <p>Crafting the future of vintage sound</p>
-            </div>
-            <nav class="footer-nav" aria-label="Footer Navigation">
-                <ul>
-                    <li><a href="privacy.html">Privacy&nbsp;Policy</a></li>
-                    <li><a href="warranty.html">Warranty</a></li>
-                    <li><a href="contact.html">Contact&nbsp;Us</a></li>
-                </ul>
-            </nav>
+<main>
+    <section id="hero" class="hero" role="banner">
+        <div class="hero-overlay">
+            <h1>
+                READY TO DROP<br>
+                THE BOMBER<br>
+                ON YOUR BOARD?
+            </h1>
+            <p>Precision gain ready for takeoff.</p>
+            <a href="#products" class="btn">Pre-Order&nbsp;Now</a>
         </div>
-        <div id="ecommerce-plugin"></div>
-    </footer>
+    </section>
 
-    <script src="script.js"></script>
-    <script>
-        // Mobile menu toggle
-        document.querySelector('.menu-toggle').addEventListener('click', () => {
-            document.querySelector('.primary-nav').classList.toggle('show');
-        });
-    </script>
+    <section id="products" class="section products" aria-labelledby="products-title">
+        <h2 id="products-title">Our&nbsp;Pedals</h2>
+        <p>Explore our range of analog effects, designed for musicians and creators.</p>
+        <div class="product-grid">
+            <article class="product-card">
+                <img src="product images/M2-Labs-The-Bomber-Overdrive-1.jpg" alt="Analog guitar pedal on a wooden table" />
+                <h3>The Bomber Overdrive</h3>
+                <p>The Bomber Overdrive hits that perfect spot between subtle breakup and serious distortion. The Distortion control lets you shape exactly how much grit you want, from those tube-like edge-of-breakup tones to rich, full-throttle drive that's loaded with harmonics.<br>Are you ready to drop The Bomber on your board?</p>
+                <a href="#" class="btn">Learn&nbsp;More</a>
+            </article>
+        </div>
+    </section>
+
+    <section id="story" class="section story" aria-labelledby="story-title">
+        <div class="story-container">
+            <div class="story-image" role="img" aria-label="Illustration of a musician with a guitar"></div>
+            <div class="story-content">
+                <h2 id="story-title">The&nbsp;Story</h2>
+                <p>Use this section to share the journey behind your brand.</p>
+                <a href="our-story.html" class="btn">Read&nbsp;More</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="news" class="section" aria-labelledby="news-title">
+        <h2 id="news-title">News</h2>
+        <p>Share the latest updates, product launches, or blog posts here.</p>
+    </section>
+
+    <section id="endorsement" class="section" aria-labelledby="endorsement-title">
+        <h2 id="endorsement-title">Artist&nbsp;Endorsement</h2>
+        <p>Highlight endorsements from well-known artists or testimonials.</p>
+    </section>
+
+    <section id="artists" class="section" aria-labelledby="artists-title">
+        <h2 id="artists-title">Artists</h2>
+        <p>Showcase the artists who use your gear.</p>
+    </section>
+
+    <section id="newsletter" class="section newsletter" aria-labelledby="newsletter-title">
+        <h2 id="newsletter-title">Stay&nbsp;in&nbsp;Touch</h2>
+        <p>Join our email list to receive updates.</p>
+        <form action="#" method="post" class="newsletter-form">
+            <label for="email" class="sr-only">Email address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email here" required />
+            <button type="submit" class="btn">Sign&nbsp;Up</button>
+        </form>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <a href="#top">
+                <img src="logos/H-Logo-white.svg" alt="M2 Labs Logo" width="120" height="40">
+            </a>
+            <p>Crafting the future of vintage sound</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer Navigation">
+            <ul>
+                <li><a href="privacy.html">Privacy&nbsp;Policy</a></li>
+                <li><a href="warranty.html">Warranty</a></li>
+                <li><a href="contact.html">Contact&nbsp;Us</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="ecommerce-plugin"></div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  // Mobile menu toggle
+  const menuBtn  = document.querySelector('.menu-toggle');
+  const nav      = document.querySelector('.primary-nav');
+
+  menuBtn.addEventListener('click', () => {
+      nav.classList.toggle('show');
+  });
+</script>
 </body>
 </html>
