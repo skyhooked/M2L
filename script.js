@@ -1,14 +1,28 @@
 /*
-  script.js
-
-  This file contains all of the site’s client‑side behaviour.  It powers
-  the responsive navigation (hamburger toggle), search modal, cart badge
-  update and smooth scrolling.  It also preserves the existing
-  newsletter form handler.  Future enhancements (e.g. product filters,
-  quizzes) should be added here to keep logic separate from markup.
+  script.js – updated to dynamically inject shared header and footer fragments
+  so that changes only need to be made once in partials/header.html and
+  partials/footer.html for them to propagate across the entire site.
 */
 
-document.addEventListener('DOMContentLoaded', () => {
+// Helper: fetch an HTML fragment and replace the matching element in the DOM
+function loadFragment(url, selector) {
+    return fetch(url)
+        .then(res => {
+            if (!res.ok) {
+                throw new Error(`Failed to load fragment: ${url}`);
+            }
+            return res.text();
+        })
+        .then(html => {
+            const container = document.querySelector(selector);
+            if (container) {
+                container.outerHTML = html; // replace the element (not just innerHTML)
+            }
+        });
+}
+
+// After the fragments are in place, attach event listeners and initialise behaviour
+function initSite() {
     // Mobile navigation toggle
     const ham = document.querySelector('.hamburger');
     const nav = document.querySelector('.primary-nav');
@@ -23,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (searchBtn) {
         searchBtn.addEventListener('click', () => {
             const dlg = document.getElementById('search-modal');
-            // `showModal` is available on <dialog> elements in modern browsers
             if (dlg && typeof dlg.showModal === 'function') {
                 dlg.showModal();
             }
@@ -55,25 +68,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 const targetEl = document.querySelector(targetId);
                 if (targetEl) {
                     event.preventDefault();
-                    // Offset by header height to ensure the section isn’t hidden
-                    const offset = targetEl.offsetTop - 70;
+                    const offset = targetEl.offsetTop - 70; // offset for fixed header
                     window.scrollTo({ top: offset, behavior: 'smooth' });
                 }
             }
         });
     });
+}
 
-    // Newsletter form submission handling
-    const newsletterForm = document.querySelector('.newsletter-form');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', event => {
-            event.preventDefault();
-            const emailInput = newsletterForm.querySelector('input[type="email"]');
-            const email = emailInput.value.trim();
-            if (email) {
-                alert(`Thank you, ${email}! You’ve been added to our mailing list.`);
-                newsletterForm.reset();
-            }
+// Initialise once DOM is ready: load shared fragments first, then run site JS
+document.addEventListener('DOMContentLoaded', () => {
+    Promise.all([
+        loadFragment('partials/header.html', 'header.site-header'),
+        loadFragment('partials/footer.html', 'footer.footer')
+    ])
+        .then(() => {
+            // Remove any deprecated inline SVG logo remnants
+            document.querySelectorAll('#m2-logo').forEach(el => el.remove());
+            initSite();
+        })
+        .catch(err => {
+            console.error(err);
+            // Fallback: initialise site even if fragments fail to load
+            initSite();
         });
-    }
 });
