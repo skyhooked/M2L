@@ -210,7 +210,7 @@ header nav a.shop-btn:hover{
     align-items:center;
     justify-content:flex-end;   /* push overlay to the right */
     padding-right:5%;           /* adjust as needed */
-    background:url('product images/tbo-hero5.png') center/cover no-repeat;
+    background:url('product images/tbo-hero6.png') center/cover no-repeat;
 }
 .hero-overlay{
     background:rgba(0,0,0,.6);
