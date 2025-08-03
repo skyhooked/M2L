@@ -533,3 +533,33 @@ header nav a.shop-btn:hover{
         cursor: pointer;
     }
 }
+@media (max-width: 768px) {
+    .hero {
+        justify-content: center;        /* center the overlay on mobile */
+        padding-right: 0;               /* remove extra right padding */
+        text-align: center;             /* center text inside overlay */
+    }
+
+    .hero-overlay {
+        width: 90%;                     /* fit most of the screen width */
+        padding: 20px;                  /* smaller padding for mobile */
+        border-radius: 8px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;                /* scale heading down */
+        line-height: 1.3;
+    }
+
+    .hero p {
+        font-size: 1rem;                /* scale subtext down */
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-overlay button,
+    .hero-overlay a {
+        width: 100%;                    /* make CTA full width on mobile */
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
+}
