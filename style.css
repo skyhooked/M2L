@@ -208,7 +208,8 @@ header nav a.shop-btn:hover{
     margin-top:0;
     display:flex;
     align-items:center;
-    justify-content:center;
+    justify-content:flex-end;   /* push overlay to the right */
+    padding-right:5%;           /* adjust as needed */
     background:url('product images/tbo-hero3.png') center/cover no-repeat;
 }
 .hero-overlay{
@@ -219,6 +220,7 @@ header nav a.shop-btn:hover{
 }
 .hero h1{font-size:3rem;margin-bottom:1rem;color:#fff}
 .hero p {font-size:1.25rem;margin-bottom:2rem;color:#fff}
+
 
 /* ---------- SECTIONS / CARDS / FOOTER ---------- */
 .section{max-width:1200px;margin:0 auto;padding:5rem 1rem}
