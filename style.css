@@ -209,7 +209,7 @@ header nav a.shop-btn:hover{
     display:flex;
     align-items:center;
     justify-content:center;
-    background:url('product images/tbo-hero.png') center/cover no-repeat;
+    background:url('product images/tbo-herotwo.png') center/cover no-repeat;
 }
 .hero-overlay{
     background:rgba(0,0,0,.6);
