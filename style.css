@@ -487,24 +487,34 @@ header nav a.shop-btn:hover{
     font-size: .7rem;
     border-radius: 50%;
     padding: 2px 6px;
-    line-height: 1;
+  
+  
+   line-height: 1; 
 }
 
-@media(max-width: 768px) {
-    .site-header .primary-nav {
-    
-       /* Fix shop button height */
+
+
+
+
+
+
+/* Fix shop button height */
 .site-header .primary-nav .pill {
     line-height: 1;
     display: inline-flex;
     align-items: center;
 }
 
-/* Hide hamburger button on desktop, show on mobile */
+/* Hide hamburger button on desktop */
 .hamburger {
     display: none;
 }
+
+/* Mobile styles */
 @media (max-width: 768px) {
+    .site-header .primary-nav {
+        gap: 1rem;
+    }
     .hamburger {
         display: block;
         background: none;
