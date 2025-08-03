@@ -492,6 +492,23 @@ header nav a.shop-btn:hover{
 
 @media(max-width: 768px) {
     .site-header .primary-nav {
-        gap: 1rem;
+    
+       /* Fix shop button height */
+.site-header .primary-nav .pill {
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Hide hamburger button on desktop, show on mobile */
+.hamburger {
+    display: none;
+}
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
     }
 }
