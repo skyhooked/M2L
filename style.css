@@ -209,7 +209,7 @@ header nav a.shop-btn:hover{
     display:flex;
     align-items:center;
     justify-content:center;
-    background:url('G:\M2 Labs\M2L-Website\product images\tbo-hero.png') center/cover no-repeat;
+    background:url('https://github.com/skyhooked/M2L/blob/7c43eca2c23e76bb084090986aa1a2a30502aa9d/product%20images/tbo-hero.png') center/cover no-repeat;
 }
 .hero-overlay{
     background:rgba(0,0,0,.6);
