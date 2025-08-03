@@ -1,41 +1,39 @@
-/* ------------------------------------------------------------------
-   M2-Labs global stylesheet
-   Palette: Charcoal + Copper        (v2025-08-03-b)
-------------------------------------------------------------------- */
+/* -----------------------------------------------------------
+   M2-Labs global stylesheet • Charcoal + Copper • 2025-08-03-c
+------------------------------------------------------------ */
 
-/* Google Font */
+/* Google font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
-/* ------------------------------------------------------------------
-   CSS Custom Properties
-------------------------------------------------------------------- */
+/* -----------------------------------------------------------
+   Custom properties
+------------------------------------------------------------ */
 :root {
-    /* Base palette */
+    /* Palette tokens */
     --neutral-0:  #F5F5F5;
     --neutral-90: #36454F;
     --neutral-60: #6C7A83;
-    --copper-60:  #B87333;   /* darker copper */
-    --copper-80:  #FF8A3D;   /* bright copper */
+    --copper-60:  #B87333;
+    --copper-80:  #FF8A3D;
 
-    /* Semantic */
+    /* Semantic aliases */
     --bg-base:        var(--neutral-0);
     --text-primary:   var(--neutral-90);
     --text-secondary: var(--neutral-60);
     --link-accent:    var(--copper-60);
-    --cta-bg:         var(--copper-80);
+
+    /* Button & CTA pill */
+    --btn-bg:      var(--copper-80);   /* default background  */
+    --btn-text:    #000000;            /* default text        */
+    --btn-h-bg:    var(--neutral-0);   /* hover background    */
+    --btn-h-text:  #000000;            /* hover text          */
 
     --font-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-
-    /* Updated button tokens */
-    --btn-bg:      var(--copper-80);   /* default */
-    --btn-text:    #FFFFFF;
-    --btn-h-bg:    var(--copper-60);   /* darker copper on hover */
-    --btn-h-text:  #FFFFFF;
 }
 
-/* ------------------------------------------------------------------
-   Normalise + base
-------------------------------------------------------------------- */
+/* -----------------------------------------------------------
+   Base reset
+------------------------------------------------------------ */
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
@@ -44,13 +42,11 @@ body{
     padding-top:60px;
 }
 img{max-width:100%;display:block}
-
-/* A11y helper */
 .sr-only{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 
-/* ------------------------------------------------------------------
-   Header + Nav
-------------------------------------------------------------------- */
+/* -----------------------------------------------------------
+   Header & navigation
+------------------------------------------------------------ */
 header{
     position:fixed;top:0;left:0;width:100%;height:60px;z-index:1000;
     background:var(--text-primary);color:var(--neutral-0);
@@ -63,8 +59,6 @@ header .nav-container{
 header .logo a{
     font-size:1.3rem;font-weight:800;color:var(--neutral-0);text-decoration:none;
 }
-
-/* primary links */
 nav ul{list-style:none;display:flex;gap:1.2rem;align-items:center}
 nav li{position:relative}
 nav a{
@@ -73,22 +67,17 @@ nav a{
     color:var(--neutral-0);
     transition:color .3s,background .3s,transform .2s;
 }
-
-/* CTA pill now mirrors button tokens */
+/* CTA pill follows button tokens */
 .nav-cta{
     background:var(--btn-bg);color:var(--btn-text);font-weight:600;
 }
 .nav-cta:hover,.nav-cta:focus{
-    background:var(--btn-h-bg);color:var(--btn-h-text);
-    transform:translateY(-2px);
+    background:var(--btn-h-bg);color:var(--btn-h-text);transform:translateY(-2px);
 }
-
 /* standard hover */
-nav a:hover:not(.nav-cta),nav a:focus:not(.nav-cta){
-    color:var(--link-accent);
-}
+nav a:hover:not(.nav-cta),nav a:focus:not(.nav-cta){color:var(--link-accent)}
 
-/* dropdown */
+/* Dropdown */
 .dropdown-parent:hover>.dropdown{display:block}
 .dropdown{
     display:none;position:absolute;top:110%;left:0;min-width:150px;
@@ -102,16 +91,16 @@ nav a:hover:not(.nav-cta),nav a:focus:not(.nav-cta){
     background:rgba(255,255,255,.08);color:var(--link-accent);
 }
 
-/* nav icons */
+/* Nav icons */
 .nav-icons{display:flex;align-items:center;gap:1rem}
 .nav-icons a{
     color:var(--neutral-0);display:flex;align-items:center;transition:color .3s;
 }
 .nav-icons a:hover,.nav-icons a:focus{color:var(--link-accent)}
 
-/* ------------------------------------------------------------------
+/* -----------------------------------------------------------
    Hero
-------------------------------------------------------------------- */
+------------------------------------------------------------ */
 .hero{
     height:100vh;margin-top:80px;display:flex;align-items:center;justify-content:center;position:relative;
     background:url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1650&q=80') center/cover no-repeat;
@@ -120,9 +109,9 @@ nav a:hover:not(.nav-cta),nav a:focus:not(.nav-cta){
 .hero h1{font-size:3rem;margin-bottom:1rem;color:var(--neutral-0)}
 .hero p {font-size:1.25rem;margin-bottom:2rem;color:var(--neutral-0)}
 
-/* ------------------------------------------------------------------
-   Buttons
-------------------------------------------------------------------- */
+/* -----------------------------------------------------------
+   Buttons (global)
+------------------------------------------------------------ */
 .btn,.newsletter-form button{
     display:inline-block;padding:.75rem 2rem;border:none;border-radius:30px;cursor:pointer;
     background:var(--btn-bg);color:var(--btn-text);
@@ -134,12 +123,12 @@ nav a:hover:not(.nav-cta),nav a:focus:not(.nav-cta){
     background:var(--btn-h-bg);color:var(--btn-h-text);
 }
 
-/* ------------------------------------------------------------------
+/* -----------------------------------------------------------
    Sections
-------------------------------------------------------------------- */
+------------------------------------------------------------ */
 .section{max-width:1200px;margin:0 auto;padding:5rem 1rem}
 
-/* products grid */
+/* Products */
 .products{background:var(--neutral-0);text-align:center}
 .products h2{font-size:2rem;margin-bottom:.5rem;color:var(--text-primary)}
 .products p {max-width:700px;margin:0 auto 2rem;color:var(--text-secondary)}
@@ -154,7 +143,7 @@ nav a:hover:not(.nav-cta),nav a:focus:not(.nav-cta){
 .product-card p {margin:0 1rem 1rem;color:var(--text-secondary);flex-grow:1}
 .product-card .btn{margin:0 1rem 1.5rem}
 
-/* story split */
+/* Story */
 .story-container{display:flex;flex-wrap:wrap;gap:2rem;align-items:center}
 .story-image{
     flex:1 1 50%;min-height:300px;border-radius:8px;
@@ -164,18 +153,16 @@ nav a:hover:not(.nav-cta),nav a:focus:not(.nav-cta){
 .story-content h2{font-size:2rem;margin-bottom:1rem;color:var(--text-primary)}
 .story-content p {margin-bottom:1.5rem;color:var(--text-secondary)}
 
-/* newsletter */
+/* Newsletter */
 .newsletter{background:var(--neutral-0);text-align:center}
 .newsletter h2{font-size:2rem;margin-bottom:.5rem;color:var(--text-primary)}
 .newsletter p {margin-bottom:2rem;color:var(--text-secondary)}
-.newsletter-form{
-    display:flex;justify-content:center;align-items:center;gap:.5rem;max-width:600px;margin:0 auto;
-}
+.newsletter-form{display:flex;justify-content:center;align-items:center;gap:.5rem;max-width:600px;margin:0 auto}
 .newsletter-form input[type=email]{
     flex:1;padding:.75rem 1rem;border:1px solid #ccc;border-radius:4px;font-size:1rem;
 }
 
-/* artists */
+/* Artists */
 .artist-list{display:flex;flex-wrap:wrap;gap:2rem;justify-content:center}
 .artist-card{
     background:#fff;border-radius:8px;padding:1.5rem;text-align:center;
@@ -186,9 +173,9 @@ nav a:hover:not(.nav-cta),nav a:focus:not(.nav-cta){
 .artist-card p {margin-bottom:1rem;color:var(--text-secondary)}
 .artist-card .btn{align-self:center}
 
-/* ------------------------------------------------------------------
+/* -----------------------------------------------------------
    Footer
-------------------------------------------------------------------- */
+------------------------------------------------------------ */
 .footer{
     background:var(--text-primary);color:var(--neutral-0);padding:3rem 1rem;
 }
@@ -203,61 +190,55 @@ nav a:hover:not(.nav-cta),nav a:focus:not(.nav-cta){
 }
 .footer-nav a:hover,.footer-nav a:focus{color:var(--link-accent)}
 
-/* ------------------------------------------------------------------
+/* -----------------------------------------------------------
    Responsive tweaks
-------------------------------------------------------------------- */
+------------------------------------------------------------ */
 @media (max-width:768px){
     .hero h1{font-size:2rem}
     .product-grid{gap:1rem}
     .story-container{flex-direction:column}
 }
 
-/* ------------------------------------------------------------------
-   Sticky alt header (if used)
-------------------------------------------------------------------- */
+/* -----------------------------------------------------------
+   Sticky alt header (if you still use it)
+------------------------------------------------------------ */
 .site-header{
     position:fixed;top:0;left:0;width:100%;height:60px;z-index:1000;
     background:rgba(54,69,79,.95);backdrop-filter:blur(6px);
 }
 .site-header .nav-wrap{
-    max-width:1200px;margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;padding:0 20px;
+    max-width:1200px;margin:0 auto;height:100%;
+    display:flex;align-items:center;justify-content:space-between;padding:0 20px;
 }
 .site-header .logo{color:var(--neutral-0);font-weight:600;font-size:1.2rem;text-decoration:none;text-transform:uppercase;letter-spacing:.03em}
 .primary-nav{display:flex;gap:24px;font-size:.95rem;text-transform:uppercase;letter-spacing:.03em;align-items:center}
 .primary-nav a{color:var(--neutral-0);text-decoration:none;transition:color .15s}
 .primary-nav a:hover,.primary-nav a:focus{color:#FFD34E}
 .primary-nav .pill{
-    background:var(--btn-bg);color:var(--btn-text);padding:8px 18px;border-radius:4px;transition:transform .15s,background .3s,color .3s;
+    background:var(--btn-bg);color:var(--btn-text);padding:8px 18px;border-radius:4px;
+    transition:transform .15s,background .3s,color .3s;
 }
 .primary-nav .pill:hover,.primary-nav .pill:focus{
     background:var(--btn-h-bg);color:var(--btn-h-text);transform:translateY(-2px);
 }
 
-/* dropdown in sticky header */
-.dropdown>button{background:none;border:none;color:var(--neutral-0);font-size:.95rem;text-transform:uppercase;letter-spacing:.03em;cursor:pointer}
-.dropdown>button:hover,.dropdown>button:focus{color:#FFD34E}
-.dropdown-menu{display:none;position:absolute;top:100%;left:0;min-width:180px;background:var(--text-primary);border-radius:4px;padding:10px 0;box-shadow:0 4px 10px rgba(0,0,0,.3);z-index:1000}
-.dropdown-menu a{
-    display:block;padding:8px 16px;color:var(--neutral-0);text-decoration:none;font-size:.85rem;transition:background .15s,color .15s;
-}
-.dropdown-menu a:hover,.dropdown-menu a:focus{background:rgba(255,255,255,.05);color:#FFD34E}
-.dropdown:hover .dropdown-menu{display:block}
-
-/* mobile hamburger */
+/* mobile menu */
 .hamburger{
-    display:none;background:none;border:0;width:32px;height:32px;background:url('icons/hamburger.svg') center/contain no-repeat;cursor:pointer;
+    display:none;background:none;border:0;width:32px;height:32px;
+    background:url('icons/hamburger.svg') center/contain no-repeat;cursor:pointer;
 }
 @media (max-width:768px){
     .primary-nav{display:none}
     .primary-nav.open{
-        display:flex;flex-direction:column;gap:16px;position:fixed;top:60px;left:0;right:0;background:var(--text-primary);padding:24px;
+        display:flex;flex-direction:column;gap:16px;position:fixed;top:60px;left:0;right:0;
+        background:var(--text-primary);padding:24px;
     }
     .hamburger{display:block}
 }
 
-/* ------------------------------------------------------------------
-   SVG icon insurance
-------------------------------------------------------------------- */
+/* -----------------------------------------------------------
+   SVG insurance
+------------------------------------------------------------ */
 .icon{width:20px;height:20px;fill:currentColor;stroke:currentColor}
 .util-icons img{width:20px;height:20px;filter:brightness(0) invert(1)}
 #cart-count{position:absolute;top:-6px;right:-10px;background:#e63946;color:#fff;border-radius:50%;padding:2px 6px;font-size:.7rem}
