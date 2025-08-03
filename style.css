@@ -3,7 +3,7 @@
 
   This stylesheet defines the visual language for your website. It uses a
   limited colour palette inspired by the reference site (dark backgrounds
-  with vibrant red highlights) and prioritises readability and responsive
+  with vibrant highlights) and prioritises readability and responsive
   layouts. Custom properties (CSS variables) at the top make it easy
   to adjust colours and fonts globally. Feel free to tweak the
   variables but avoid renaming them without updating dependent rules.
@@ -13,16 +13,17 @@
 */
 
 /* Colour and font variables */
-/* Load Montserrat (regular 400, semibold 600, bold 800) */
-/* style.css */
+/* Load Inter (regular 400, semibold 600, bold 800) */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
 :root {
     --primary-color: #0b0b0b;
     --secondary-color: #ffffff;
-    --accent-color: #e63946;
+    --accent-color: #e63946;        /* kept for links & indicators */
     --neutral-color: #f5f5f5;
     --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --button-color: #FF8A3D;        /* new variable for all buttons */
+    --button-hover: #D87533;        /* 15 % darker for hover/focus */
 }
 
 html,
@@ -48,6 +49,7 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #fff;
+    padding-top: 60px;              /* offset for fixed header */
 }
 
 img {
@@ -78,7 +80,7 @@ header {
     width: 100%;
     z-index: 1000;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    height: 60px; /* compact bar height */
+    height: 60px;
 }
 
 header .nav-container {
@@ -204,7 +206,7 @@ nav a:focus:not(.nav-cta) {
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-top: 80px; /* offset for fixed header */
+    margin-top: 80px;
 }
 
 .hero-overlay {
@@ -227,10 +229,11 @@ nav a:focus:not(.nav-cta) {
     margin-bottom: 2rem;
 }
 
+/* ---------- BUTTONS ---------- */
 .btn {
     display: inline-block;
     padding: 0.75rem 2rem;
-    background-color: var(--accent-color);
+    background-color: var(--button-color);   /* updated */
     color: var(--secondary-color);
     border-radius: 30px;
     text-decoration: none;
@@ -240,7 +243,7 @@ nav a:focus:not(.nav-cta) {
 
 .btn:hover,
 .btn:focus {
-    background-color: #c92b36;
+    background-color: var(--button-hover);   /* updated */
 }
 
 /* Generic section styling */
@@ -381,7 +384,7 @@ nav a:focus:not(.nav-cta) {
 .newsletter-form button {
     padding: 0.75rem 1.5rem;
     border: none;
-    background-color: var(--accent-color);
+    background-color: var(--button-color);   /* updated */
     color: var(--secondary-color);
     border-radius: 4px;
     font-size: 1rem;
@@ -391,16 +394,10 @@ nav a:focus:not(.nav-cta) {
 
 .newsletter-form button:hover,
 .newsletter-form button:focus {
-    background-color: #c92b36;
+    background-color: var(--button-hover);   /* updated */
 }
 
-/*
-  Artist listing styles
-  These rules format the list of artist cards on the artists index
-  page. Cards are laid out responsively in a flexbox grid similar
-  to the product cards. Adjust the max-width and flex properties as
-  needed.
-*/
+/* Artist listing styles */
 .artist-list {
     display: flex;
     flex-wrap: wrap;
@@ -495,17 +492,9 @@ nav a:focus:not(.nav-cta) {
     }
 }
 
-/*
-  -------------------------------------------------------------------------
-  Sticky CTA-first navigation bar
-  The rules below implement a minimal, conversion-focused header that stays
-  affixed to the top of the viewport. It features a translucent dark
-  background with a subtle blur, a highlighted "Shop" pill, dropdowns for
-  Artists and Support, and utility icons for search, account and cart. At
-  smaller breakpoints (≤768px) the main nav collapses behind a hamburger
-  button. The body receives top padding equal to the header height to
-  prevent content from being hidden behind the fixed bar.
-*/
+/* -------------------------------------------------------------------------
+   Sticky CTA-first navigation bar
+   ------------------------------------------------------------------------- */
 .site-header {
     position: fixed;
     top: 0;
@@ -606,19 +595,19 @@ nav a:focus:not(.nav-cta) {
     display: block;
 }
 
-/* -------- Updated util-icons with white SVG support -------- */
+/* -------- util-icons with white SVG support -------- */
 .util-icons {
     display: flex;
     gap: 16px;
     align-items: center;
-    color: #ffffff; /* everything inside inherits this color */
+    color: #ffffff;
 }
 
 .util-icons button,
 .util-icons a {
     background: none;
     border: none;
-    color: #f4f4f4;
+    color: inherit;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -628,21 +617,14 @@ nav a:focus:not(.nav-cta) {
 .util-icons img {
     width: 20px;
     height: 20px;
+    filter: brightness(0) invert(1);
 }
 
-/* inline SVGs */
 .icon {
     width: 20px;
     height: 20px;
-}
-
-.icon-btn {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
+    fill: currentColor;
+    stroke: currentColor;
 }
 
 #cart-count {
@@ -656,12 +638,7 @@ nav a:focus:not(.nav-cta) {
     font-size: 0.7rem;
 }
 
-/*
-  The hamburger icon uses an external SVG stored in the `icons` directory of
-  the repository. Avoid referencing `/assets/img` here since Cloudflare
-  rewrites all asset requests to the root document. Instead, we load the
-  graphic from the `icons` folder alongside the other nav icons.
-*/
+/* Hamburger icon */
 .hamburger {
     display: none;
     background: none;
@@ -691,19 +668,7 @@ nav a:focus:not(.nav-cta) {
     }
 }
 
-/* Offset body content for fixed header */
-body {
-    padding-top: 60px;
-}
-
-/*
-  Story page typography
-  The classes below are used on the dedicated story page
-  (our-story.html) to style headings and paragraphs consistently
-  across multiple narrative sections. They intentionally mirror
-  the font sizes and colours found in other sections to maintain
-  visual harmony.
-*/
+/* Story page typography */
 .story-page-section h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
@@ -716,47 +681,4 @@ body {
     color: #666;
     max-width: 800px;
     line-height: 1.6;
-}
-/* --- util-icons FIX: force icons white --- */
-.util-icons {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-    color: #ffffff;                /* every inline <svg> inherits this */
-}
-
-.util-icons button,
-.util-icons a {
-    background: none;
-    border: none;
-    color: inherit;                /* inherit the white, don't override */
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.icon {                            /* inline <svg class="icon"> */
-    width: 20px;
-    height: 20px;
-    fill: currentColor;
-    stroke: currentColor;
-}
-
-/* If you’re still using <img src="icons/*.svg">, flip them to white */
-.util-icons img {
-    width: 20px;
-    height: 20px;
-    filter: brightness(0) invert(1);
-}
-
-#cart-count {
-    position: absolute;
-    top: -6px;
-    right: -10px;
-    background: #e63946;
-    color: #fff;
-    border-radius: 50%;
-    padding: 2px 6px;
-    font-size: 0.7rem;
 }
