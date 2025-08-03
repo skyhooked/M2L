@@ -1,5 +1,5 @@
 /* ===========================================================
-   M2-Labs  |  Charcoal + Copper palette  |  2025-08-03 FINAL
+   M2-Labs | Charcoal + Copper palette | 2025-08-03 FIXED
 =========================================================== */
 
 /* Font */
@@ -19,6 +19,9 @@
     --cta-radius:      6px;
 
     --font-base:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+
+    /* new tokens */
+    --header-h:72px;
 }
 
 /* ---------- RESET ---------- */
@@ -29,7 +32,7 @@ body{
     line-height:1.6;
     background:var(--neutral-0);
     color:var(--neutral-90);
-    padding-top:60px;                /* space for fixed header */
+    padding-top:var(--header-h);     /* space for fixed header */
 }
 img{max-width:100%;display:block}
 
@@ -62,7 +65,7 @@ header{
     top:0;
     left:0;
     width:100%;
-    height:60px;
+    height:var(--header-h);
     z-index:1000;
     background:var(--neutral-90);
     border-bottom:1px solid rgba(255,255,255,.15);
@@ -74,32 +77,34 @@ header .nav-container{
     width:100%;
     margin:0 auto;
     height:100%;
-    padding:0 20px;
+    padding:0 24px;
     display:flex;
     align-items:center;
 }
 
 /* logo */
 header .logo{flex:none}
-header .logo img{height:40px}
+header .logo img{height:48px;width:auto}
 
 /* primary nav */
 header nav{
-    margin-left:40px;
+    flex:1 1 auto;
+    height:100%;
     display:flex;
     align-items:center;
-    height:100%;
+    justify-content:center;
 }
 header nav ul{
     display:flex;
-    gap:1.5rem;
+    align-items:center;
+    gap:2rem;
     list-style:none;
 }
 header nav li{position:relative}
 header nav a{
     color:#fff;
-    font-size:.85rem;
-    line-height:60px;
+    font-size:.875rem;
+    line-height:var(--header-h);
     text-transform:uppercase;
     letter-spacing:.03em;
     text-decoration:none;
@@ -107,6 +112,21 @@ header nav a{
 }
 header nav a:hover,
 header nav a:focus{color:#B87333}
+
+/* “SHOP” button variant */
+header nav a.shop-btn{
+    background:var(--cta-fill);
+    color:var(--cta-text);
+    border:1px solid var(--cta-border);
+    padding:.5rem 1.5rem;
+    border-radius:var(--cta-radius);
+    font-weight:600;
+    transition:background .25s;
+}
+header nav a.shop-btn:hover{
+    background:var(--cta-fill-hover);
+    color:var(--cta-text);
+}
 
 /* dropdown */
 .dropdown-parent:hover>.dropdown{display:block}
@@ -139,6 +159,7 @@ header nav a:focus{color:#B87333}
     display:flex;
     align-items:center;
     gap:1.25rem;
+    flex-shrink:0;
 }
 .nav-icons button,
 .nav-icons a{
@@ -158,14 +179,15 @@ header nav a:focus{color:#B87333}
 .nav-icons a:focus{color:#B87333}
 .nav-icons svg,
 .icon{
-    width:20px;
-    height:20px;
+    width:22px;
+    height:22px;
     fill:currentColor;
     stroke:currentColor;
+    transform:none !important;      /* prevents accidental rotation */
 }
 .nav-icons img{
-    width:20px;
-    height:20px;
+    width:22px;
+    height:22px;
     filter:brightness(0) invert(1);
 }
 #cart-count{
@@ -182,8 +204,8 @@ header nav a:focus{color:#B87333}
 
 /* ---------- HERO ---------- */
 .hero{
-    height:calc(100vh - 60px); /* adjust for fixed header */
-    margin-top:0;              /* <-- FIX: removed the extra gap */
+    height:calc(100vh - var(--header-h));
+    margin-top:0;
     display:flex;
     align-items:center;
     justify-content:center;
