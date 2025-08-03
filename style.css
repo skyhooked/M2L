@@ -215,7 +215,7 @@ header nav a.shop-btn:hover{
     background:rgba(0,0,0,.6);
     padding:40px;
     border-radius:10px;
-    text-align:center;
+    text-align:right;
 }
 .hero h1{font-size:3rem;margin-bottom:1rem;color:#fff}
 .hero p {font-size:1.25rem;margin-bottom:2rem;color:#fff}
