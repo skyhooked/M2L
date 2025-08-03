@@ -1,8 +1,8 @@
 /*
-  script.js – updated to dynamically inject shared header and footer fragments
-  so that changes only need to be made once in partials/header.html and
-  partials/footer.html for them to propagate across the entire site.
-*/
+      script.js – updated to dynamically inject shared header and footer 
+      fragments so that changes only need to be made once in partials/header.html and
+      partials/footer.html for them to propagate across the entire site.
+    */
 
 // Helper: fetch an HTML fragment and replace the matching element in the DOM
 function loadFragment(url, selector) {
@@ -27,8 +27,9 @@ function initSite() {
     const ham = document.querySelector('.hamburger');
     const nav = document.querySelector('.primary-nav');
     if (ham && nav) {
+        // Use the 'show' class here so it matches CSS rather than the previous 'open'.
         ham.addEventListener('click', () => {
-            nav.classList.toggle('open');
+            nav.classList.toggle('show');
         });
     }
 
