@@ -303,15 +303,15 @@ img {
     align-items: center;
     justify-content: flex-end;
     padding-right: 5%;
-    background: url('product images/TBOHero3.webp') center / cover no-repeat;
+    background: url('product images/TBOHero4.webp') center / cover no-repeat;
 }
 
 /* ---------- HERO RESPONSIVE IMAGES ---------- */
 @media (max-width: 1400px) {
-    .hero { background: url('product images/TBOHero3.webp') center / cover no-repeat; }
+    .hero { background: url('product images/TBOHero4.webp') center / cover no-repeat; }
 }
 @media (max-width: 1024px) {
-    .hero { background: url('product images/TBOHero3.webp') center / cover no-repeat; }
+    .hero { background: url('product images/TBOHero4.webp') center / cover no-repeat; }
 }
 
 /* phones */
@@ -320,7 +320,7 @@ img {
         justify-content: center;
         padding-right: 0;
         text-align: center;
-        background: url('product images/TBOHero3.webp') center / cover no-repeat;
+        background: url('product images/TBOHero4.webp') center / cover no-repeat;
     }
 }
 
