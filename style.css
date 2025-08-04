@@ -139,7 +139,7 @@ img {
     color: var(--cta-text);
 }
 
-/* ---------- DROPDOWN ---------- */
+/* Dropdown */
 .site-header .dropdown {
     position: relative;
 }
@@ -167,8 +167,8 @@ img {
     top: 100%;
     left: 0;
     /* auto-size to widest item */
-    width: max-content;
-    min-width: unset;
+    width: max-content;      /* ← NEW */
+    min-width: unset;        /* ← NEW */
     background: var(--neutral-90);
     padding: 0.5rem 0;
     border-radius: 4px;
@@ -176,7 +176,7 @@ img {
 }
 .site-header .dropdown-menu a {
     display: block;
-    padding: 0.3rem 1rem; /* tighter rows, equal L/R */
+    padding: 0.3rem 1rem;    /* ← NEW: compact desktop rows */
     font-size: 0.8rem;
     line-height: 1.2;
     color: #fff;
@@ -187,7 +187,7 @@ img {
     color: #B87333;
 }
 
-/* ---------- UTILITY ICONS ---------- */
+/* Utility icons */
 .util-icons {
     margin-left: auto;
     display: flex;
@@ -232,7 +232,7 @@ img {
 
 /* ---------- HAMBURGER ICON ---------- */
 .hamburger {
-    display: none; /* shown in media query */
+    display: none;               /* shown in media query */
     background: none;
     border: none;
     cursor: pointer;
@@ -252,9 +252,15 @@ img {
     background: #fff;
     transition: transform 0.3s, opacity 0.3s;
 }
-.hamburger::before { top: 9px; }
-.hamburger span      { top: 15px; }
-.hamburger::after  { top: 21px; }
+.hamburger::before {
+    top: 9px;
+}
+.hamburger span {
+    top: 15px;
+}
+.hamburger::after {
+    top: 21px;
+}
 
 /* Legacy .menu-toggle kept for old pages */
 .menu-toggle {
@@ -482,8 +488,8 @@ img {
         right: 0;
         left: 0;
         background: var(--neutral-90);
-        padding: 1rem 0;
-        gap: 1rem;
+        padding: 0.25rem 0;   /* ← NEW: less top/bottom padding */
+        gap: 0.75rem;         /* ← NEW: tighter gap */
         z-index: 1001;
         text-align: center;
     }
@@ -539,6 +545,11 @@ img {
     .product-card {
         flex: 1 1 100%;
         max-width: 100%;
+    }
+
+    /* larger tap targets in dropdown */
+    .site-header .dropdown-menu a {
+        padding: 0.6rem 1rem;  /* ← NEW */
     }
 }
 
