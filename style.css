@@ -172,10 +172,13 @@ img {
     border-radius: 4px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
 }
+
+/* ↓↓↓  SMALLER ROW HEIGHT FOR EACH ITEM ↓↓↓ */
 .site-header .dropdown-menu a {
     display: block;
-    padding: 0.5rem 1rem;
+    padding: 0.3rem 1rem;   /* was 0.5rem 1rem */
     font-size: 0.8rem;
+    line-height: 1.2;       /* keeps rows compact */
     color: #fff;
 }
 .site-header .dropdown-menu a:hover,
