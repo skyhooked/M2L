@@ -294,34 +294,39 @@ img {
     background: url('product images/Hero1.webp') center / cover no-repeat;
 }
 
-/* ---------- HERO RESPONSIVE IMAGES ---------- */
-@media (max-width: 1400px) {
-    .hero { background-image: url('product images/Hero1-1440.webp'); }
-}
-@media (max-width: 1024px) {
-    .hero { background-image: url('product images/Hero1-1024.webp'); }
+/* ---------- HERO ---------- */
+.hero {
+    height: calc(100vh - var(--header-h));
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 5%;
+    background: url('product images/Hero1.webp') center / cover no-repeat;
 }
 
-.hero-overlay {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 40px;
-    border-radius: 10px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
+/* ---------- HERO RESPONSIVE IMAGES ---------- */
+/* Make sure these filenames exist in /product images/ */
+@media (max-width: 1400px) {
+    .hero {
+        /* full shorthand keeps size/position/repeat intact */
+        background: url('product images/Hero1-1440.webp') center / cover no-repeat;
+    }
 }
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: #fff;
+@media (max-width: 1024px) {
+    .hero {
+        background: url('product images/Hero1-1024.webp') center / cover no-repeat;
+    }
 }
-.hero p {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-    color: #fff;
-}
+
+/* phones */
+@media (max-width: 768px) {
+    .hero {
+        justify-content: center;
+        padding-right: 0;
+        text-align: center;
+        background: url('product images/Hero1-600.webp') center / cover no-repeat;
+    }
 
 /* ---------- SECTIONS / CARDS / FOOTER ---------- */
 .section {
