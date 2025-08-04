@@ -166,9 +166,8 @@ img {
     position: absolute;
     top: 100%;
     left: 0;
-    /* auto-size to widest item */
-    width: max-content;      /* ← NEW */
-    min-width: unset;        /* ← NEW */
+    width: max-content;     /* auto-size to widest item */
+    min-width: unset;
     background: var(--neutral-90);
     padding: 0.5rem 0;
     border-radius: 4px;
@@ -176,7 +175,7 @@ img {
 }
 .site-header .dropdown-menu a {
     display: block;
-    padding: 0.3rem 1rem;    /* ← NEW: compact desktop rows */
+    padding: 0.6rem 1rem;   /* larger tap target */
     font-size: 0.8rem;
     line-height: 1.2;
     color: #fff;
@@ -488,10 +487,11 @@ img {
         right: 0;
         left: 0;
         background: var(--neutral-90);
-        padding: 0.25rem 0;   /* ← NEW: less top/bottom padding */
-        gap: 0.75rem;         /* ← NEW: tighter gap */
+        padding: 0.25rem 0;
+        gap: 0.75rem;
         z-index: 1001;
         text-align: center;
+        justify-content: flex-start; /* <-- ADDED: start items just below header */
     }
     .site-header .primary-nav.show {
         display: flex;
@@ -549,7 +549,7 @@ img {
 
     /* larger tap targets in dropdown */
     .site-header .dropdown-menu a {
-        padding: 0.6rem 1rem;  /* ← NEW */
+        padding: 0.6rem 1rem;
     }
 }
 
