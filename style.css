@@ -96,6 +96,11 @@ img {
 .site-header .logo img {
     height: 48px;
     width: auto;
+    /* invert logo on hover */
+.site-header .logo:hover img {
+    filter: invert(1);   /* white ↔ black (or dark) */
+}
+
 }
 
 /* Primary navigation */
