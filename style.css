@@ -98,11 +98,13 @@ img {
     width: auto;
 }
 
-/* change logo from black to #B87333 on hover */
-.site-header .logo:hover img {
-    /* the following filter chain approximates the copper tone (#B87333) */
-    filter: invert(57%) sepia(67%) saturate(742%) hue-rotate(347deg) brightness(50%) contrast(96%);
-}
+/* ---------- LOGO COLOUR EFFECT ---------- */
+/* Remove the old full-logo tint and target only the wave paths */
+.site-header .logo:hover img { filter: none; }   /* suppress previous filter */
+
+/* 1) default charcoal waves   2) copper on hover  */
+.logo svg .waves            { fill: var(--neutral-90); transition: fill .25s; }
+.logo:hover svg .waves      { fill: #B87333; }
 
 /* Primary navigation */
 .site-header .primary-nav {
@@ -291,21 +293,15 @@ img {
     align-items: center;
     justify-content: flex-end;
     padding-right: 5%;
-    background: url('product images/Hero2.webp') center / cover no-repeat;
+    background: url('product images/Hero1.webp') center / cover no-repeat;
 }
 
-/* ---------- HERO RESPONSIVE IMAGES ----------
-   If you *only* have one WebP file, point every
-   breakpoint at that same file so nothing breaks. */
+/* ---------- HERO RESPONSIVE IMAGES ---------- */
 @media (max-width: 1400px) {
-    .hero {
-        background: url('product images/Hero2.webp') center / cover no-repeat;
-    }
+    .hero { background: url('product images/Hero1.webp') center / cover no-repeat; }
 }
 @media (max-width: 1024px) {
-    .hero {
-        background: url('product images/Hero2.webp') center / cover no-repeat;
-    }
+    .hero { background: url('product images/Hero1.webp') center / cover no-repeat; }
 }
 
 /* phones */
@@ -314,10 +310,8 @@ img {
         justify-content: center;
         padding-right: 0;
         text-align: center;
-        background: url('product images/Hero2.webp') center / cover no-repeat;
+        background: url('product images/Hero1.webp') center / cover no-repeat;
     }
-
-    /* (rest of the ≤768px rules unchanged) */
 }
 
 .hero-overlay {
