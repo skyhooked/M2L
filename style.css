@@ -96,15 +96,25 @@ img {
 .site-header .logo img {
     height: 48px;
     width: auto;
+    display: block;              /* ensure no inline gap */
+    transition: opacity .25s;    /* fade when swapping */
 }
 
 /* ---------- LOGO COLOUR EFFECT ---------- */
-/* Remove the old full-logo tint and target only the wave paths */
-.site-header .logo:hover img { filter: none; }   /* suppress previous filter */
+/* Simple image-swap overlay: copper wave SVG appears on hover */
+.site-header .logo { position: relative; display: inline-block; }
 
-/* 1) default charcoal waves   2) copper on hover  */
-.logo svg .waves            { fill: var(--neutral-90); transition: fill .25s; }
-.logo:hover svg .waves      { fill: #B87333; }
+.site-header .logo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('logos/H-Logo-white-copperwaves.svg') center/contain no-repeat;
+    opacity: 0;
+    transition: opacity .25s;
+}
+
+.site-header .logo:hover::after { opacity: 1; }  /* show copper waves */
+.site-header .logo:hover img    { opacity: 0; }  /* hide charcoal waves */
 
 /* Primary navigation */
 .site-header .primary-nav {
