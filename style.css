@@ -101,7 +101,7 @@ img {
 /* change logo from black to #B87333 on hover */
 .site-header .logo:hover img {
     /* the following filter chain approximates the copper tone (#B87333) */
-    filter: invert(57%) sepia(67%) saturate(742%) hue-rotate(347deg) brightness(96%) contrast(96%);
+    filter: invert(57%) sepia(67%) saturate(742%) hue-rotate(347deg) brightness(75%) contrast(96%);
 }
 
 /* Primary navigation */
