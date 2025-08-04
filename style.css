@@ -108,7 +108,7 @@ img {
     content: '';
     position: absolute;
     inset: 0;
-    background: url('logos/H-Logo-white-copperwaves.svg') center/contain no-repeat;
+    background: url('logos/H-Logo-white-orangewaves.svg') center/contain no-repeat;
     opacity: 0;
     transition: opacity .25s;
 }
