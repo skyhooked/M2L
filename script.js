@@ -27,6 +27,7 @@ function initSite() {
     const ham = document.querySelector('.hamburger');
     const nav = document.querySelector('.primary-nav');
     if (ham && nav) {
+        // Use the 'show' class here so it matches CSS rather than the previous 'open'.
         ham.addEventListener('click', () => {
             nav.classList.toggle('show');
         });
@@ -83,11 +84,13 @@ document.addEventListener('DOMContentLoaded', () => {
         loadFragment('partials/footer.html', 'footer.footer')
     ])
         .then(() => {
+            // Remove any deprecated inline SVG logo remnants
             document.querySelectorAll('#m2-logo').forEach(el => el.remove());
             initSite();
         })
         .catch(err => {
             console.error(err);
+            // Fallback: initialise site even if fragments fail to load
             initSite();
         });
 });
