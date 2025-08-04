@@ -291,8 +291,17 @@ img {
     align-items: center;
     justify-content: flex-end;
     padding-right: 5%;
-    background: url('product images/tbo-hero7.png') center / cover no-repeat;
+    background: url('product images/Hero1.webp') center / cover no-repeat;
 }
+
+/* ---------- HERO RESPONSIVE IMAGES ---------- */
+@media (max-width: 1400px) {
+    .hero { background-image: url('product images/Hero1-1440.webp'); }
+}
+@media (max-width: 1024px) {
+    .hero { background-image: url('product images/Hero1-1024.webp'); }
+}
+
 .hero-overlay {
     background: rgba(0, 0, 0, 0.6);
     padding: 40px;
@@ -520,6 +529,7 @@ img {
         justify-content: center;
         padding-right: 0;
         text-align: center;
+        background-image: url('product images/Hero1-600.webp');
     }
     .hero-overlay {
         width: 90%;
