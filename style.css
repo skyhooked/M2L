@@ -1,3 +1,4 @@
+```css
 /* ===========================================================
    M2-Labs | Charcoal + Copper palette | 2025-08-03 MOBILE FIX
 =========================================================== */
@@ -98,9 +99,10 @@ img {
     width: auto;
 }
 
-/* invert logo on hover */
+/* change logo from black to #B87333 on hover */
 .site-header .logo:hover img {
-    filter: invert(1);   /* white ↔ black (or dark) */
+    /* the following filter chain approximates the copper tone (#B87333) */
+    filter: invert(46%) sepia(67%) saturate(742%) hue-rotate(347deg) brightness(96%) contrast(96%);
 }
 
 /* Primary navigation */
@@ -559,3 +561,4 @@ img {
 }
 
 /* (end of style.css) */
+```
