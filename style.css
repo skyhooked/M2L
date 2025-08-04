@@ -291,7 +291,7 @@ img {
     align-items: center;
     justify-content: flex-end;
     padding-right: 5%;
-    background: url('product images/Hero1.webp') center / cover no-repeat;
+    background: url('product images/Hero2.webp') center / cover no-repeat;
 }
 
 /* ---------- HERO RESPONSIVE IMAGES ----------
@@ -299,12 +299,12 @@ img {
    breakpoint at that same file so nothing breaks. */
 @media (max-width: 1400px) {
     .hero {
-        background: url('product images/Hero1.webp') center / cover no-repeat;
+        background: url('product images/Hero2.webp') center / cover no-repeat;
     }
 }
 @media (max-width: 1024px) {
     .hero {
-        background: url('product images/Hero1.webp') center / cover no-repeat;
+        background: url('product images/Hero2.webp') center / cover no-repeat;
     }
 }
 
@@ -314,7 +314,7 @@ img {
         justify-content: center;
         padding-right: 0;
         text-align: center;
-        background: url('product images/Hero1.webp') center / cover no-repeat;
+        background: url('product images/Hero2.webp') center / cover no-repeat;
     }
 
     /* (rest of the ≤768px rules unchanged) */
