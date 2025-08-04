@@ -285,13 +285,15 @@ img {
 
 /* ---------- HERO ---------- */
 .hero {
-    height: calc(100vh - var(--header-h));
+    height: auto;
     margin-top: 0;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     padding-right: 5%;
     background: url('product images/tbo-hero7.png') center / cover no-repeat;
+    background-position: top center;     /* start at the top */
+    background-repeat: no-repeat;        /* don’t tile */
 }
 .hero-overlay {
     background: rgba(0, 0, 0, 0.6);
