@@ -248,7 +248,7 @@ img {
     left: 4px;
     right: 4px;
     height: 3px;
-    background: #fff;
+    background: #FF8A3D;
     transition: transform 0.3s, opacity 0.3s;
 }
 .hamburger::before {
