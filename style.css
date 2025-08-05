@@ -351,7 +351,7 @@ img{max-width:100%;display:block;}
 }
 
 .hero .hero-img {
-    display: none; /* Hide the <picture> element on mobile */
+    display: none; /* Hide the empty div on mobile */
 }
 
 .hero-copy {
@@ -384,33 +384,37 @@ img{max-width:100%;display:block;}
         justify-content: center;
         align-items: center;
         gap: 5vw;
+        width: 100%;
         max-width: 1400px;
         margin: 0 auto;
         background-image: none;
         background-color: var(--neutral-90);
-        padding: 2rem;
+        padding: 2rem 4rem;
     }
 
-    /* Make text block visible and stable */
+    /* Text block styles */
     .hero-copy {
-        order: 1; /* Text on the left */
-        flex: 1 1 45%; /* More robust flex definition */
-        max-width: 500px; /* Set a max-width for consistency */
+        flex: 1 1 45%;
+        max-width: 500px;
         text-align: left;
-        background: none; /* Remove mobile overlay */
+        background: none;
         padding: 0;
         backdrop-filter: none;
     }
     
     .hero-copy h1, .hero-copy p {
-        color: var(--neutral-0); /* Ensure text is white */
+        color: var(--neutral-0);
     }
 
-    /* Make image block visible and stable */
+    /* Image container styles - THIS IS THE NEW, STABLE METHOD */
     .hero-img {
-        display: block; /* Show the <picture> element */
-        order: 2; /* Image on the right */
-        flex: 1 1 50%; /* More robust flex definition */
-        min-width: 0; /* Prevents flex item from overflowing */
+        display: block; /* Make the div visible */
+        flex: 1 1 55%;  /* Allow it to take up space */
+        height: 70vh;   /* Give it an explicit height */
+        max-height: 600px; /* And a max height */
+        background-image: url('product%20images/TBOHero4.webp');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
     }
 }
