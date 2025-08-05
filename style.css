@@ -826,6 +826,40 @@ img{max-width:100%;display:block;}
 /* ===========================  END  =============================== */
 
 
+/* ==========================================================
+   QUICK FIX – stop the dark veil + force new colours
+   ----------------------------------------------------------
+   ⬇︎  paste everything between these comment lines at the very end
+========================================================== */
+
+/* 1 ▸ nuke the gradient veil that’s still sitting on top   */
+.hero::before{
+    background:none !important;   /* removes the gradient */
+    content:'';                   /* keeps layout happy    */
+}
+
+/* 2 ▸ hide the obsolete overlay box (not in the HTML now)  */
+.hero-overlay{display:none !important;}
+
+/* 3 ▸ be 100 % sure the hero itself has *no* background
+      (the <picture> tag delivers the image)               */
+.hero{background:none !important;}
+
+/* 4 ▸ force charcoal copy so old #fff rules can’t win      */
+.hero-copy h1,
+.hero-copy p{
+    color:#36454F !important;    /* Neutral-90 */
+}
+
+/* 5 ▸ OPTIONAL – keep same colour on phones; remove if you want white */
+@media(max-width:768px){
+  .hero-copy h1,
+  .hero-copy p{color:#36454F !important;}
+}
+
+/* =======================  END PATCH  ====================== */
+
+
 }
 
 /* (end of style.css) */
