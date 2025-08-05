@@ -743,7 +743,11 @@ nav a:focus:not(.nav-cta) {
     border: 0;
     width: 32px;
     height: 32px;
-    background: url('icons/hamburger.svg') center/contain no-repeat;
+    background: url("data:image/svg+xml;utf8,\
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'>\
+      <path d='M4 8h24 M4 16h24 M4 24h24' stroke='%23FF8A3D' stroke-width='2'/>\
+      </svg>"
+ ) center/contain no-repeat;
     cursor: pointer;
 }
 @media (max-width: 768px) {
