@@ -277,19 +277,24 @@ nav a:focus:not(.nav-cta) {
     .hero {
         flex-direction: row;
         text-align: left;
-        padding: 0 2rem;
+        padding: 0;
+        background-color: var(--primary-text);
     }
     .hero-img {
         order: 0;             /* image on the left */
         flex: 0 0 55%;
         min-height: 100%;
         background-image: url('product%20images/TBOHero4.webp');
+        background-position: center center;
     }
     .hero-copy {
         order: 1;             /* text on the right */
         flex: 1;
         max-width: 520px;
         margin-left: auto;
+        background-color: rgba(0,0,0,0.75);
+        padding: 2rem;
+        border-radius: 12px;
     }
 }
 
@@ -683,7 +688,7 @@ nav a:focus:not(.nav-cta) {
     left: 0;
     min-width: 180px;
     background: var(--primary-text);
-    box-shadow: box-shadow: none;
+    box-shadow: none;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 4px;
     padding: 10px 0;
