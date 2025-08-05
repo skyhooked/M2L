@@ -322,7 +322,7 @@ img {
         text-align: center;
         background: url('product images/Hero1.webp') center / cover no-repeat;
         /* ADDED – mobile knob-visibility fix */
-        background-position: 5% center;
+        background-position: -15% center;
     }
 }
 
