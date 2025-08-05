@@ -197,14 +197,12 @@ nav a:focus:not(.nav-cta) {
       keeps the repository light while providing an eye‑catching
       backdrop.  Remember to use HTTPS.
     */
-    background-image: url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1650&q=80');
-    background-size: cover;
-    background-position: center;
+    /* Background handled by .hero-img element */
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-top: 80px; /* offset for fixed header */
+    margin-top: 0;
 }
 
 /* ------------------------------------------------------------------
@@ -231,7 +229,8 @@ nav a:focus:not(.nav-cta) {
 }
 
 /* Subtle gradient makes text panel feel integrated while revealing
-   the pedal graphics on the left. Only shown on tablets + desktops. */
+   the pedal graphics on the left. Only shown on tablets + desktops.
+   (opacity toggled via media queries below) */
 .hero::before {
     content: '';
     position: absolute;
@@ -242,6 +241,38 @@ nav a:focus:not(.nav-cta) {
     opacity: 0;           /* hidden on mobile */
     transition: opacity 0.3s ease;
 }
+
+/* -------- Mobile hero overlay -------- */
+@media (max-width: 767px) {
+    .hero {
+        display: block;
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .hero-img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .hero-copy {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 90%;
+        padding: 0 1rem;
+        text-align: center;
+    }
+
+    .hero::before {
+        opacity: 0;
+    }
+}
+
 
 @media (min-width: 768px) {
     .hero::before {
@@ -727,7 +758,8 @@ nav a:focus:not(.nav-cta) {
     .primary-nav {
         display: none;
     }
-    .primary-nav.open {
+    .primary-nav.open,
+    .primary-nav.show {
         display: flex;
         flex-direction: column;
         background: var(--primary-text);
