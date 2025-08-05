@@ -306,6 +306,28 @@ img {
     background: url('product images/TBOHero4.webp') center / cover no-repeat;
 }
 
+/* ---------- GLOBAL HERO OVERLAY ---------- */
+.hero-overlay{                                /* ← ADDED */
+    background:rgba(0,0,0,.6);
+    padding:40px;
+    border-radius:10px;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:1.5rem;
+}
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
 /* ---------- HERO RESPONSIVE IMAGES ---------- */
 @media (max-width: 1400px) {
     .hero { background: url('product images/TBOHero4.webp') center / cover no-repeat; }
