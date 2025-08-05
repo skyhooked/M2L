@@ -43,9 +43,9 @@ html{scroll-behavior:smooth;}
 body{
     font-family:var(--font-base);
     line-height:1.6;
-    background:var(--neutral-0);
-    color:var(--neutral-90);
-    padding-top:var(--header-h);         /* space for fixed header */
+    background:var(--neutral-90); /* Set dark background for the whole page */
+    color:var(--neutral-0);       /* Set light text for the whole page */
+    padding-top:var(--header-h);  /* space for fixed header */
 }
 img{max-width:100%;display:block;}
 
@@ -62,7 +62,7 @@ img{max-width:100%;display:block;}
     font-weight:600;
     text-decoration:none;
     cursor:pointer;
-    transition:background .25s,color .25s;
+    transition:background .25s,color .25s, transform .25s, box-shadow .25s;
 }
 .btn:hover,.btn:focus,
 .nav-cta:hover,.nav-cta:focus{
@@ -84,7 +84,7 @@ img{max-width:100%;display:block;}
     align-items: center;
 }
 .site-header .nav-wrap {
-    max-width: 1200px;
+    max-width: 1400px;
     width: 100%;
     margin: 0 auto;
     height: 100%;
@@ -122,11 +122,18 @@ img{max-width:100%;display:block;}
 .site-header .primary-nav {
     flex: 1 1 auto;
     height: 100%;
-    display: flex;
+    display: none; /* Hidden by default, shown on desktop */
     align-items: center;
     justify-content: center;
     gap: 2rem;
 }
+
+@media(min-width: 1024px) {
+    .site-header .primary-nav {
+        display: flex;
+    }
+}
+
 .site-header .primary-nav a {
     color: #fff;
     font-size: 0.875rem;
@@ -251,15 +258,23 @@ img{max-width:100%;display:block;}
 
 /* ---------- HAMBURGER ICON ---------- */
 .hamburger {
-    display: none;               /* shown in media query */
+    display: block; /* Shown on mobile */
     background: none;
     border: none;
     cursor: pointer;
-    margin-left: auto;
+    margin-left: 1rem;
     width: 32px;
     height: 32px;
     position: relative;
+    z-index: 1002;
 }
+
+@media(min-width: 1024px) {
+    .hamburger {
+        display: none;
+    }
+}
+
 .hamburger::before,
 .hamburger::after,
 .hamburger span {
@@ -271,167 +286,23 @@ img{max-width:100%;display:block;}
     background: #FF8A3D;
     transition: transform 0.3s, opacity 0.3s;
 }
-.hamburger::before {
-    top: 9px;
-}
-.hamburger span {
-    top: 15px;
-}
-.hamburger::after {
-    top: 21px;
-}
-
-/* Legacy .menu-toggle kept for old pages */
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    margin-left: auto;
-    width: 32px;
-    height: 32px;
-}
-.menu-toggle img {
-    width: 100%;
-    height: 100%;
-    filter: brightness(0) invert(1);
-}
+.hamburger::before { top: 9px; }
+.hamburger span { top: 15px; }
+.hamburger::after { top: 21px; }
 
 /* ---------- SECTIONS / CARDS / FOOTER ---------- */
 .section {
     max-width: 1200px;
     margin: 0 auto;
     padding: 5rem 1rem;
+    background: var(--neutral-0); /* Light background for inner page sections */
+    color: var(--neutral-90);     /* Dark text for inner page sections */
 }
-
-.products {
-    text-align: center;
-}
-.products h2 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+.section h2, .section h3, .section p {
     color: var(--neutral-90);
 }
-.products p {
-    max-width: 900px;
-    margin: 0 auto 2rem;
+.section p {
     color: var(--neutral-60);
-}
-.product-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-}
-.product-card {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 520px;
-    flex: 1 1 300px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
-.product-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-.product-card h3 {
-    font-size: 1.25rem;
-    margin: 1rem;
-    color: var(--neutral-90);
-}
-.product-card p {
-    margin: 0 1rem 1rem;
-    color: var(--neutral-60);
-    flex-grow: 1;
-}
-.product-card .btn {
-    margin: 0 1rem 1.5rem;
-}
-
-.story-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    align-items: center;
-}
-.story-image {
-    flex: 1 1 50%;
-    min-height: 300px;
-    border-radius: 8px;
-    background: url('https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1000&q=80') center / cover no-repeat;
-}
-.story-content {
-    flex: 1 1 50%;
-}
-.story-content h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: var(--neutral-90);
-}
-.story-content p {
-    margin-bottom: 1.5rem;
-    color: var(--neutral-60);
-}
-
-.newsletter {
-    text-align: center;
-}
-.newsletter h2 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    color: var(--neutral-90);
-}
-.newsletter p {
-    margin-bottom: 2rem;
-    color: var(--neutral-60);
-}
-.newsletter-form {
-    display: flex;
-    gap: 0.5rem;
-    justify-content: center;
-    max-width: 600px;
-    margin: 0 auto;
-}
-.newsletter-form input[type="email"] {
-    flex: 1;
-    padding: 0.75rem 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-}
-
-.artist-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-}
-.artist-card {
-    background: #fff;
-    border-radius: 8px;
-    padding: 1.5rem;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    flex: 1 1 300px;
-    max-width: 320px;
-    display: flex;
-    flex-direction: column;
-}
-.artist-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--neutral-90);
-}
-.artist-card p {
-    margin-bottom: 1rem;
-    color: var(--neutral-60);
-}
-.artist-card .btn {
-    align-self: center;
 }
 
 .footer {
@@ -459,139 +330,88 @@ img{max-width:100%;display:block;}
     color: #B87333;
 }
 
-/* ---------- RESPONSIVE ---------- */
-@media (max-width: 768px) {
-    /* show .hamburger and legacy .menu-toggle on small screens */
-    .hamburger,
-    .menu-toggle {
-        display: block;
-    }
-
-    /* slide-down mobile nav */
-    .site-header .primary-nav {
-        display: none;
-        flex-direction: column;
-        position: fixed;
-        top: var(--header-h);
-        right: 0;
-        left: 0;
-        background: var(--neutral-90);
-        padding: 20px 0;
-        gap: 0.75rem;
-        z-index: 1001;
-        text-align: center;
-        justify-content: flex-start; /* start items just below header */
-    }
-    .site-header .primary-nav.show {
-        display: flex;
-    }
-
-    /* dark translucent backdrop behind menu */
-    .nav-backdrop {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.6);
-        z-index: 1000;
-    }
-    .primary-nav.show + .nav-backdrop {
-        display: block;
-    }
-   
-    /* story & product tweaks */
-    .story-container {
-        flex-direction: column;
-    }
-    .product-grid {
-        gap: 1.5rem;
-    }
-    .product-card {
-        flex: 1 1 100%;
-        max-width: 100%;
-    }
-
-    /* larger tap targets in dropdown */
-    .site-header .dropdown-menu a {
-        padding: 0.6rem 1rem;
-    }
-}
-
 
 /* ==========================================================
-   HERO — single clean definition (image left ≤1023px, right ≥1024px)
+   CORRECTED HERO SECTION STYLES
    ========================================================== */
 
-/* base (phones & tablets) ---------------------------------- */
-.hero{
-    display:flex;
-    flex-direction:column;        /* image first, copy underneath */
-    align-items:center;
-    text-align:center;
-    gap:2rem;
-    max-width:1400px;
-    margin:0 auto;
-    padding:clamp(3rem,6vw,6rem) 5vw;
-    background:none;              /* NO background image here    */
-    height: calc(100vh - var(--header-h));
+/* Mobile-First: Full-bleed background image with overlay card */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: calc(100vh - var(--header-h));
+    padding: 2rem;
+    /* This creates a dark layer on top of the background image for text contrast */
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('product%20images/TBOHero4.webp');
+    background-size: cover;
+    background-position: center;
 }
 
-/* pedal image */
-.hero-img{
-    width:80%;
-    max-width:550px;
-}
-.hero-img img{
-    width:100%;
-    height:auto;
-    object-fit:contain;
+/* On mobile, we HIDE the <picture> element because the image is in the CSS background */
+.hero .hero-img {
+    display: none;
 }
 
-/* copy column */
-.hero-copy{
-    max-width:32rem;
-}
-.hero-copy h1{
-    color:#36454F;
-    font-size:clamp(2.5rem,5vw,3.5rem);
-    line-height:1.1;
-    text-shadow:0 2px 4px rgba(0,0,0,.35);
-}
-.hero-copy p{
-    color:#6C7A83;
-    margin:1rem 0 2rem;
-    font-size:1.125rem;
-    text-shadow:0 2px 4px rgba(0,0,0,.35);
+.hero-copy {
+    background: rgba(20, 20, 20, 0.6); /* Semi-transparent dark card */
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 500px;
+    backdrop-filter: blur(5px); /* Optional: glass effect */
 }
 
-/* button */
-.btn{
-    background:#FF8A3D;
-    color:#000;
-    box-shadow:0 4px 8px -2px rgba(0,0,0,.4);
-    transition:box-shadow .25s, transform .25s;
-}
-.btn:hover,
-.btn:focus{
-    background:#B87333;
-    box-shadow:0 6px 12px -2px rgba(0,0,0,.5);
-    transform:translateY(-2px);
+.hero-copy h1 {
+    color: var(--neutral-0); /* White text */
+    font-size: clamp(2.2rem, 6vw, 3rem);
+    line-height: 1.2;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
 
-/* desktop ≥1024px : swap columns --------------------------- */
-@media(min-width:1024px){
-    .hero{
-        flex-direction:row-reverse;
-        justify-content: center;
-        text-align:right;
-        gap:5vw;
+.hero-copy p {
+    color: var(--neutral-0); /* White text */
+    margin: 1rem 0 2rem;
+    font-size: 1.125rem;
+    opacity: 0.9;
+}
+
+/* Desktop: Split-screen layout */
+@media (min-width: 1024px) {
+    .hero {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 4vw;
+        max-width: 1400px;
+        margin: 0 auto;
+        /* On desktop, we remove the background image and use a solid dark color */
+        background-image: none;
+        background-color: var(--neutral-90);
+        padding: 4rem;
     }
-    .hero-img{
-        flex-basis: 45%;
+
+    /* SHOW the <picture> element again on desktop */
+    .hero .hero-img {
+        display: block;
+        flex: 1 1 50%; /* Takes up half the space */
+        order: 2; /* Puts image on the right */
     }
-    .hero-copy{
-        flex-basis: 45%;
-        margin-right:5vw;
+
+    .hero .hero-img img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .hero .hero-copy {
+        flex: 1 1 45%; /* Takes up slightly less than half */
+        order: 1; /* Puts text on the left */
+        text-align: left;
+        /* No background card needed in this layout, but we could add one if desired */
+        background: none;
+        padding: 0;
+        backdrop-filter: none;
     }
 }
-
-/* (end of style.css) */
