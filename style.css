@@ -138,7 +138,7 @@ nav a:focus:not(.nav-cta) {
 }
 
 .dropdown {
-    display: none;
+
     position: absolute;
     top: 110%;
     left: 0;
@@ -211,7 +211,6 @@ nav a:focus:not(.nav-cta) {
 .hero {
     flex-direction: column;
     text-align: center;
-    background: #1e2b36; /* solid dark backdrop for image + overlay */
 }
 
 .hero-copy {
@@ -235,10 +234,10 @@ nav a:focus:not(.nav-cta) {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, rgba(30, 43, 54, 0.0) 0%, rgba(30, 43, 54, 0.65) 40%, rgba(30, 43, 54, 0.9) 65%);
-    pointer-events: none; /* allow clicks through */
-    z-index: 1;           /* sits above image but below copy */
-    opacity: 0;           /* hidden on mobile */
+    background: none;
+    pointer-events: none;            /* allow clicks through */
+    z-index: 1;                      /* sits above image but below copy */
+    opacity: 0 !important;           /* hidden on mobile */
     transition: opacity 0.3s ease;
 }
 
@@ -270,13 +269,6 @@ nav a:focus:not(.nav-cta) {
 
     .hero::before {
         opacity: 0;
-    }
-}
-
-
-@media (min-width: 768px) {
-    .hero::before {
-        opacity: 1;
     }
 }
 
