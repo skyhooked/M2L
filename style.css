@@ -291,12 +291,15 @@ nav a:focus:not(.nav-cta) {
     z-index: 1;               /* sit beneath the text */
   }
 
-  .hero-copy {
-    position: relative;
-    z-index: 2;
-    max-width: 520px;
-    margin: auto 2rem;        /* center vertically, 2rem from right */
-    /* (keep or remove your background-color as desired) */
+    .hero-copy {
+    position: absolute;        /* take it out of flex layout */
+    top: 50%;                  /* halfway down the hero container */
+    right: 2rem;               /* 2rem from the right edge */
+    transform: translateY(-50%); /* perfectly center vertically */
+    max-width: 520px;          /* keep your width limit */
+    padding: 2rem;             /* optional padding */
+    border-radius: 12px;       /* optional rounding */
+    z-index: 2;                /* sit on top of the image */
   }
 }
 
