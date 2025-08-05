@@ -706,23 +706,30 @@ img{max-width:100%;display:block;}
 }
 
 /* ======================  END OVERRIDES  ===================== */
-/* === Pattern C — blur *only* under the card === */
-.hero{position:relative;justify-content:center;}   /* keep center or move as you like */
-.hero-overlay{
-    position:relative; z-index:1;                  /* above the bubble */
-    background:rgba(0,0,0,.25);
-    padding:40px; border-radius:12px;
+
+/* === Pattern A — dark strip left, clear image right === */
+.hero{
+    justify-content:flex-start;          /* text starts on the left */
+    padding-left:5%;                     /* small margin from edge  */
 }
-/* the “bubble” */
-.hero-overlay::before{
+.hero::before{
     content:'';
-    position:absolute; inset:0; z-index:-1;        /* sits under text inside card   */
-    border-radius:inherit;
-    background:rgba(0,0,0,.25);                    /* tint */
-    backdrop-filter:blur(6px)                     /* blur only inside card */
-                     saturate(130%);
-    -webkit-backdrop-filter:blur(6px) saturate(130%);
+    position:absolute; inset:0; z-index:0;
+    background:linear-gradient(90deg,
+        rgba(0,0,0,.60) 0%,
+        rgba(0,0,0,.55) 35%,   /* fade ends here */
+        rgba(0,0,0,0) 60%);
 }
+.hero-overlay{
+    background:none;                     /* strip already darkens BG */
+    position:relative; z-index:1;        /* keep card above strip    */
+    max-width:420px; text-align:left;
+}
+@media(max-width:768px){                 /* fall back to centered layout */
+    .hero{justify-content:center;padding-left:0;}
+    .hero::before{background:rgba(0,0,0,.45);}  /* plain tint on small screens */
+}
+
 
 }
 
