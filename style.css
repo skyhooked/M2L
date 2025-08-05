@@ -547,7 +547,7 @@ img {
         text-align: center;
         background: url('product images/Hero1.webp') center / cover no-repeat;
         /* knob-visibility fix */
-        background-position: 40% center;
+        background-position: 35% center;
     }
     .hero-overlay {
         width: 90%;
