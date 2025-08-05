@@ -335,7 +335,7 @@ img{max-width:100%;display:block;}
    FINAL HERO SECTION STYLES
    ========================================================== */
 
-/* Mobile & Tablet First: Full-bleed background image with overlay */
+/* Mobile & Tablet First (<1024px): Full-bleed background */
 .hero {
     display: flex;
     justify-content: center;
@@ -347,17 +347,16 @@ img{max-width:100%;display:block;}
         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
         url('product%20images/TBOHero4.webp');
     background-size: cover;
-    background-position: 35% center; /* <<< POSITIONING ADJUSTMENT HERE */
+    background-position: 35% center;
 }
 
-/* On mobile, we HIDE the <picture> element and use the background image */
 .hero .hero-img {
-    display: none;
+    display: none; /* Hide the <picture> element on mobile */
 }
 
 .hero-copy {
     background: rgba(20, 20, 20, 0.6);
-    padding: clamp(1.5rem, 5vw, 2rem); /* Responsive padding */
+    padding: clamp(1.5rem, 5vw, 2rem);
     border-radius: 12px;
     max-width: 500px;
     backdrop-filter: blur(5px);
@@ -377,42 +376,41 @@ img{max-width:100%;display:block;}
     opacity: 0.9;
 }
 
-/* Desktop Layout: Split-screen (≥1024px) */
+/* Desktop Layout (≥1024px): Split-screen */
 @media (min-width: 1024px) {
     .hero {
+        display: flex;
         flex-direction: row;
-        justify-content: center; /* Center the two items */
-        align-items: center;     /* Vertically align them */
-        gap: 5vw;                /* Space between items */
+        justify-content: center;
+        align-items: center;
+        gap: 5vw;
         max-width: 1400px;
         margin: 0 auto;
-        /* Remove background image and use solid color */
         background-image: none;
         background-color: var(--neutral-90);
-        padding: 4rem;
+        padding: 2rem;
     }
 
-    /* SHOW the <picture> element on desktop and give it space */
-    .hero .hero-img {
-        display: block;
-        order: 2; /* Image on the right */
-        flex-basis: 50%; /* Assign it 50% of the space */
-        min-width: 0;    /* Flexbox fix for responsive images */
-    }
-
-    .hero .hero-img img {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-    }
-
-    .hero .hero-copy {
+    /* Make text block visible and stable */
+    .hero-copy {
         order: 1; /* Text on the left */
-        flex-basis: 45%; /* Assign it 45% of the space */
+        flex: 1 1 45%; /* More robust flex definition */
+        max-width: 500px; /* Set a max-width for consistency */
         text-align: left;
-        /* Remove the mobile overlay styles */
-        background: none;
+        background: none; /* Remove mobile overlay */
         padding: 0;
         backdrop-filter: none;
+    }
+    
+    .hero-copy h1, .hero-copy p {
+        color: var(--neutral-0); /* Ensure text is white */
+    }
+
+    /* Make image block visible and stable */
+    .hero-img {
+        display: block; /* Show the <picture> element */
+        order: 2; /* Image on the right */
+        flex: 1 1 50%; /* More robust flex definition */
+        min-width: 0; /* Prevents flex item from overflowing */
     }
 }
