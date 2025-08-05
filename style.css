@@ -753,7 +753,7 @@ nav a:focus:not(.nav-cta) {
 @media (max-width: 768px) {
     .primary-nav {
         display: none;
-    }
+    } 
     .primary-nav.open,
     .primary-nav.show {
         display: flex;
