@@ -320,7 +320,9 @@ img {
         justify-content: center;
         padding-right: 0;
         text-align: center;
-        background: url('product images/TBOHero4.webp') center / cover no-repeat;
+        background: url('product images/Hero1.webp') center / cover no-repeat;
+        /* ADDED – mobile knob-visibility fix */
+        background-position: left center;
     }
 }
 
@@ -552,6 +554,8 @@ img {
         padding-right: 0;
         text-align: center;
         background: url('product images/Hero1.webp') center / cover no-repeat;
+        /* ADDED – mobile knob-visibility fix */
+        background-position: left center;
     }
     .hero-overlay {
         width: 90%;
