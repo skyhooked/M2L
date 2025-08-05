@@ -332,10 +332,10 @@ img{max-width:100%;display:block;}
 
 
 /* ==========================================================
-   CORRECTED HERO SECTION STYLES
+   FINAL HERO SECTION STYLES
    ========================================================== */
 
-/* Mobile-First: Full-bleed background image with overlay card */
+/* Mobile & Tablet First: Full-bleed background image with overlay */
 .hero {
     display: flex;
     justify-content: center;
@@ -343,60 +343,61 @@ img{max-width:100%;display:block;}
     text-align: center;
     min-height: calc(100vh - var(--header-h));
     padding: 2rem;
-    /* This creates a dark layer on top of the background image for text contrast */
     background-image: 
         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
         url('product%20images/TBOHero4.webp');
     background-size: cover;
-    background-position: center;
+    background-position: 35% center; /* <<< POSITIONING ADJUSTMENT HERE */
 }
 
-/* On mobile, we HIDE the <picture> element because the image is in the CSS background */
+/* On mobile, we HIDE the <picture> element and use the background image */
 .hero .hero-img {
     display: none;
 }
 
 .hero-copy {
-    background: rgba(20, 20, 20, 0.6); /* Semi-transparent dark card */
-    padding: 2rem;
+    background: rgba(20, 20, 20, 0.6);
+    padding: clamp(1.5rem, 5vw, 2rem); /* Responsive padding */
     border-radius: 12px;
     max-width: 500px;
-    backdrop-filter: blur(5px); /* Optional: glass effect */
+    backdrop-filter: blur(5px);
 }
 
 .hero-copy h1 {
-    color: var(--neutral-0); /* White text */
+    color: var(--neutral-0);
     font-size: clamp(2.2rem, 6vw, 3rem);
     line-height: 1.2;
     text-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
 
 .hero-copy p {
-    color: var(--neutral-0); /* White text */
+    color: var(--neutral-0);
     margin: 1rem 0 2rem;
     font-size: 1.125rem;
     opacity: 0.9;
 }
 
-/* Desktop: Split-screen layout */
+/* Desktop Layout: Split-screen (≥1024px) */
 @media (min-width: 1024px) {
     .hero {
         flex-direction: row;
-        justify-content: space-between;
-        gap: 4vw;
+        justify-content: center; /* Center the two items */
+        align-items: center;     /* Vertically align them */
+        gap: 5vw;                /* Space between items */
         max-width: 1400px;
         margin: 0 auto;
-        /* On desktop, we remove the background image and use a solid dark color */
+        /* Remove background image and use solid color */
         background-image: none;
         background-color: var(--neutral-90);
         padding: 4rem;
     }
 
-    /* SHOW the <picture> element again on desktop */
+    /* SHOW the <picture> element on desktop and give it space */
     .hero .hero-img {
         display: block;
-        flex: 1 1 50%; /* Takes up half the space */
-        order: 2; /* Puts image on the right */
+        order: 2; /* Image on the right */
+        flex-basis: 50%; /* Assign it 50% of the space */
+        min-width: 0;    /* Flexbox fix for responsive images */
     }
 
     .hero .hero-img img {
@@ -406,10 +407,10 @@ img{max-width:100%;display:block;}
     }
 
     .hero .hero-copy {
-        flex: 1 1 45%; /* Takes up slightly less than half */
-        order: 1; /* Puts text on the left */
+        order: 1; /* Text on the left */
+        flex-basis: 45%; /* Assign it 45% of the space */
         text-align: left;
-        /* No background card needed in this layout, but we could add one if desired */
+        /* Remove the mobile overlay styles */
         background: none;
         padding: 0;
         backdrop-filter: none;
