@@ -670,8 +670,12 @@ nav a:focus:not(.nav-cta) {
 }
 .dropdown > button:hover,
 .dropdown > button:focus {
+  /* (nothing else here) */
+    outline: none;           /* ensure no focus outline */
     color: var(--accent-color);
 }
+
+
 .dropdown-menu {
     display: none;
     position: absolute;
@@ -679,7 +683,7 @@ nav a:focus:not(.nav-cta) {
     left: 0;
     min-width: 180px;
     background: var(--primary-text);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: box-shadow: none;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 4px;
     padding: 10px 0;
