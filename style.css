@@ -298,6 +298,7 @@ nav a:focus:not(.nav-cta) {
     background-color: rgba(0,0,0,0.75);    /* dark panel behind text */
     padding: 2rem;
     border-radius: 12px;
+    transform: translateX(-35px);
   }
 }
 
