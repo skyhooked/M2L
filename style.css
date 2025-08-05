@@ -325,26 +325,24 @@ img{max-width:100%;display:block;}
 
 
 /* ---------- RESPONSIVE ---------- */
+/* hero tweaks for phones (≤768 px) */
 @media (max-width:768px){
+  .hero{
+      justify-content:center;
+      padding-right:0;
+      text-align:center;
+      background:url('product images/Hero1.webp') 35% center/cover no-repeat;
+  }
+  .hero h1{
+      font-size:2rem;
+      line-height:1.3;
+  }
+  .hero p{
+      font-size:1rem;
+      margin-bottom:1.5rem;
+  }
+}   /* ← closes the @media */
 
-    /* mobile nav (unchanged) */
-    /* …                                    */
-
-    /* hero tweaks for phones */
-    .hero{
-        justify-content:center;
-        padding-right:0;
-        text-align:center;
-        background:url('product images/Hero1.webp') 35% center/cover no-repeat;
- 
-    .hero h1{
-        font-size:2rem;
-        line-height:1.3;
-    }
-    .hero p{
-        font-size:1rem;
-        margin-bottom:1.5rem;
-  
 
 /*  NOTE: the duplicate "phones" block that used to be here
     was removed to prevent conflicting overrides               */
