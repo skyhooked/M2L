@@ -314,37 +314,78 @@ img {
     .hero { background: url('product images/TBOHero4.webp') center / cover no-repeat; }
 }
 
-/* phones */
+/* ---------- RESPONSIVE ---------- */
 @media (max-width: 768px) {
+
+    /* show .hamburger and legacy .menu-toggle on small screens */
+    .hamburger,
+    .menu-toggle {
+        display: block;
+    }
+
+    /* slide-down mobile nav */
+    .site-header .primary-nav {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: var(--header-h);
+        right: 0;
+        left: 0;
+        background: var(--neutral-90);
+        padding: 20px 0;
+        gap: 0.75rem;
+        z-index: 1001;
+        text-align: center;
+        justify-content: flex-start; /* start items just below header */
+    }
+    .site-header .primary-nav.show { display: flex; }
+
+    /* dark translucent backdrop behind menu */
+    .nav-backdrop {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1000;
+    }
+    .primary-nav.show + .nav-backdrop { display: block; }
+
+    /* hero (phone) */
     .hero {
         justify-content: center;
         padding-right: 0;
         text-align: center;
         background: url('product images/Hero1.webp') center / cover no-repeat;
-        /* ADDED – mobile knob-visibility fix */
+        /* FINAL mobile knob-visibility fix */
         background-position: -50% center;
     }
-}
+    .hero-overlay {
+        width: 90%;
+        padding: 20px;
+        border-radius: 8px;
+    }
+    .hero h1 {
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    .hero-overlay button,
+    .hero-overlay a {
+        width: 100%;
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
 
-.hero-overlay {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 40px;
-    border-radius: 10px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-}
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: #fff;
-}
-.hero p {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-    color: #fff;
+    /* story & product tweaks */
+    .story-container { flex-direction: column; }
+    .product-grid     { gap: 1.5rem; }
+    .product-card     { flex: 1 1 100%; max-width: 100%; }
+
+    /* larger tap targets in dropdown */
+    .site-header .dropdown-menu a { padding: 0.6rem 1rem; }
 }
 
 /* ---------- SECTIONS / CARDS / FOOTER ---------- */
@@ -354,9 +395,7 @@ img {
     padding: 5rem 1rem;
 }
 
-.products {
-    text-align: center;
-}
+.products { text-align: center; }
 .products h2 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
@@ -398,9 +437,7 @@ img {
     color: var(--neutral-60);
     flex-grow: 1;
 }
-.product-card .btn {
-    margin: 0 1rem 1.5rem;
-}
+.product-card .btn { margin: 0 1rem 1.5rem; }
 
 .story-container {
     display: flex;
@@ -414,9 +451,7 @@ img {
     border-radius: 8px;
     background: url('https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1000&q=80') center / cover no-repeat;
 }
-.story-content {
-    flex: 1 1 50%;
-}
+.story-content { flex: 1 1 50%; }
 .story-content h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
@@ -427,18 +462,13 @@ img {
     color: var(--neutral-60);
 }
 
-.newsletter {
-    text-align: center;
-}
+.newsletter { text-align: center; }
 .newsletter h2 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
     color: var(--neutral-90);
 }
-.newsletter p {
-    margin-bottom: 2rem;
-    color: var(--neutral-60);
-}
+.newsletter p { margin-bottom: 2rem; color: var(--neutral-60); }
 .newsletter-form {
     display: flex;
     gap: 0.5rem;
@@ -454,12 +484,7 @@ img {
     font-size: 1rem;
 }
 
-.artist-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-}
+.artist-list { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; }
 .artist-card {
     background: #fff;
     border-radius: 8px;
@@ -476,13 +501,8 @@ img {
     margin-bottom: 0.5rem;
     color: var(--neutral-90);
 }
-.artist-card p {
-    margin-bottom: 1rem;
-    color: var(--neutral-60);
-}
-.artist-card .btn {
-    align-self: center;
-}
+.artist-card p  { margin-bottom: 1rem; color: var(--neutral-60); }
+.artist-card .btn { align-self: center; }
 
 .footer {
     background: var(--neutral-90);
@@ -493,11 +513,7 @@ img {
     align-items: center;
     gap: 1.5rem;
 }
-.footer nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-}
+.footer nav ul { list-style: none; display: flex; gap: 1.5rem; }
 .footer nav a {
     color: #fff;
     text-decoration: none;
@@ -505,94 +521,6 @@ img {
     transition: color 0.25s;
 }
 .footer nav a:hover,
-.footer nav a:focus {
-    color: #B87333;
-}
-
-/* ---------- RESPONSIVE ---------- */
-@media (max-width: 768px) {
-    /* show .hamburger and legacy .menu-toggle on small screens */
-    .hamburger,
-    .menu-toggle {
-        display: block;
-    }
-
-    /* slide-down mobile nav */
-    .site-header .primary-nav {
-        display: none;
-        flex-direction: column;
-        position: fixed;
-        top: var(--header-h);
-        right: 0;
-        left: 0;
-        background: var(--neutral-90);
-        padding: 20px 0;
-        gap: 0.75rem;
-        z-index: 1001;
-        text-align: center;
-        justify-content: flex-start; /* <-- ADDED: start items just below header */
-    }
-    .site-header .primary-nav.show {
-        display: flex;
-    }
-
-    /* dark translucent backdrop behind menu */
-    .nav-backdrop {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.6);
-        z-index: 1000;
-    }
-    .primary-nav.show + .nav-backdrop {
-        display: block;
-    }
-
-    /* hero tweaks */
-    .hero {
-        justify-content: center;
-        padding-right: 0;
-        text-align: center;
-        background: url('product images/Hero1.webp') center / cover no-repeat;
-        /* ADDED – mobile knob-visibility fix */
-        background-position: left center;
-    }
-    .hero-overlay {
-        width: 90%;
-        padding: 20px;
-        border-radius: 8px;
-    }
-    .hero h1 {
-        font-size: 2rem;
-        line-height: 1.3;
-    }
-    .hero p {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
-    }
-    .hero-overlay button,
-    .hero-overlay a {
-        width: 100%;
-        font-size: 1rem;
-        padding: 0.75rem;
-    }
-
-    /* story & product tweaks */
-    .story-container {
-        flex-direction: column;
-    }
-    .product-grid {
-        gap: 1.5rem;
-    }
-    .product-card {
-        flex: 1 1 100%;
-        max-width: 100%;
-    }
-
-    /* larger tap targets in dropdown */
-    .site-header .dropdown-menu a {
-        padding: 0.6rem 1rem;
-    }
-}
+.footer nav a:focus { color: #B87333; }
 
 /* (end of style.css) */
