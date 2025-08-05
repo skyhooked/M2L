@@ -573,8 +573,6 @@ img{max-width:100%;display:block;}
         justify-content: center;
         padding-right: 0;
         text-align: center;
-        background: url('product images/Hero1.webp') center / cover no-repeat;
-        /* knob-visibility fix */
         background-position: 35% center;
     }
     .hero-overlay {
@@ -621,30 +619,7 @@ img{max-width:100%;display:block;}
     .site-header .dropdown-menu a {
         padding: 0.6rem 1rem;
     }
-    /* ===========================================================
-   HERO VISIBILITY OVERRIDES  (v3)
-=========================================================== */
-
-.hero::before{
-    content:'';
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-        to bottom,
-        rgba(0,0,0,.15) 0%,
-        rgba(0,0,0,.35) 100%);
-    z-index:0;         /* sits under the overlay card */
-}
-
-.hero-overlay{
-    /* lighter translucent “glass” card */
-    background:var(--glass-bg) !important;
-    backdrop-filter:blur(3px) saturate(120%);
-    -webkit-backdrop-filter:blur(3px) saturate(120%);
-    z-index:1;         /* sits above ::before */
-}
-
-/* make sure the white text doesn’t disappear */
+ 
 
 }
 
@@ -837,6 +812,38 @@ img{max-width:100%;display:block;}
 }
 
 /* =======================  END  ========================== */
+
+
+/* ==========================================================
+   HERO — final colours + shadows  (2025-08-04 reset)
+   ========================================================= */
+
+/* charcoal copy, w / soft text shadow */
+.hero-copy h1,
+.hero-copy p{
+    color:#36454F;                     /* Neutral-90 */
+    text-shadow:0 2px 4px rgba(0,0,0,.35);
+}
+
+/* copper CTA with lift & shadow */
+.btn{
+    background:#FF8A3D;                /* Copper-80  */
+    color:#000;
+    box-shadow:0 4px 8px -2px rgba(0,0,0,.4);
+    transition:box-shadow .25s, transform .25s;
+}
+.btn:hover,
+.btn:focus{
+    background:#B87333;                /* Copper-60  */
+    box-shadow:0 6px 12px -2px rgba(0,0,0,.5);
+    transform:translateY(-2px);
+}
+
+/* pedal left / copy right on big screens */
+@media (min-width:1024px){
+    .hero{flex-direction:row-reverse;text-align:right;gap:5vw;}
+    .hero-copy{margin-right:5vw;}
+}
 
 
 }
