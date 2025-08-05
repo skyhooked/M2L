@@ -755,26 +755,6 @@ nav a:focus:not(.nav-cta) {
     cursor: pointer;
 }
 @media (max-width: 768px) {
-    /* --- Mobile header layout tweaks --- */
-    .site-header .nav-wrap{
-        position: relative; /* create containing block for absolute hamburger */
-    }
-    .hamburger{
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    .util-icons{
-        position: absolute;
-        right: 20px;
-        z-index: 1100;
-    }
-    .hamburger{
-        background: var(--cta-color) url('icons/hamburger.svg') center/18px 18px no-repeat;
-        border-radius: 4px;
-    }
-
-    /* original nav rules */
     .primary-nav {
         display: none;
     }

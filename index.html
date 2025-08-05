@@ -24,147 +24,32 @@
             <!-- Primary navigation links -->
             <nav class="primary-nav" role="navigation" aria-label="Main">
                 <a href="shop.html" class="pill">Shop</a>
-                <a href="our-story.html">Our Story</a>
+                <a href="our-story.html">Our Story</a>
                 <a href="news.html">News</a>
-                <a href="artist-endorsement.html">Artist Endorsement</a>
+                <a href="artist-endorsement.html">Artist Endorsement</a>
                 <a href="artists.html">Artists</a>
+                <div class="dropdown">
+                    <button aria-haspopup="true" aria-expanded="false">Support ▾</button>
+                    <div class="dropdown-menu" role="menu">
+                        <a href="warranty.html">Warranty</a>
+                        <a href="privacy.html">Privacy</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
             </nav>
-        </div>
 
-        <!-- Backdrop appears behind the mobile menu -->
-        <div class="nav-backdrop"></div>
-    </header>
-
-    <!-- ===== HERO ===== -->
-    <section class="hero" role="banner">
-      <div class="hero-copy">
-        <h1>DROP THE BOMBER<br>ON YOUR BOARD</h1>
-        <p>ARE YOU READY?</p>
-        <a class="btn" href="#shop">PRE-ORDER</a>
-      </div>
-    
-      <!-- This is now an empty div that will be styled with CSS. It is much more stable. -->
-      <div class="hero-img"></div>
-    </section>
-
-
-    <!-- ===== PRODUCTS ===== -->
-    <section id="products" class="section products" aria-labelledby="products-title">
-        <h2 id="products-title">Our Pedals</h2>
-        <p>Explore our range of analog effects, designed for musicians and creators.</p>
-
-        <div class="product-grid">
-            <article class="product-card">
-                <img src="product%20images/M2-Labs-The-Bomber-Overdrive-1.jpg"
-                     alt="The Bomber Overdrive pedal on a wooden table" />
-                <h3>The Bomber Overdrive</h3>
-                <p>
-                    The Bomber Overdrive hits that perfect spot between subtle breakup and serious distortion. The
-                    Distortion control lets you shape exactly how much grit you want, from tube-like edge-of-breakup
-                    tones to rich, full-throttle drive loaded with harmonics. Are you ready to drop The Bomber on your board?
-                </p>
-                <a href="product.html" class="btn">Learn More</a>
-            </article>
-        </div>
-    </section>
-
-    <!-- ===== STORY ===== -->
-    <section id="story" class="section story" aria-labelledby="story-title">
-        <div class="story-container">
-            <div class="story-image" role="img" aria-label="Vintage studio with guitars and amps"></div>
-            <div class="story-content">
-                <h2 id="story-title">The Story</h2>
-                <p>Use this section to share the journey behind your brand.</p>
-                <a href="our-story.html" class="btn">Read More</a>
+            <div class="util-icons">
+                <button id="search-btn" aria-label="Search">
+                    <img src="icons/search.svg" alt="">
+                </button>
+                <a href="login.html" aria-label="Account">
+                    <img src="icons/user.svg" alt="">
+                </a>
+                <a href="cart.html" aria-label="Cart">
+                    <img src="icons/cart.svg" alt="">
+                    <span id="cart-count">0</span>
+                </a>
             </div>
-        </div>
-    </section>
-
-    <!-- ===== NEWS ===== -->
-    <section id="news" class="section" aria-labelledby="news-title">
-        <h2 id="news-title">News</h2>
-        <p>Share the latest updates, product launches or blog posts here.</p>
-    </section>
-
-    <!-- ===== ENDORSEMENT ===== -->
-    <section id="endorsement" class="section" aria-labelledby="endorsement-title">
-        <h2 id="endorsement-title">Artist Endorsement</h2>
-        <p>Highlight endorsements from well-known artists or testimonials.</p>
-    </section>
-
-    <!-- ===== ARTISTS ===== -->
-    <section id="artists" class="section" aria-labelledby="artists-title">
-        <h2 id="artists-title">Artists</h2>
-        <p>Showcase the artists who use your gear.</p>
-    </section>
-
-    <!-- ===== NEWSLETTER ===== -->
-    <section id="newsletter" class="section newsletter" aria-labelledby="newsletter-title">
-        <h2 id="newsletter-title">Stay in Touch</h2>
-        <p>Join our email list to receive updates.</p>
-        <form action="#" method="post" class="newsletter-form">
-            <label for="email" class="sr-only">Email address</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email here" required />
-            <button type="submit" class="btn">Sign Up</button>
-        </form>
-    </section>
-
-    <!-- ===== FOOTER ===== -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-logo">
-                <a href="#top"><img src="logos/H-Logo-white.svg" alt="M2 Labs Logo"
-                    width="120" height="40" /></a>
-                <p>Crafting the future of vintage sound</p>
-            </div>
-
-            <nav class="footer-nav" aria-label="Footer Navigation">
-                <ul>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="warranty.html">Warranty</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </nav>
-        </div>
-
-        <!-- Placeholder for e-commerce widget -->
-        <div id="ecommerce-plugin"></div>
-    </footer>
-
-    <!-- ===== SCRIPTS ===== -->
-    <script src="script.js"></script>
-</body>
-</html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>M2 Labs – Crafting the Future of Vintage Sound</title>
-    <meta name="description" content="Crafting the future of vintage sound with high-quality analog equipment, modern design and a transferable lifetime warranty." />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-</head>
-
-<body>
-    <!-- ===== HEADER ===== -->
-    <header class="site-header">
-        <div class="nav-wrap">
-            <a href="index.html" class="logo">
-                <img src="logos/H-Logo-white.svg" alt="M2 Labs Logo" width="140" height="47" />
-            </a>
-
-            <!-- Hamburger button (three bars are drawn in CSS) -->
-            <button class="hamburger" aria-label="Toggle menu"><span></span></button>
-
-            <!-- Primary navigation links -->
-            <nav class="primary-nav" role="navigation" aria-label="Main">
-                <a href="shop.html" class="pill">Shop</a>
-                <a href="our-story.html">Our Story</a>
-                <a href="news.html">News</a>
-                <a href="artist-endorsement.html">Artist Endorsement</a>
-                <a href="artists.html">Artists</a>
-            </nav>
         </div>
 
         <!-- Backdrop appears behind the mobile menu -->
