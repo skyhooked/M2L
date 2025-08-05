@@ -1,14 +1,6 @@
 /* ===========================================================
-   M2-Labs | Charcoal + Copper palette | 2025-08-04  HERO VISIBILITY TUNE (v2)
-   ————————————————————————————————————————————————————————————————
-   Changelog vs original style.css (2025-08-03)
-   • Added section-wide gradient darken (.hero::before)
-   • .hero set to position:relative; overlay raised to z-index:1
-   • Re-worked .hero-overlay → translucent “glass” card (rgba 0.45 + backdrop-filter)
-   • Text legibility boosts: text-shadow on h1 / p
-   • Tweaked max-width / padding so the pedal knobs peek out
-   • Slight background-position refinement on tablets (<1024 px)
-=========================================================== */
+   M2-Labs | Final Hero Fix
+   =========================================================== */
 
 /* Font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
@@ -32,8 +24,6 @@
 
     /* new tokens for glass overlay */
     --glass-bg: rgba(0,0,0,.30);   /* 30 % black for the glass card */
-
-    
 }
 
 
@@ -103,7 +93,6 @@ img{max-width:100%;display:block;}
 }
 
 /* ---------- LOGO COLOUR EFFECT ---------- */
-/* Simple image-swap overlay: copper wave SVG appears on hover */
 .site-header .logo { position: relative; display: inline-block; }
 
 .site-header .logo::after {
@@ -335,9 +324,10 @@ img{max-width:100%;display:block;}
    FINAL HERO SECTION STYLES
    ========================================================== */
 
-/* Mobile & Tablet First (<1024px): Full-bleed background */
+/* Mobile & Tablet First (<1024px) */
 .hero {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -351,7 +341,7 @@ img{max-width:100%;display:block;}
 }
 
 .hero .hero-img {
-    display: none; /* Hide the empty div on mobile */
+    display: none;
 }
 
 .hero-copy {
@@ -376,26 +366,24 @@ img{max-width:100%;display:block;}
     opacity: 0.9;
 }
 
-/* Desktop Layout (≥1024px): Split-screen */
+/* Desktop Layout (≥1024px): Uses CSS Grid for stability */
 @media (min-width: 1024px) {
     .hero {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
+        display: grid; /* Use Grid */
+        grid-template-columns: 1fr 1fr; /* Create two equal columns */
         align-items: center;
-        gap: 5vw;
-        width: 100%;
+        gap: 2rem;
         max-width: 1400px;
         margin: 0 auto;
+        padding: 2rem 4rem;
         background-image: none;
         background-color: var(--neutral-90);
-        padding: 2rem 4rem;
     }
 
     /* Text block styles */
     .hero-copy {
-        flex: 1 1 45%;
         max-width: 500px;
+        justify-self: end; /* Align the text block to the right of its column */
         text-align: left;
         background: none;
         padding: 0;
@@ -406,15 +394,15 @@ img{max-width:100%;display:block;}
         color: var(--neutral-0);
     }
 
-    /* Image container styles - THIS IS THE NEW, STABLE METHOD */
+    /* Image container styles */
     .hero-img {
-        display: block; /* Make the div visible */
-        flex: 1 1 55%;  /* Allow it to take up space */
-        height: 70vh;   /* Give it an explicit height */
-        max-height: 600px; /* And a max height */
+        display: block;
+        width: 100%;
+        height: 70vh;
+        max-height: 600px;
         background-image: url('product%20images/TBOHero4.webp');
         background-size: contain;
         background-repeat: no-repeat;
-        background-position: center;
+        background-position: center left; /* Align image to the left of its column */
     }
 }
