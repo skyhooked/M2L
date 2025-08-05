@@ -770,6 +770,61 @@ img{max-width:100%;display:block;}
         margin-bottom:2rem;
     }
 }
+/* === HERO SPLIT-LAYOUT (text | image) ========================= */
+.hero{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:5vw;
+    max-width:1400px;
+    margin:0 auto;
+    padding:clamp(3rem,6vw,6rem) 5vw;
+    background:none;                /* no photo here – <picture> handles it */
+}
+.hero-copy{flex:1 1 480px;max-width:32rem;}
+.hero-copy h1{color:#36454F;font-size:clamp(2.5rem,4vw,3.5rem);line-height:1.1;}
+.hero-copy p{color:#6C7A83;margin:1rem 0 2rem;font-size:1.125rem;}
+.hero-img{flex:1 1 550px;display:flex;justify-content:center;}
+.hero-img img{width:100%;height:auto;object-fit:contain;}
+
+/* stack on phones */
+@media(max-width:768px){
+  .hero{flex-direction:column;text-align:center;}
+  .hero-img{order:-1;max-width:80%;margin-bottom:2rem;}
+  .hero-copy{max-width:90%;}
+}
+
+/* =================================================================
+   HERO  –  final colour tweaks  (Neutral-90 text + optional card)
+   -----------------------------------------------------------------
+   ⬇︎  Paste everything between these comment lines at the very end
+   ================================================================= */
+
+/* 1 ▸ Headline & paragraph use charcoal (Neutral-90 #36454F)        */
+.hero-copy h1,
+.hero-copy p{
+    color:#36454F;          /* keeps copy readable without clashing */
+}
+
+/* 2 ▸ OPTIONAL: pale “card” behind the copy for even more contrast.
+      Delete this block if you prefer no background.                */
+.hero-copy{
+    background:rgba(245,245,245,0.85);   /* Neutral-0 @ 85 % opacity */
+    padding:2rem;
+    border-radius:12px;
+}
+
+/* 3 ▸ CTA button keeps bright copper, hover shifts to darker copper */
+.btn{
+    background:#FF8A3D;     /* Copper-80 (brand orange)             */
+    color:#000;
+}
+.btn:hover{
+    background:#B87333;     /* Copper-60 (darker copper)            */
+}
+
+/* ===========================  END  =============================== */
+
 
 }
 
