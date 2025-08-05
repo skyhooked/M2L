@@ -37,19 +37,20 @@
 
     <!-- ===== HERO ===== -->
 <section class="hero" role="banner">
+  <!-- Image element now uses the corrected path with %20 for the space -->
+  <picture class="hero-img">
+    <source srcset="product%20images/TBOHero4@2x.webp" media="(min-width:1200px)" type="image/webp">
+    <source srcset="product%20images/TBOHero4.webp"                    type="image/webp">
+    <img   src="product%20images/TBOHero4.jpg"
+           alt="The Bomber overdrive pedal – gold knobs, copper plate"
+           width="600" height="550" loading="eager">
+  </picture>
+
   <div class="hero-copy">
     <h1>DROP THE BOMBER<br>ON YOUR BOARD</h1>
     <p>ARE YOU READY?</p>
     <a class="btn" href="#shop">PRE-ORDER</a>
   </div>
-
-  <picture class="hero-img">
-    <source srcset="product images/TBOHero4@2x.webp" media="(min-width:1200px)" type="image/webp">
-    <source srcset="product images/TBOHero4.webp"                    type="image/webp">
-    <img   src="product images/TBOHero4.jpg"
-           alt="The Bomber overdrive pedal – gold knobs, copper plate"
-           width="600" height="550" loading="eager">
-  </picture>
 </section>
 
 
@@ -60,7 +61,8 @@
 
         <div class="product-grid">
             <article class="product-card">
-                <img src="product images/M2-Labs-The-Bomber-Overdrive-1.jpg"
+                <!-- Corrected path for this image as well -->
+                <img src="product%20images/M2-Labs-The-Bomber-Overdrive-1.jpg"
                      alt="The Bomber Overdrive pedal on a wooden table" />
                 <h3>The Bomber Overdrive</h3>
                 <p>
