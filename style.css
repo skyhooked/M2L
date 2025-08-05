@@ -320,34 +320,6 @@ img{max-width:100%;display:block;}
     background:url('product images/TBOHero4.webp') center/cover no-repeat;
 }
 
-/* section-wide gradient soft-darken so pedal is still vibrant */
-.hero::before{
-    content:'';
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-        to bottom,
-        rgba(0,0,0,.25) 0%,
-        rgba(0,0,0,.4) 100%);
-    z-index:0;
-}
-
-/* ---------- HERO OVERLAY “GLASS” CARD ---------- */
-.hero-overlay{
-    z-index:1;                                         /* sits above ::before */
-    background:var(--glass-bg);
-    backdrop-filter:blur(4px) saturate(120%);
-    -webkit-backdrop-filter:blur(4px) saturate(120%);
-    padding:48px 56px;
-    border-radius:12px;
-    max-width:480px;
-    width:100%;
-    text-align:center;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:1.75rem;
-}
 
 /* headline & copy legibility */
 .hero h1,
@@ -667,7 +639,7 @@ img{max-width:100%;display:block;}
         padding: 0.6rem 1rem;
     }
     /* ===========================================================
-   HERO VISIBILITY OVERRIDES  (v3)   ⬆ paste *once* at the end
+   HERO VISIBILITY OVERRIDES  (v3)
 =========================================================== */
 
 .hero::before{
@@ -829,7 +801,6 @@ img{max-width:100%;display:block;}
 /* ==========================================================
    QUICK FIX – stop the dark veil + force new colours
    ----------------------------------------------------------
-   ⬇︎  paste everything between these comment lines at the very end
 ========================================================== */
 
 /* 1 ▸ nuke the gradient veil that’s still sitting on top   */
