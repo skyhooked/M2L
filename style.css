@@ -274,29 +274,30 @@ nav a:focus:not(.nav-cta) {
 
 
 @media (min-width: 768px) {
-    .hero {
-        flex-direction: row;
-        text-align: left;
-        padding: 0;
-        background-color: var(--primary-text);
-    }
-    .hero-img {
-        order: 0;             /* image on the left */
-        flex: 0 0 55%;
-        min-height: 100%;
-        background-image: url('product%20images/TBOHero4.webp');
-        background-position: center center;
-        position: relative; left: 35px;
-    }
-    .hero-copy {
-        order: 1;             /* text on the right */
-        flex: 1;
-        max-width: 520px;
-        margin-left: auto;
-        background-color: rgba(0,0,0,0.75);
-        padding: 2rem;
-        border-radius: 12px;
-    }
+  .hero {
+    flex-direction: row;
+    text-align: left;
+    padding: 0;                            /* removed the 2rem gap */
+    background-color: var(--primary-text); /* fill the rest with dark */
+  }
+
+  .hero-img {
+    order: 0;                              /* image on the left */
+    flex: 0 0 55%;
+    min-height: 100%;
+    background-image: url('product images/TBOHero4.webp');
+    background-position: center center;   /* ← center the pedal inside its pane */
+  }
+
+  .hero-copy {
+    order: 1;                              /* text on the right */
+    flex: 1;
+    max-width: 520px;
+    margin-left: auto;
+    background-color: rgba(0,0,0,0.75);    /* dark panel behind text */
+    padding: 2rem;
+    border-radius: 12px;
+  }
 }
 
 @media (min-width: 1200px) {
