@@ -286,6 +286,7 @@ nav a:focus:not(.nav-cta) {
         min-height: 100%;
         background-image: url('product%20images/TBOHero4.webp');
         background-position: center center;
+        position: relative; left: 35px;
     }
     .hero-copy {
         order: 1;             /* text on the right */
