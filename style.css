@@ -656,16 +656,28 @@ nav a:focus:not(.nav-cta) {
 .primary-nav a:focus {
     color: var(--accent-color);
 }
-.primary-nav .pill {
-    background: var(--cta-color);
-    color: var(--white);
-    padding: 8px 18px;
-    border-radius: 4px;
-    transition: transform 0.15s ease;
+.pill {
+    display: inline-block;
+    background: #FF8A3D;
+    color: #FFF;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s ease, color 0.3s ease;
 }
-.primary-nav .pill:hover,
-.primary-nav .pill:focus {
-    transform: translateY(-2px);
+.pill:hover,
+.pill:focus {
+    background: #E5531E;
+}
+.pill--accent {
+  background-color: #FF8A3D;  /* orange fill */
+  color: #000;                /* black text */
+}
+.pill--accent:hover,
+.pill--accent:focus {
+  background-color: #F5F5F5;  /* white fill on hover */
+  color: #FFF;                /* white text on hover */
 }
 .dropdown {
     position: relative;
