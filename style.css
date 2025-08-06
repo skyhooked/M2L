@@ -826,5 +826,5 @@ body {
 .pill--accent:focus,
 .btn--accent:focus {
   background-color: #F5F5F5;
-  color: #FFF;
+  color: #000;
 }
