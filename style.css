@@ -860,19 +860,22 @@ body {
 /* Target only SHOP & PRE-ORDER by ID */
 #shop-btn,
 #preorder-btn {
-  background-color: #FF8A3D;    /* orange fill */
-  color: #000;                  /* black text */
-  border-radius: 8px;           /* rounded rectangle */
-  padding: 0.75rem 2rem;        /* match your existing btn padding */
-  text-decoration: none;
-  display: inline-block;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: #FF8A3D !important;    /* orange fill */
+  color: #000 !important;                  /* black text */
+  border-radius: 8px !important;           /* rounded rectangle */
+  padding: 0.75rem 2rem !important;        /* match your existing btn padding */
+  text-decoration: none !important;
+  display: inline-block !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
+  transition: background-color 0.3s ease, color 0.3s ease !important;
 }
 
 #shop-btn:hover,
 #shop-btn:focus,
 #preorder-btn:hover,
 #preorder-btn:focus {
-  background-color: #F5F5F5;   /* white fill on hover */
-  color: #000;              /* orange text on hover */
+  background-color: #F5F5F5 !important;   /* white fill on hover */
+  color: #000 !important;                  /* black text on hover */
 }
