@@ -109,7 +109,6 @@ nav a {
     padding: 0.5rem 0.75rem;
     transition: color 0.3s ease, background-color 0.3s ease,
         transform 0.2s ease;
-    border-radius: 20px;
 }
 
 /* CTA styling for the Shop link */
