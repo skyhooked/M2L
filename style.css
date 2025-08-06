@@ -346,7 +346,7 @@ nav a:focus:not(.nav-cta) {
   color: #FF8A3D;             /* swap text to accent so it remains visible */
 }
 /* Primary hero & shop button—rounded rectangle, orange/black/off-white */
-.btn--primary {
+.btn.btn--primary {
   background-color: #FF8A3D;   /* orange fill */
   color: #000;                 /* black text */
   padding: 0.75rem 2rem;       /* same comfort as your old btn */
