@@ -813,3 +813,18 @@ body {
     max-width: 800px;
     line-height: 1.6;
 }
+
+/* Accent-style variant of both .pill and .btn */
+.pill--accent,
+.btn--accent {
+  background-color: #FF8A3D;
+  color: #000;
+}
+
+.pill--accent:hover,
+.btn--accent:hover,
+.pill--accent:focus,
+.btn--accent:focus {
+  background-color: #F5F5F5;
+  color: #FFF;
+}
