@@ -345,6 +345,23 @@ nav a:focus:not(.nav-cta) {
   background-color: #F5F5F5;  /* your new hover */
   color: #FF8A3D;             /* swap text to accent so it remains visible */
 }
+/* Primary hero & shop button—rounded rectangle, orange/black/off-white */
+.btn--primary {
+  background-color: #FF8A3D;   /* orange fill */
+  color: #000;                 /* black text */
+  padding: 0.75rem 2rem;       /* same comfort as your old btn */
+  border-radius: 8px;          /* slight rounding (not full pill) */
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn--primary:hover,
+.btn--primary:focus {
+  background-color: #F5F5F5;   /* off-white fill */
+  color: #F5F5F5;              /* off-white text on hover */
+}
 
 /* Generic section styling */
 .section {
